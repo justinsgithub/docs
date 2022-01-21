@@ -1,0 +1,2597 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Learning Documentation">
+      
+      
+      
+        <link rel="canonical" href="https://docs.justintylers.com/computer-science/programming/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.7">
+    
+    
+      
+        <title>Programming - Justins Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.cd566b2a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://justinsgithub.github.io/static/docs.justintylers.com/css/termynal.css">
+    
+      <link rel="stylesheet" href="https://justinsgithub.github.io/static/docs.justintylers.com/css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#programming-principals" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Justins Docs" class="md-header__button md-logo" aria-label="Justins Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Justins Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Programming
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/justinsgithub/learning-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    justinsgithub/learning-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Justins Docs" class="md-nav__button md-logo" aria-label="Justins Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Justins Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/justinsgithub/learning-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    justinsgithub/learning-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Study Documentation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essential-css/" class="md-nav__link">
+        CSS Essentials
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Computer Science
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Computer Science" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Computer Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digital-information/" class="md-nav__link">
+        Digital Information
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Programming
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Programming
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#control-computers-with-code" class="md-nav__link">
+    control computers with code
+  </a>
+  
+    <nav class="md-nav" aria-label="control computers with code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#history-of-programming" class="md-nav__link">
+    history of programming
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forms-of-programming" class="md-nav__link">
+    forms of programming
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-actions-using-code" class="md-nav__link">
+    define actions using code
+  </a>
+  
+    <nav class="md-nav" aria-label="define actions using code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#work-with-values-and-variables" class="md-nav__link">
+    work with values and variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-functions-to-repeat-actions" class="md-nav__link">
+    use functions to repeat actions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#break-down-tasks" class="md-nav__link">
+    break down tasks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customize-functions-with-parameters" class="md-nav__link">
+    customize functions with parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-and-scope" class="md-nav__link">
+    variables and scope
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-values-from-functions" class="md-nav__link">
+    return values from functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-with-an-api" class="md-nav__link">
+    work with an API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repeat-actions-and-test-for-conditions" class="md-nav__link">
+    repeat actions and test for conditions
+  </a>
+  
+    <nav class="md-nav" aria-label="repeat actions and test for conditions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#capture-input-from-the-user" class="md-nav__link">
+    capture input from the user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-different-variable-types" class="md-nav__link">
+    manage different variable types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-conditional-tests" class="md-nav__link">
+    create conditional tests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-compound-conditional-tests" class="md-nav__link">
+    build compound conditional tests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loops-arrays" class="md-nav__link">
+    loops arrays
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objects-and-oop" class="md-nav__link">
+    objects and OOP
+  </a>
+  
+    <nav class="md-nav" aria-label="objects and OOP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#everything-is-an-object" class="md-nav__link">
+    everything is an object
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#everything-is-a-class" class="md-nav__link">
+    everything is a class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-with-existing-classes-and-objects" class="md-nav__link">
+    work with existing classes and objects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-your-own-classes-and-objects" class="md-nav__link">
+    make your own classes and objects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extend-classes" class="md-nav__link">
+    extend classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-polymorphism-using-interfaces" class="md-nav__link">
+    use polymorphism using interfaces
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#beyond-programming" class="md-nav__link">
+    beyond programming
+  </a>
+  
+    <nav class="md-nav" aria-label="beyond programming">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debug-problems" class="md-nav__link">
+    debug problems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refactor-code-to-make-improvements" class="md-nav__link">
+    refactor code to make improvements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save-progress-and-work-with-others" class="md-nav__link">
+    save progress and work with others
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-iteratively-using-agile-development" class="md-nav__link">
+    build iteratively using agile development
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-for-multiple-platforms" class="md-nav__link">
+    create for multiple platforms
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Computer Technology
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Computer Technology" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Computer Technology
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          HTTP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="HTTP" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          HTTP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-technology/HTTP/http-essentials/" class="md-nav__link">
+        Essentials
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-technology/HTTP/http-terminology/" class="md-nav__link">
+        Terminology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-technology/HTTP/headers/" class="md-nav__link">
+        Headers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-technology/HTTP/requests-responses/" class="md-nav__link">
+        Requests & Responses
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-technology/data-types/" class="md-nav__link">
+        Data Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-technology/data-structures/" class="md-nav__link">
+        Data Structures
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-technology/terms/" class="md-nav__link">
+        Terms
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Creative
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Creative" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Creative
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../creative/emojis/" class="md-nav__link">
+        Emojis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../creative/writing-blogs/" class="md-nav__link">
+        Writing Blogs
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/code-snips/" class="md-nav__link">
+        Code Snips
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/directories/" class="md-nav__link">
+        Directories
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/command-line/" class="md-nav__link">
+        Command Line
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/linux-programs/" class="md-nav__link">
+        Advanced
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/zsh/" class="md-nav__link">
+        Zsh
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Resources
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Resources" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Resources
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/resources/" class="md-nav__link">
+        Learning Resources
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/learning-software/" class="md-nav__link">
+        Learning Tips
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Programming Langs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Programming Langs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Programming Langs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1" type="checkbox" id="__nav_8_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_1">
+          JavaScript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_1">
+          <span class="md-nav__icon md-icon"></span>
+          JavaScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-langs/javascript/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-langs/javascript/functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-langs/javascript/objects/" class="md-nav__link">
+        Classes & Objects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-langs/javascript/code-challenges/" class="md-nav__link">
+        Code Challenges
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2" type="checkbox" id="__nav_8_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_2">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_2">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-langs/python/code-challenges/" class="md-nav__link">
+        Code Challenges
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-langs/python/data-structures-and-algorithms/" class="md-nav__link">
+        Class Queue Deque
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-langs/python/dsa/" class="md-nav__link">
+        DSA
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_3" type="checkbox" id="__nav_8_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_3">
+          Rust
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Rust" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_3">
+          <span class="md-nav__icon md-icon"></span>
+          Rust
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-langs/rust/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-langs/rust/datatypes/" class="md-nav__link">
+        Datatypes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-langs/rust/basics/" class="md-nav__link">
+        VFCL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-langs/rust/ownership/" class="md-nav__link">
+        Ownership
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-langs/rust/code-examples/" class="md-nav__link">
+        Code Examples
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-langs/rust/mini-projects/" class="md-nav__link">
+        Mini Projects
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Software
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Software" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/docker/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2" type="checkbox" id="__nav_9_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_2">
+          Git
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Git" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_2">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/git/essentials/" class="md-nav__link">
+        Git Essentials
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/git/github-pages/" class="md-nav__link">
+        GitHub Pages
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_3" type="checkbox" id="__nav_9_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_3">
+          NodeJS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="NodeJS" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_3">
+          <span class="md-nav__icon md-icon"></span>
+          NodeJS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/nodejs/static-server/" class="md-nav__link">
+        Static Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/nodejs/essentials/" class="md-nav__link">
+        Essentials
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_4" type="checkbox" id="__nav_9_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_4">
+          React
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="React" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_4">
+          <span class="md-nav__icon md-icon"></span>
+          React
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/react/design-patterns/" class="md-nav__link">
+        Design Patterns
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/react/getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/react/essentials/" class="md-nav__link">
+        Essentials
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/react/hooks-descriptions/" class="md-nav__link">
+        Hooks Descriptions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/react/hooks-examples/" class="md-nav__link">
+        Hooks Examples
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/react/software-architecture/" class="md-nav__link">
+        Software Architecture
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_5" type="checkbox" id="__nav_9_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_5">
+          TypeScript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="TypeScript" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_5">
+          <span class="md-nav__icon md-icon"></span>
+          TypeScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/typescript/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_6" type="checkbox" id="__nav_9_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_6">
+          Vim
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Vim" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_6">
+          <span class="md-nav__icon md-icon"></span>
+          Vim
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/vim/nvim-lua-config/" class="md-nav__link">
+        Nvim Lua Config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/vim/learning-vim/" class="md-nav__link">
+        New Learnings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/vim/nvim-config/" class="md-nav__link">
+        Nvim Config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/vim/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/vim/snips/" class="md-nav__link">
+        Vim Commands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/vim/spacevim-config/" class="md-nav__link">
+        SpaceVim Config
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quicknotes/" class="md-nav__link">
+        Quick Notes
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#control-computers-with-code" class="md-nav__link">
+    control computers with code
+  </a>
+  
+    <nav class="md-nav" aria-label="control computers with code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#history-of-programming" class="md-nav__link">
+    history of programming
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forms-of-programming" class="md-nav__link">
+    forms of programming
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-actions-using-code" class="md-nav__link">
+    define actions using code
+  </a>
+  
+    <nav class="md-nav" aria-label="define actions using code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#work-with-values-and-variables" class="md-nav__link">
+    work with values and variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-functions-to-repeat-actions" class="md-nav__link">
+    use functions to repeat actions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#break-down-tasks" class="md-nav__link">
+    break down tasks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customize-functions-with-parameters" class="md-nav__link">
+    customize functions with parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-and-scope" class="md-nav__link">
+    variables and scope
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-values-from-functions" class="md-nav__link">
+    return values from functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-with-an-api" class="md-nav__link">
+    work with an API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repeat-actions-and-test-for-conditions" class="md-nav__link">
+    repeat actions and test for conditions
+  </a>
+  
+    <nav class="md-nav" aria-label="repeat actions and test for conditions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#capture-input-from-the-user" class="md-nav__link">
+    capture input from the user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-different-variable-types" class="md-nav__link">
+    manage different variable types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-conditional-tests" class="md-nav__link">
+    create conditional tests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-compound-conditional-tests" class="md-nav__link">
+    build compound conditional tests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loops-arrays" class="md-nav__link">
+    loops arrays
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objects-and-oop" class="md-nav__link">
+    objects and OOP
+  </a>
+  
+    <nav class="md-nav" aria-label="objects and OOP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#everything-is-an-object" class="md-nav__link">
+    everything is an object
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#everything-is-a-class" class="md-nav__link">
+    everything is a class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-with-existing-classes-and-objects" class="md-nav__link">
+    work with existing classes and objects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-your-own-classes-and-objects" class="md-nav__link">
+    make your own classes and objects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extend-classes" class="md-nav__link">
+    extend classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-polymorphism-using-interfaces" class="md-nav__link">
+    use polymorphism using interfaces
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#beyond-programming" class="md-nav__link">
+    beyond programming
+  </a>
+  
+    <nav class="md-nav" aria-label="beyond programming">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debug-problems" class="md-nav__link">
+    debug problems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refactor-code-to-make-improvements" class="md-nav__link">
+    refactor code to make improvements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save-progress-and-work-with-others" class="md-nav__link">
+    save progress and work with others
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-iteratively-using-agile-development" class="md-nav__link">
+    build iteratively using agile development
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-for-multiple-platforms" class="md-nav__link">
+    create for multiple platforms
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="programming-principals">Programming Principals<a class="headerlink" href="#programming-principals" title="Permanent link">&para;</a></h1>
+<ul>
+<li>computers are useless unless they are told exactly what to do </li>
+<li>since the beginning of computers, there has always been the need for someone to tell it what to do </li>
+<li>this is where programmers come in </li>
+<li>programmers take a set up steps or jobs that need to be done by a computer and convert it from our language to their language</li>
+</ul>
+<h2 id="control-computers-with-code">control computers with code<a class="headerlink" href="#control-computers-with-code" title="Permanent link">&para;</a></h2>
+<h3 id="history-of-programming">history of programming<a class="headerlink" href="#history-of-programming" title="Permanent link">&para;</a></h3>
+<ul>
+<li>in the early 1840's Charles Babbage proposed a machine called the Analytical Engine</li>
+<li>it was only a proposal, no actual machine was built</li>
+<li>one inventive woman by the name of Ada Lovelace decided to write an article that provided detailed instructions on how to represent Bernoulli numbers, a recursive equation based in number theory on the Analytical Engine</li>
+<li>this article is considered the very first computer program</li>
+<li>
+<p>since then the devices that can be programmed went from: </p>
+<ul>
+<li>theoretical to physical</li>
+<li>manual to automatic</li>
+<li>analog to digital</li>
+</ul>
+</li>
+<li>
+<p>with each evolutionary step, the way we program computers needed to evolve as well</p>
+</li>
+<li>with the birth of main frame computers, data processing required instructions to be sent to the machine and interpret the instructions from the programmer</li>
+<li>this was then applied to data to organize and analyze it </li>
+<li>instructions were entered through a keyboard, but without a monitor, so everything was done through printouts on paper </li>
+<li>if you look carefully at text encodings, and at some programming languages, you'll see things like carriage return or print that are carryovers from those printer days from decades ago </li>
+<li>as computers got smaller and more powerful more languages were created </li>
+<li>languages were also created to serve specific types of projects and industries like mathematics and science, data storage and graphics</li>
+<li>today we work with programming language that can serve many different purposes </li>
+<li>a programmer often needs to use multiple programming languages to get a project completed</li>
+<li>as languages have evolved they have become specialized to complete specific tasks</li>
+<li>as a programmer you will use the best languages for specific tasks and combine them together to create your project</li>
+<li>the programming languages you learn today will continue to evolve and change in the future</li>
+<li>with future waves of new technology new languages with be developed to allow programmers to drive even more innovation</li>
+</ul>
+<h3 id="forms-of-programming">forms of programming<a class="headerlink" href="#forms-of-programming" title="Permanent link">&para;</a></h3>
+<ul>
+<li>as programming as evolved over the decades, the types of programming you can do have changed as well </li>
+<li>depending on what you want to do there are different types or forms of programming languages that work in different ways</li>
+<li>machine, assembly, interpreted, compiled </li>
+<li>imperative, OOP, functional, scripting</li>
+<li>JS is an example of an interpreted language </li>
+<li>C is an example of a compiled language</li>
+<li>Java and C# are examples of OOP languages</li>
+<li>Haskell, Scala, F# are examples of functional languages</li>
+<li>SQL and R is for data</li>
+<li>powershell, perl, and bash are examples of scripting languages</li>
+</ul>
+<h2 id="define-actions-using-code">define actions using code<a class="headerlink" href="#define-actions-using-code" title="Permanent link">&para;</a></h2>
+<h3 id="work-with-values-and-variables">work with values and variables<a class="headerlink" href="#work-with-values-and-variables" title="Permanent link">&para;</a></h3>
+<ul>
+<li>when a programmer needs to store a value a variable is used</li>
+<li>when a variable is defined, the computer allocates the space needed to store a variable of a certain type </li>
+<li>sometimes the programmer defines what the type is that needs to be stored, like an integer</li>
+<li>the computer can then sometimes infer what type is needed based on the value that needs to be stored </li>
+<li>
+<p>when you define a certain type, it can only store that type of value </p>
+</li>
+<li>
+<p>you can take a variable and then assign its value to another variable</p>
+<ul>
+<li>some languages copy the value from one variable to another, so that their are now 2 unique values</li>
+<li>other languages tell a variable to point to a value that is stored in memory, so if one of those variables changes, it changes in two places</li>
+</ul>
+</li>
+</ul>
+<h3 id="use-functions-to-repeat-actions">use functions to repeat actions<a class="headerlink" href="#use-functions-to-repeat-actions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>functions are groups of actions that a programmer defines and gives a name</li>
+<li>while variables are named values, functions are named actions</li>
+<li>the steps that take place in a program and the order they go in are called the program flow </li>
+<li>functions are the generic name for named groupings of code</li>
+<li>functions can be used in different ways throughout programming and they form the basic organization of your code </li>
+</ul>
+<h3 id="break-down-tasks">break down tasks<a class="headerlink" href="#break-down-tasks" title="Permanent link">&para;</a></h3>
+<ul>
+<li>part of a programmers job is to take complicated jobs and break them down into individual steps that cannot be broken down any further </li>
+<li>it is like looking at water and then drilling down to the molecules and then the atoms that form it </li>
+<li>you dive down to the smallest element that forms the basis of the object</li>
+<li>now take that principal and apply it to an action</li>
+<li>we take for granted so many steps that are part of a group of actions</li>
+<li>as a programmer you need to be as accurate and literal as possible with your code</li>
+<li>breaking down actions into smaller actions is critical to being successful</li>
+<li>with each function you write like take out the trash you need to define each statement or action that needs to happen within that to fulfill everything you expect and for the action, to be executed correctly</li>
+<li>when you breakdown a process or a task put yourself in someone else's shoes to see if the steps you outline make sense, if not add the clarity and details you need to make it fool proof to get the desired results</li>
+</ul>
+<h3 id="customize-functions-with-parameters">customize functions with parameters<a class="headerlink" href="#customize-functions-with-parameters" title="Permanent link">&para;</a></h3>
+<ul>
+<li>when we create functions we take actions and group them together and give them a name</li>
+<li>we can then call those actions using the function name and run them as often as we need in our code </li>
+<li>sometimes we want to customize the steps a little bit based on information we might have </li>
+<li>parameters allow us to used different variable inside our function, like if we needed a sales tax variable to change bases on state, we could use a parameter for it</li>
+</ul>
+<h3 id="variables-and-scope">variables and scope<a class="headerlink" href="#variables-and-scope" title="Permanent link">&para;</a></h3>
+<ul>
+<li>when we create variables we need them to hold values during our program, but how long do we need them to stick around? </li>
+<li>as we build programs we can define how long we want to use variables, using Scope</li>
+<li>Scope defines how long a variable and the memory that is used to store it, is kept and how it's available for the program</li>
+<li>one obvious instance of when the variable is not available anymore is when the program closes, when the program stops it releases</li>
+<li>all the memory that it used and frees it for other programs or systems to use</li>
+<li>inside of our program, if we create a variable, we can access it using the name</li>
+<li>on our code if we create a variable and then call a function or method, the variable is available to that method since it was already created </li>
+<li>if we enter into a function and create a variable inside of it, as soon as that function is complete the variable is thrown away, including the name and value</li>
+<li>a variable created inside a function, it is scoped to that function </li>
+<li>if a variable is created outside a function, and then a function changes it that variable, it changes for the entire program, it would be scoped outside of the function, and can apply to a larger portion of a program</li>
+<li>anything you create in a function will be gone when you have finished it </li>
+<li>you need to consider when and where you create your variables</li>
+<li>variable scope is an important part of knowing how to work with variables as you build more complex programs and code </li>
+</ul>
+<h3 id="return-values-from-functions">return values from functions<a class="headerlink" href="#return-values-from-functions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>functions, sometimes called methods, are tools for programmers to take common actions and to group them to call using a function name </li>
+<li>with a function you can send in values for it to use and perform actions on it </li>
+<li>you often need to get information out of a function </li>
+<li>because of variable's scope, any variable you create inside of it will be thrown away when the function is finished</li>
+<li>you need to have a way to return a value from the function when it is called</li>
+<li>
+<p>there are 3 ways to work with a value: </p>
+<ol>
+<li>use a literal, a literal is a value itself without any name or container, it is simply the value, like answer = 5*5, the 5s are literals</li>
+<li>use a variable, that variable has a value, and can be assigned to another variable, like secondAnswer = answer</li>
+<li>the third is with a function or method, you essentially use it like a variable or literal, but to do this you need to have a return value, like answerPlusFive = function(answer) {return answer + 5}</li>
+</ol>
+</li>
+</ul>
+<h3 id="work-with-an-api">work with an API<a class="headerlink" href="#work-with-an-api" title="Permanent link">&para;</a></h3>
+<ul>
+<li>as a programmer you are building rules for how to program</li>
+<li>you and potentially others will use these rules to build out your program over time  </li>
+<li>
+<p>examples of these rules: </p>
+<ul>
+<li>you create variables that can store certain types of values </li>
+<li>you create functions that perform certain actions and functions that require parameters</li>
+<li>you create functions that return values of certain types</li>
+<li>you create functions that are a combination of these</li>
+</ul>
+</li>
+<li>
+<p>with all of these mixed together you are creating a set of rules that a programmer will work with in the program</p>
+</li>
+<li>you are creating an interface, or API</li>
+<li>API = Application Programming Interface</li>
+<li>as you make more advanced programs your API will expand and get more complex</li>
+<li>
+<p>as a programmer you are doing 2 things at once:</p>
+<ul>
+<li>you are defining steps that you want the program to perform with the hardware</li>
+<li>you are defining the rules that you will use to build your program at the same time </li>
+</ul>
+</li>
+<li>
+<p>you start off building the private API for your Application </p>
+</li>
+<li>as you get more sophisticated with your programming and coding skills you can build a public API that others can use for their own apps and programs</li>
+</ul>
+<h2 id="repeat-actions-and-test-for-conditions">repeat actions and test for conditions<a class="headerlink" href="#repeat-actions-and-test-for-conditions" title="Permanent link">&para;</a></h2>
+<h3 id="capture-input-from-the-user">capture input from the user<a class="headerlink" href="#capture-input-from-the-user" title="Permanent link">&para;</a></h3>
+<ul>
+<li>as a programmer you will create code that will have your program listen for events</li>
+<li>you will define what that event is (touch swipe pressure-change temperature-change location click)</li>
+<li>your program will perform actions based on defined events </li>
+<li>the specifics on how you do this will vary slightly based on input type </li>
+<li>some input happens while the program runs and happens in parallel to other things</li>
+<li>other types of input require that the program stops and waits for you to provide input to continue </li>
+<li>the first type of input is called synchronous input, where the program and input capturing happen in parallel</li>
+<li>the other type of input is called asynchronous, where the program must wait for input from you to in order to continue </li>
+<li>based on the type of program you are creating and the type of device it is for will define how you will create code for your user interaction</li>
+</ul>
+<h3 id="manage-different-variable-types">manage different variable types<a class="headerlink" href="#manage-different-variable-types" title="Permanent link">&para;</a></h3>
+<ul>
+<li>as you program you will be working with values of all kinds, but often you will find that things will not match up, and you will need to juggle different variable types to get your code to work</li>
+<li>there are different ways your program can manage differences between value types </li>
+<li>some ways are automatic and some you have to do yourself</li>
+<li>with some languages the variables are dynamically typed </li>
+<li>dynamically typed means that they adjust to whatever is assigned to them </li>
+<li>with dynamically types languages, a variable that is assigned as an unsigned integer can become a string if one is assigned to it </li>
+<li>sometimes a value does not match a variable type </li>
+<li>some languages may automatically convert that the best it can to match the variable type, like null to false</li>
+<li>sometimes you need to make the conversion explicit</li>
+<li>with some languages you need to manually convert from one type to another </li>
+<li>programming languages have functions and methods that can take a value and return it as a different type </li>
+<li>usually the tool that you are using for coding can help you see what your variable types are, but sometimes that is not possible</li>
+<li>in many languages there are methods that tell you what your types are, so you can make the right conversions</li>
+<li>it is important to remember, types do not just apply to functions and methods as well </li>
+<li>the parameters that define what data goes into the functions and the return values are all based on specific types</li>
+<li>any value, either a literal, variable, expression or function will need to be managed as you work with your program</li>
+</ul>
+<h3 id="create-conditional-tests">create conditional tests<a class="headerlink" href="#create-conditional-tests" title="Permanent link">&para;</a></h3>
+<ul>
+<li>computers process in binary, yes no, 1 0 </li>
+<li>in programming you need to think in binary</li>
+<li>Boolean is a special datatype designed for this, and use equality operators</li>
+<li>there are 6 equality operators to choose from in programming</li>
+<li><code>==</code> = checks if values are equal</li>
+<li><code>!=</code> = checks if values are not equal</li>
+<li><code>&gt;</code> = checks if value is greater than other value</li>
+<li><code>&lt;</code> = checks if value is less than other value</li>
+<li><code>&gt;=</code> = checks if value is greater than or equal other value</li>
+<li>
+<p><code>&lt;=</code> = checks if value is less than or equal other value</p>
+</li>
+<li>
+<p>if else statements create more complex tests</p>
+</li>
+</ul>
+<h3 id="build-compound-conditional-tests">build compound conditional tests<a class="headerlink" href="#build-compound-conditional-tests" title="Permanent link">&para;</a></h3>
+<ul>
+<li>or = will be true if either condition is true</li>
+<li>and = will be true if both conditions are true</li>
+<li>not = returns the opposite of what the above tests would return</li>
+</ul>
+<h3 id="loops-arrays">loops arrays<a class="headerlink" href="#loops-arrays" title="Permanent link">&para;</a></h3>
+<ul>
+<li>while loop = performs an action while a certain condition is true (or not true)</li>
+<li>do while loop = will run the action at least once then perform while loop </li>
+<li>for loop = perform an action for a specified count or amount of something</li>
+<li>array = one of the most basic ways to collect values as a single unit / collection in programming</li>
+<li>it is common to loop through arrays</li>
+</ul>
+<h2 id="objects-and-oop">objects and OOP<a class="headerlink" href="#objects-and-oop" title="Permanent link">&para;</a></h2>
+<h3 id="everything-is-an-object">everything is an object<a class="headerlink" href="#everything-is-an-object" title="Permanent link">&para;</a></h3>
+<ul>
+<li>in many languages, objects are the foundation</li>
+<li>in OOP languages, everything is considered an object</li>
+<li>objects consist of names, actions, characteristics</li>
+</ul>
+<h3 id="everything-is-a-class">everything is a class<a class="headerlink" href="#everything-is-a-class" title="Permanent link">&para;</a></h3>
+<ul>
+<li>with objects everything can be defined as having characteristics, actions, and names</li>
+<li>to program with these, we need to have some framework or scaffolding to build objects from </li>
+<li>we do this using classes </li>
+<li>a class is a set of rules that define how a category of objects or a class of objects, look, behave, and take customization through various values and settings</li>
+<li>
+<p>within a class you define 4 things, called class members:</p>
+<ul>
+<li>class name </li>
+<li>properties</li>
+<li>methods</li>
+<li>constructor</li>
+</ul>
+</li>
+<li>
+<p>class members define the basic structure of a class</p>
+</li>
+<li>classes are a blueprint for objects</li>
+<li>you don't use a class directly, you create instances of classes</li>
+<li>defining a class is like creating a stack of sticky notes where every page is the same </li>
+<li>the sticky notes are templates that will define all the instances you create on that class </li>
+<li>when you take the top note off the stack you are instantiating the class <ul>
+<li>you are creating an instance of the class that you can use in your program</li>
+<li>when you instantiate a class you give the instance a unique name, an instance name</li>
+<li>when you create an instance and give it a name you also trigger the constructor </li>
+<li>the special constructor function is where you define what needs to get setup when you create the instance</li>
+<li>sometimes you need to set some properties or execute a method to configure part of the instance</li>
+<li>since it is function you can set it up to accept a value </li>
+<li>generally a constructor doesn't return any value, but an instance of the class </li>
+</ul>
+</li>
+</ul>
+<h3 id="work-with-existing-classes-and-objects">work with existing classes and objects<a class="headerlink" href="#work-with-existing-classes-and-objects" title="Permanent link">&para;</a></h3>
+<ul>
+<li>as a programmer you will work with prebuilt classes that are part of the programming language and SDK (software development kit) that you will be working with </li>
+<li>when you create an instance of a class, you instantiate it and the code in the constructor runs</li>
+<li>the constructor is helpful if you need to set things up in the instance when it runs </li>
+<li>
+<p>when you work with an instance you will access properties and methods inside it, defined by the class, using the instance name</p>
+</li>
+<li>
+<p>a static property is the same for all properties </p>
+</li>
+<li>an example could be a count that tracks the total of all instances created from that class</li>
+<li>a constructor could bump that count up by 1</li>
+</ul>
+<h3 id="make-your-own-classes-and-objects">make your own classes and objects<a class="headerlink" href="#make-your-own-classes-and-objects" title="Permanent link">&para;</a></h3>
+<ul>
+<li>when you create a class with a property, you are by default making is accessible to everyone </li>
+<li>you do not always want to give unrestricted public access to your properties</li>
+<li>you can take members of a class and make them either private or public</li>
+<li>public means that anyone can access them <ul>
+<li>they can access properties like any other variable and public methods like any function</li>
+</ul>
+</li>
+<li>private properties are available only within the instance and they are hidden from anything outside of the class </li>
+<li>private properties can be accessed with getters and setters</li>
+</ul>
+<h3 id="extend-classes">extend classes<a class="headerlink" href="#extend-classes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>when you create a class you are not limited to just that class, you can add properties and methods to it </li>
+</ul>
+<h3 id="use-polymorphism-using-interfaces">use polymorphism using interfaces<a class="headerlink" href="#use-polymorphism-using-interfaces" title="Permanent link">&para;</a></h3>
+<ul>
+<li>an interface is a tool in OOP that allows you to categorize classes</li>
+<li>this allows you to say that anything that uses this interface, includes its methods</li>
+<li>when you create a variable it has to have a type</li>
+<li>you either define a type or it is inferred by the value that is being assigned to it </li>
+<li>when you have a variable that has a type you define the type based on a class</li>
+<li>since everything is a class that means an integer, Boolean, string, and anything else to define a variable are also classes</li>
+<li>if we create a variable that accepts integers we are typing that variable using the integer class </li>
+<li>we can type variables to be any object we want, including objects based on classes that we create ourselves</li>
+<li>you can type variables to interfaces instead of classes which works better in some scenarios</li>
+<li>this is the basis of polymorphism</li>
+<li>using object orientated programming, class hierarchy, and polymorphism programmers have built tons of rules and recommendations on how to create code called best practices and design patterns</li>
+</ul>
+<h2 id="beyond-programming">beyond programming<a class="headerlink" href="#beyond-programming" title="Permanent link">&para;</a></h2>
+<h3 id="debug-problems">debug problems<a class="headerlink" href="#debug-problems" title="Permanent link">&para;</a></h3>
+<ul>
+<li>there are a few ways you can go about fixing problems</li>
+<li>you can print out things in your code as it runs to see what is happening and pinpoint where things went wrong</li>
+<li>there are also tools you can use to control how your code runs</li>
+<li>many IDEs have a special debugging mode that allows you to interactively run your code line by line</li>
+<li>you can also do this with browsers using their built in developer modes</li>
+<li>another way is to create code for catching errors and handling them more gracefully, maybe by prompting the user for different input</li>
+<li>an exception is an error that a programmer can use to adjust their code</li>
+</ul>
+<h3 id="refactor-code-to-make-improvements">refactor code to make improvements<a class="headerlink" href="#refactor-code-to-make-improvements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>coding is an iterative process, you may have to come back to code months later to adjust it, and wonder what you were thinking when you wrote it </li>
+<li>you maybe learned a new practice that makes the code better, or you overlooked something when you first wrote it </li>
+<li>when you update your code to make it work better, you are refactoring it </li>
+<li>refactoring is a common practice with programming</li>
+<li>as you add new capabilities to your programs, you will revisit and update older code</li>
+<li>
+<p>the trick with refactoring is to make sure that any changes you make won't have adverse effects on the rest of your program</p>
+</li>
+<li>
+<p>refactoring is not about fixing errors or crashes, it's about improving already working code in some way</p>
+</li>
+<li>there are 3 reasons why you may want to refactor your code</li>
+<li>
+<p>the first reason to refactor is to improve performance: </p>
+<ul>
+<li>sometimes based on the types of data you work with, your program might require a lot of memory or processing power</li>
+<li>refactoring your code to be more efficient with resources can make you programs faster </li>
+</ul>
+</li>
+<li>
+<p>second reason is to support new features:</p>
+<ul>
+<li>as you add new capabilities to your project, you might have existing sections of code that need to be updated to better support the code you add to your program</li>
+</ul>
+</li>
+<li>
+<p>the third reason to refactor your code is to improve readability:</p>
+<ul>
+<li>sometimes when you write your code it might make sense to you, but going back and cleaning things up like variable names, method names, and adding comments can make your code easier for others to understand and work with </li>
+</ul>
+</li>
+<li>
+<p>refactoring existing code is a common practice for any programmer, and keeps your code working its best and makes you a better programmer along the way </p>
+</li>
+</ul>
+<h3 id="save-progress-and-work-with-others">save progress and work with others<a class="headerlink" href="#save-progress-and-work-with-others" title="Permanent link">&para;</a></h3>
+<ul>
+<li>working as a developer is an iterative process, as you add more capabilities to your project and re-factor existing code, you will want to keep a history of your progress</li>
+<li>
+<p>sometime changes you make do not quite work out and you need a way to go back in time to an earlier point and restore from an earlier version</p>
+<ul>
+<li>using code repositories are the main way your are able to do that </li>
+<li>one of the most popular methods is Git and GitHub, which is used to manage your code and work with others collaboratively on a project </li>
+</ul>
+</li>
+<li>
+<p>code repositories are essentially snapshots in time, the capture your code at a certain point called a "commit"</p>
+<ul>
+<li>when you finish editing your code you perform a commit that saves that point in time and the state of the code in the repository</li>
+<li>you provide a description and then that is saved into the repository</li>
+<li>as you continue to make changes even if you make additional commits, if you ever need to go back to another point, you can restore code from an earlier point in time</li>
+</ul>
+</li>
+<li>
+<p>you can create a branch in code repositories</p>
+</li>
+<li>
+<p>branches are points in the life of your code that you break the development up into 2 parts</p>
+<ul>
+<li>one reason could be that you are getting ready to build the next major version of your product, but you need to keep the existing version around to fix bugs and issues that might crop up while you are developing the new version</li>
+<li>when you are ready to release your new version, you can then manage both versions of code or merge back if you need to </li>
+</ul>
+</li>
+<li>
+<p>code repositories allow you to work collaboratively with others </p>
+</li>
+<li>coding projects can become really big and often too large for a single person to manage</li>
+<li>with a code repository, you can have multiple people work with different sections of code<ul>
+<li>when they commit their code, you will get a notification that your project has been updated by another person</li>
+<li>you can then compare or diff between what you have and the new code to you see if you need if you need to refactor anything that you have been working on </li>
+</ul>
+</li>
+</ul>
+<h3 id="build-iteratively-using-agile-development">build iteratively using agile development<a class="headerlink" href="#build-iteratively-using-agile-development" title="Permanent link">&para;</a></h3>
+<ul>
+<li>agile means that the product is designed and built over multiple phases</li>
+<li>with each phase work goes into adding functionality or features that either the end user can use or you need to have in place before you can do other work</li>
+<li>
+<p>each phase, sometimes called a sprint, is planned independently from one another  </p>
+<ul>
+<li>a roadmap brings it all together and plots out all the sprints that are required to release the product to market </li>
+</ul>
+</li>
+<li>
+<p>as programmer you will learn that agile is use for many projects</p>
+</li>
+</ul>
+<h3 id="create-for-multiple-platforms">create for multiple platforms<a class="headerlink" href="#create-for-multiple-platforms" title="Permanent link">&para;</a></h3>
+<ul>
+<li>as a programmer you will build programmers and apps for customers and users </li>
+<li>not all of your users might be the same </li>
+<li>consider they might be using different OS, devices, or browsers</li>
+<li>you need to plan for this reality by planning to build for multiple platforms</li>
+<li>there are 2 ways to make apps for multiple platforms</li>
+<li>
+<p>the first is to use first-party tools</p>
+<ul>
+<li>these are tools technologies and programming languages that are created by the makers of the operating system and ecosystem</li>
+<li>these tools come from companies such as google microsoft and apple</li>
+<li>although these tools are different the programming languages for each of them are very similar (c-sharp java swift) and are based on the same principals</li>
+</ul>
+</li>
+<li>
+<p>the alternative is to use 3rd party tools that can build applications for multiple platforms at the same time </p>
+<ul>
+<li>some of these are based on web technologies, like Cordova, while others are based on other platforms like Xamarin or Unity with C-sharp, .net</li>
+<li>the advantage of these is that you only need to learn 1 set of tools or technologies </li>
+<li>but you do trade off some platform specific-capabilities </li>
+</ul>
+</li>
+<li>
+<p>the important thing is that when learning programming you should keep in mind that you will be targeting many, many people and not all of these people will have the same devices or software</p>
+</li>
+<li>as developer you need to plan on reaching as many people as you can with your project and that may require building for multiple platforms</li>
+</ul>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../digital-information/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Digital Information" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Digital Information
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../computer-technology/HTTP/http-essentials/" class="md-footer__link md-footer__link--next" aria-label="Next: Essentials" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Essentials
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/justinsgithub" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/lovejustintyler" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/justinaawd" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "content.tabs.link"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.22074ed6.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.01de222e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
+      
+        <script src="https://justinsgithub.github.io/static/docs.justintylers.com/javascript/termynal.js"></script>
+      
+        <script src="https://justinsgithub.github.io/static/docs.justintylers.com/javascript/custom.js"></script>
+      
+    
+  </body>
+</html>

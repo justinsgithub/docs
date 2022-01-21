@@ -1,0 +1,3213 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Learning Documentation">
+      
+      
+      
+        <link rel="canonical" href="https://docs.justintylers.com/linux/command-line/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.7">
+    
+    
+      
+        <title>Command Line - Justins Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.cd566b2a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://justinsgithub.github.io/static/docs.justintylers.com/css/termynal.css">
+    
+      <link rel="stylesheet" href="https://justinsgithub.github.io/static/docs.justintylers.com/css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linux-command-line" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Justins Docs" class="md-header__button md-logo" aria-label="Justins Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Justins Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Command Line
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/justinsgithub/learning-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    justinsgithub/learning-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Justins Docs" class="md-nav__button md-logo" aria-label="Justins Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Justins Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/justinsgithub/learning-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    justinsgithub/learning-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Study Documentation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essential-css/" class="md-nav__link">
+        CSS Essentials
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Computer Science
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Computer Science" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Computer Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-science/digital-information/" class="md-nav__link">
+        Digital Information
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-science/programming/" class="md-nav__link">
+        Programming
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Computer Technology
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Computer Technology" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Computer Technology
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          HTTP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="HTTP" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          HTTP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-technology/HTTP/http-essentials/" class="md-nav__link">
+        Essentials
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-technology/HTTP/http-terminology/" class="md-nav__link">
+        Terminology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-technology/HTTP/headers/" class="md-nav__link">
+        Headers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-technology/HTTP/requests-responses/" class="md-nav__link">
+        Requests & Responses
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-technology/data-types/" class="md-nav__link">
+        Data Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-technology/data-structures/" class="md-nav__link">
+        Data Structures
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer-technology/terms/" class="md-nav__link">
+        Terms
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Creative
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Creative" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Creative
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../creative/emojis/" class="md-nav__link">
+        Emojis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../creative/writing-blogs/" class="md-nav__link">
+        Writing Blogs
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-snips/" class="md-nav__link">
+        Code Snips
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../directories/" class="md-nav__link">
+        Directories
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Command Line
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Command Line
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-linux-intro" class="md-nav__link">
+    quick Linux intro
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unix" class="md-nav__link">
+    Unix
+  </a>
+  
+    <nav class="md-nav" aria-label="Unix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-unix" class="md-nav__link">
+    what is Unix?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branches-and-improvements" class="md-nav__link">
+    branches and improvements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-line-basics" class="md-nav__link">
+    command-line basics
+  </a>
+  
+    <nav class="md-nav" aria-label="command-line basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-command-line" class="md-nav__link">
+    what is the command line?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-structure" class="md-nav__link">
+    command structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write-commands-in-a-shell-at-the-prompt" class="md-nav__link">
+    write commands in a shell at the prompt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finding-help-for-commands" class="md-nav__link">
+    finding help for commands
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#helpful-keyboard-shortcuts-in-the-terminal" class="md-nav__link">
+    helpful keyboard shortcuts in the terminal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files-directories-permissions" class="md-nav__link">
+    files, directories, permissions
+  </a>
+  
+    <nav class="md-nav" aria-label="files, directories, permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux-file-system" class="md-nav__link">
+    Linux file system
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-file-paths" class="md-nav__link">
+    understanding file paths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navigating-the-file-system" class="md-nav__link">
+    navigating the file system
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copy-move-delete-files-and-directories" class="md-nav__link">
+    copy move delete files and directories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-files-from-the-command-line" class="md-nav__link">
+    find files from the command line
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understand-user-roles-and-sudo" class="md-nav__link">
+    understand user roles and sudo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understand-file-permissions" class="md-nav__link">
+    understand file permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modify-file-permissions" class="md-nav__link">
+    modify file permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-hard-and-symbolic-links" class="md-nav__link">
+    create hard and symbolic links
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks-tools" class="md-nav__link">
+    tasks &amp; tools
+  </a>
+  
+    <nav class="md-nav" aria-label="tasks &amp; tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unix-philosophy" class="md-nav__link">
+    Unix philosophy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-pipes" class="md-nav__link">
+    using pipes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cat-head-tail-less" class="md-nav__link">
+    cat head tail less
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-with-grep" class="md-nav__link">
+    search with grep
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#awk-sed-sort" class="md-nav__link">
+    awk sed sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tar-and-zip-archives" class="md-nav__link">
+    tar and zip archives
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-redirection" class="md-nav__link">
+    output redirection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables-and-path" class="md-nav__link">
+    environment variables and PATH
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-advanced-topics" class="md-nav__link">
+    more advanced topics
+  </a>
+  
+    <nav class="md-nav" aria-label="more advanced topics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux-distribution-info" class="md-nav__link">
+    Linux distribution info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware-and-disk-information" class="md-nav__link">
+    hardware and disk information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-manager" class="md-nav__link">
+    package manager
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-programs/" class="md-nav__link">
+        Advanced
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zsh/" class="md-nav__link">
+        Zsh
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Resources
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Resources" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Resources
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/resources/" class="md-nav__link">
+        Learning Resources
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/learning-software/" class="md-nav__link">
+        Learning Tips
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Programming Langs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Programming Langs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Programming Langs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1" type="checkbox" id="__nav_8_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_1">
+          JavaScript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_1">
+          <span class="md-nav__icon md-icon"></span>
+          JavaScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-langs/javascript/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-langs/javascript/functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-langs/javascript/objects/" class="md-nav__link">
+        Classes & Objects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-langs/javascript/code-challenges/" class="md-nav__link">
+        Code Challenges
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2" type="checkbox" id="__nav_8_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_2">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_2">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-langs/python/code-challenges/" class="md-nav__link">
+        Code Challenges
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-langs/python/data-structures-and-algorithms/" class="md-nav__link">
+        Class Queue Deque
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-langs/python/dsa/" class="md-nav__link">
+        DSA
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_3" type="checkbox" id="__nav_8_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_3">
+          Rust
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Rust" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_3">
+          <span class="md-nav__icon md-icon"></span>
+          Rust
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-langs/rust/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-langs/rust/datatypes/" class="md-nav__link">
+        Datatypes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-langs/rust/basics/" class="md-nav__link">
+        VFCL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-langs/rust/ownership/" class="md-nav__link">
+        Ownership
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-langs/rust/code-examples/" class="md-nav__link">
+        Code Examples
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../program-langs/rust/mini-projects/" class="md-nav__link">
+        Mini Projects
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Software
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Software" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/docker/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2" type="checkbox" id="__nav_9_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_2">
+          Git
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Git" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_2">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/git/essentials/" class="md-nav__link">
+        Git Essentials
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/git/github-pages/" class="md-nav__link">
+        GitHub Pages
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_3" type="checkbox" id="__nav_9_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_3">
+          NodeJS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="NodeJS" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_3">
+          <span class="md-nav__icon md-icon"></span>
+          NodeJS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/nodejs/static-server/" class="md-nav__link">
+        Static Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/nodejs/essentials/" class="md-nav__link">
+        Essentials
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_4" type="checkbox" id="__nav_9_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_4">
+          React
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="React" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_4">
+          <span class="md-nav__icon md-icon"></span>
+          React
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/react/design-patterns/" class="md-nav__link">
+        Design Patterns
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/react/getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/react/essentials/" class="md-nav__link">
+        Essentials
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/react/hooks-descriptions/" class="md-nav__link">
+        Hooks Descriptions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/react/hooks-examples/" class="md-nav__link">
+        Hooks Examples
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/react/software-architecture/" class="md-nav__link">
+        Software Architecture
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_5" type="checkbox" id="__nav_9_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_5">
+          TypeScript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="TypeScript" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_5">
+          <span class="md-nav__icon md-icon"></span>
+          TypeScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/typescript/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_6" type="checkbox" id="__nav_9_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_6">
+          Vim
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Vim" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_6">
+          <span class="md-nav__icon md-icon"></span>
+          Vim
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/vim/nvim-lua-config/" class="md-nav__link">
+        Nvim Lua Config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/vim/learning-vim/" class="md-nav__link">
+        New Learnings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/vim/nvim-config/" class="md-nav__link">
+        Nvim Config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/vim/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/vim/snips/" class="md-nav__link">
+        Vim Commands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/vim/spacevim-config/" class="md-nav__link">
+        SpaceVim Config
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quicknotes/" class="md-nav__link">
+        Quick Notes
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-linux-intro" class="md-nav__link">
+    quick Linux intro
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unix" class="md-nav__link">
+    Unix
+  </a>
+  
+    <nav class="md-nav" aria-label="Unix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-unix" class="md-nav__link">
+    what is Unix?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branches-and-improvements" class="md-nav__link">
+    branches and improvements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-line-basics" class="md-nav__link">
+    command-line basics
+  </a>
+  
+    <nav class="md-nav" aria-label="command-line basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-command-line" class="md-nav__link">
+    what is the command line?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-structure" class="md-nav__link">
+    command structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write-commands-in-a-shell-at-the-prompt" class="md-nav__link">
+    write commands in a shell at the prompt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finding-help-for-commands" class="md-nav__link">
+    finding help for commands
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#helpful-keyboard-shortcuts-in-the-terminal" class="md-nav__link">
+    helpful keyboard shortcuts in the terminal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files-directories-permissions" class="md-nav__link">
+    files, directories, permissions
+  </a>
+  
+    <nav class="md-nav" aria-label="files, directories, permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux-file-system" class="md-nav__link">
+    Linux file system
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-file-paths" class="md-nav__link">
+    understanding file paths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navigating-the-file-system" class="md-nav__link">
+    navigating the file system
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copy-move-delete-files-and-directories" class="md-nav__link">
+    copy move delete files and directories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-files-from-the-command-line" class="md-nav__link">
+    find files from the command line
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understand-user-roles-and-sudo" class="md-nav__link">
+    understand user roles and sudo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understand-file-permissions" class="md-nav__link">
+    understand file permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modify-file-permissions" class="md-nav__link">
+    modify file permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-hard-and-symbolic-links" class="md-nav__link">
+    create hard and symbolic links
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks-tools" class="md-nav__link">
+    tasks &amp; tools
+  </a>
+  
+    <nav class="md-nav" aria-label="tasks &amp; tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unix-philosophy" class="md-nav__link">
+    Unix philosophy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-pipes" class="md-nav__link">
+    using pipes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cat-head-tail-less" class="md-nav__link">
+    cat head tail less
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-with-grep" class="md-nav__link">
+    search with grep
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#awk-sed-sort" class="md-nav__link">
+    awk sed sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tar-and-zip-archives" class="md-nav__link">
+    tar and zip archives
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-redirection" class="md-nav__link">
+    output redirection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables-and-path" class="md-nav__link">
+    environment variables and PATH
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-advanced-topics" class="md-nav__link">
+    more advanced topics
+  </a>
+  
+    <nav class="md-nav" aria-label="more advanced topics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux-distribution-info" class="md-nav__link">
+    Linux distribution info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware-and-disk-information" class="md-nav__link">
+    hardware and disk information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-manager" class="md-nav__link">
+    package manager
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="linux-command-line">Linux Command Line<a class="headerlink" href="#linux-command-line" title="Permanent link">&para;</a></h1>
+<h3 id="quick-linux-intro">quick Linux intro<a class="headerlink" href="#quick-linux-intro" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Linux broadly refers to a free, open-source operating system first released by Linus Torvalds in 1991</li>
+<li>Linux is really just the name of the kernel</li>
+<li>a kernel allows software to communicate with a computers hardware</li>
+<li>Linux was inspired by Unix, which in turn was inspired by MINIX</li>
+<li>Linux is free software under the GPL (GNU General Public License)</li>
+<li>all Linux systems run a version of the Linux kernel</li>
+<li>most Linux systems use the same set of core tools called the GNU coreutils</li>
+<li>the combination of these tools and the kernel are referred to as GNU/Linux</li>
+<li>Linux distributions are operating systems that include the kernel and various other software</li>
+<li>Distribution maintainers make choices about how their distributions are configured and what tools they provide</li>
+<li>
+<p>many distributions are related to each other:</p>
+<ul>
+<li>Arch, Debian, Red Hat, Slackware, and others</li>
+<li>we choose a distro based on many factors</li>
+</ul>
+</li>
+<li>
+<p>Debian:</p>
+<ul>
+<li>Ubuntu  </li>
+<li>Linux mint  </li>
+<li>Elementary OS  </li>
+<li>Kali Linux</li>
+</ul>
+</li>
+<li>
+<p>all distributions differ in various ways </p>
+</li>
+<li>the command line or shell is common to all of them </li>
+<li>
+<p>the Bash shell is very widely used and widely available</p>
+</li>
+<li>
+<p>Red Hat:</p>
+<ul>
+<li>CentOS</li>
+<li>Fedora</li>
+<li>Red Hat Enterprise Linux</li>
+</ul>
+</li>
+</ul>
+<h2 id="unix">Unix<a class="headerlink" href="#unix" title="Permanent link">&para;</a></h2>
+<h3 id="what-is-unix">what is Unix?<a class="headerlink" href="#what-is-unix" title="Permanent link">&para;</a></h3>
+<ul>
+<li>an operating system</li>
+<li>created around 1970 by AT&amp;T employees working at Bell Labs</li>
+<li>many of the Bell Labs employees were involved in the design of a mainframe operating system called MULTICS</li>
+<li>MULTICS = Multiplex Information and Computing Service</li>
+<li>back around 1970 mainframes were expensive, so users were granted timesharing slots to do their work, often by logging in from a remote terminal with less computing power </li>
+<li>MULTICS was designed to manage that remote login, timesharing process</li>
+<li>MULTICS became a large and complex project and Bell Labs decided to pull out of it</li>
+<li>the employees who worked on it still liked the projects goals, so like as side project, they worked on building a smaller and simpler version</li>
+<li>their first version only supported a single user, so as a play on the name MULTICS, they called it UNICS</li>
+<li>UNICS = Uniplexed Information and Computing Service</li>
+<li>UNICS became able to support multiple users and was renamed Unix (not an acronym anymore)</li>
+<li>at this point Unix was now a main frame operating system being used by Bell Labs</li>
+<li>2 events gave Unix a big boost in popularity</li>
+<li>in 1972 Unix was rewritten in the C programming language</li>
+<li>prior operating systems were typically written in Assembly, a very low-level programming language</li>
+<li>Assembly requires code to be written for specific computer hardware</li>
+<li>Assembly is very fast but it is not portable, if you wanted to take your operating system to new hardware, you had to rewrite portions of your code</li>
+<li>The C programming language language was originally designed to write programs for the Unix operating system</li>
+<li>C is a low level language, but not as low level as Assembly, and so the programs are easier to write, and they are hardware-independent </li>
+<li>the developers liked C and decided to rewrite the whole Unix operating system using it, so Unix became portable to other hardware</li>
+<li>the next important event is the spread of Unix outside of AT&amp;Ts Bell Labs</li>
+<li>a court order in an antitrust case forbid AT&amp;T from entering the computer software business, so AT&amp;T could not sell the Unix operating system, but they could give it away  </li>
+<li>if you wrote to AT&amp;T and asked for a copy of Unix, they would give you a free license, and send you all the source code</li>
+<li>free high-quality software was very attractive to government agencies, corporations, and especially universities, who'd bought these expensive mainframe computers </li>
+<li>Unix spread quickly and in 1975 programming was taking off and students at universities were learning to program on mainframe computers using Unix</li>
+<li>those students went on to work at corporations and software companies, and took their fondness of Unix with them</li>
+<li>since then Unix has grown an improved </li>
+</ul>
+<h3 id="branches-and-improvements">branches and improvements<a class="headerlink" href="#branches-and-improvements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>the first public version of Unix in 1975 is often referred to as System 5</li>
+<li>over time more branches have been released and that still continues today </li>
+<li>one of the most famous of these is the Berkeley Software Distribution (BSD)</li>
+<li>Linux is open source and comes in many variations, such as Red Hat, CentOS, Debian, Ubuntu, Kali, Gentoo</li>
+</ul>
+<h2 id="command-line-basics">command-line basics<a class="headerlink" href="#command-line-basics" title="Permanent link">&para;</a></h2>
+<h3 id="what-is-the-command-line">what is the command line?<a class="headerlink" href="#what-is-the-command-line" title="Permanent link">&para;</a></h3>
+<ul>
+<li>allows us to interact with programs using text commands</li>
+<li>command-line programs can read text inputs and output text to the screen </li>
+<li>command-line programs can read and write from files and the network </li>
+<li>Bash is a widely used shell or command-line interpreter</li>
+<li>Bash was released in 1989 and is named Bourne Again SHell</li>
+<li>Bash builds on earlier shells, like Bourne shell and Thompson shell</li>
+<li>Many other shells are available, offering varying features</li>
+<li>Bash is widely available on Linux</li>
+<li>command-line interface (CLI) is any place we can enter text commands</li>
+<li>a shell is a piece of software that interprets typed commands and runs them</li>
+<li>terminal is a software that a shell program runs inside of</li>
+<li>these terms are easily confused with each other </li>
+</ul>
+<h3 id="command-structure">command structure<a class="headerlink" href="#command-structure" title="Permanent link">&para;</a></h3>
+<ul>
+<li>command option(s) argument(s)</li>
+<li>commands are programs that are available on a system</li>
+<li>when we run a command, the system takes a specific action</li>
+<li>many commands have short names in order to save typing</li>
+<li>command names can seem tricky at first</li>
+<li>many aspects of the command line are all about efficiency</li>
+<li>commands are programs that take a particular action</li>
+<li>options tell the command <strong><em>how</em></strong> to operate, changing the behavior of the command</li>
+<li>options often begin with a dash or minus sign (like -e or -s)</li>
+<li>options are often represented by one letter or number</li>
+<li>most commands offer more than 1 option</li>
+<li>options can be used together </li>
+<li>arguments tell the command <strong><em>what</em></strong> to operate on </li>
+<li>this could be files, directories, urls, etc </li>
+</ul>
+<h3 id="write-commands-in-a-shell-at-the-prompt">write commands in a shell at the prompt<a class="headerlink" href="#write-commands-in-a-shell-at-the-prompt" title="Permanent link">&para;</a></h3>
+<ul>
+<li>F11 makes terminal full screen </li>
+<li>spacing matters </li>
+<li>spelling command names matters</li>
+<li>misspelled commands usually will just fail </li>
+<li>mistyped options or arguments can cause unexpected outcomes or data loss</li>
+<li>always double check what you've typed before you run a command</li>
+<li>most commands are programs installed</li>
+<li>many common utilities come from the GNU coreutils </li>
+<li>the system provides ways for us to find programs</li>
+</ul>
+<h3 id="finding-help-for-commands">finding help for commands<a class="headerlink" href="#finding-help-for-commands" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Albert Einstein was credited with saying he didn't keep certain technical information in his mind because it was readily available in books</li>
+<li>you do not have to memorize everything</li>
+<li>the command <strong><em>man</em></strong> opens the manual pages</li>
+<li>manual pages are the built-in documentation for commands</li>
+<li>the highlighted line at bottom of terminal will show what line your cursor is on</li>
+<li>many commands also have the --help option to get help for the command </li>
+<li><strong><em>help</em></strong> command outputs help for Bash</li>
+<li><strong><em>apropos</em></strong> searches through installed programs that can be used as commands and searches their descriptions for text that you provide as an argument</li>
+<li>apropos list will show all options for commands that perform some type of list action or that perform actions on some type of list item</li>
+</ul>
+<h3 id="helpful-keyboard-shortcuts-in-the-terminal">helpful keyboard shortcuts in the terminal<a class="headerlink" href="#helpful-keyboard-shortcuts-in-the-terminal" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><code>^ = ctrl</code></p>
+</li>
+<li>
+<p>tab completion:</p>
+<ul>
+<li>automatically completes a file, command, or folder name</li>
+<li>makes guesses based on the contents of the path</li>
+</ul>
+</li>
+<li>
+<p>text navigation shortcuts:</p>
+<ul>
+<li>ctrl a = move to beginning of line</li>
+<li>ctrl e = move to end of line</li>
+<li>ctrl left = move backward a word at a time</li>
+<li>ctrl right = move forward a word at a time</li>
+<li>ctrl u = delete from cursor to line start </li>
+<li>ctrl k = delete from cursor to line end</li>
+<li>ctrl shift c = copy selected text to clipboard</li>
+<li>ctrl shift v = paste selected text from clipboard</li>
+<li>up / down arrow = scroll previous commands </li>
+<li>ctrl r = search command history, ctrl r again cycles through search results</li>
+<li>ctrl c = cancel command</li>
+</ul>
+</li>
+<li>
+<p>long commands or long series of commands can wrap at the window boundary, but these are still considered one line</p>
+</li>
+<li>a line is any text we type at the command prompt before pressing return</li>
+</ul>
+<h2 id="files-directories-permissions">files, directories, permissions<a class="headerlink" href="#files-directories-permissions" title="Permanent link">&para;</a></h2>
+<h3 id="linux-file-system">Linux file system<a class="headerlink" href="#linux-file-system" title="Permanent link">&para;</a></h3>
+<ul>
+<li>file determines a file type </li>
+<li>stat displays a files status</li>
+<li>in a Linux system everything is thought of as a file</li>
+<li>
+<p>we organize these files into directories which are sometimes called folders </p>
+</li>
+<li>
+<p>how directories are organized: </p>
+<ul>
+<li>working at the command line we will often need to refer to files and directories that represent the input, output, or the configurations for commands we use</li>
+<li>we also need to know where commands are located on the system</li>
+<li>on a Linux system files and directories are part of the file system, which defines the way the data is represented on the system's storage media</li>
+<li>the file system keeps track of and represents files on the system's storage</li>
+<li>Most Linux distributions follow the FHS (Filesystem Hierarchy Standard) </li>
+<li>the FHS defines where certain kinds of files are stored on the file system </li>
+<li>having files like configurations, programs, or binaries and so on in predictable locations is important to the operability to the software across Linux distributions</li>
+</ul>
+</li>
+<li>
+<p>each Linux system only has one file system and everything else, directories, external hard drives, network shares, and so on are represented within it </p>
+</li>
+</ul>
+<h3 id="understanding-file-paths">understanding file paths<a class="headerlink" href="#understanding-file-paths" title="Permanent link">&para;</a></h3>
+<ul>
+<li>in order to refer to locations on the filesystem we use a path, a string of text that represents a file or directory within the file system</li>
+</ul>
+<h3 id="navigating-the-file-system">navigating the file system<a class="headerlink" href="#navigating-the-file-system" title="Permanent link">&para;</a></h3>
+<ul>
+<li>use backslash or quotes to refer to folders or files with space in them </li>
+<li>ls -R recursively lists directories and subdirectories</li>
+</ul>
+<h3 id="copy-move-delete-files-and-directories">copy move delete files and directories<a class="headerlink" href="#copy-move-delete-files-and-directories" title="Permanent link">&para;</a></h3>
+<ul>
+<li>cp = copy files, cp -R = copy directories</li>
+<li>mv = move or rename files</li>
+<li>wildcards are characters that stand for or represent patterns in text</li>
+<li>
+<ul>
+<li>= any number of characters</li>
+</ul>
+</li>
+<li>? = one character</li>
+<li><code>mv dir1/* dir2</code> = moves all files from dir1 to dir2</li>
+<li><code>mv dir1/*txt dir2</code> = moves all files ending in txt to dir2</li>
+<li><code>mv dir1/*.css dir2</code> = moves all files ending in .css to dir2</li>
+<li>rm = remove file</li>
+<li>rm file?.txt  = removes any file starting with file and ending with .txt, that has 1 letter in between (file1.txt files.txt filer.txt file%.txt)</li>
+</ul>
+<h3 id="find-files-from-the-command-line">find files from the command line<a class="headerlink" href="#find-files-from-the-command-line" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>the find command:</p>
+<ul>
+<li>finds files </li>
+<li>find ~/ -name "text*" = finds all files &amp; dirs with a name starting in text starting from our home dir</li>
+<li>find ~/ -name "*t*" will find everything with t in the name</li>
+</ul>
+</li>
+</ul>
+<h3 id="understand-user-roles-and-sudo">understand user roles and sudo<a class="headerlink" href="#understand-user-roles-and-sudo" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>multiuser environment:</p>
+<ul>
+<li>older systems didn't have the concept of separate users</li>
+<li>who ever used the system was the system admin and could do whatever they want</li>
+<li>modern systems allow multiple users with there own private files</li>
+</ul>
+</li>
+<li>
+<p>su $USERNAME = switch user to $USERNAME, will need to provide password</p>
+</li>
+<li>root / superuser is like the admin of the system and can make any changes to the system</li>
+<li>sudo allows normal users with the proper privileges to make admin changes</li>
+<li>sudo -k = turns off superuser privileges</li>
+<li>sudo -s = logs into root shell </li>
+</ul>
+<h3 id="understand-file-permissions">understand file permissions<a class="headerlink" href="#understand-file-permissions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>file permissions are the way we tell the system which users and groups of users are allowed to access any given file and in what ways</li>
+<li>
+<p>when a user tries to access a file, the system consults the permission mode of a file and only allows the user access if they are permitted to have it </p>
+</li>
+<li>
+<p>the sequence of letters breaks down into 3 sections</p>
+</li>
+<li>the first section represents the user designated as owner of the file</li>
+<li>
+<p>the second section represents a group</p>
+<ul>
+<li>a group is a collection of users for whom we can define specific access to the file</li>
+</ul>
+</li>
+<li>
+<p>the third section represents the access to the file for all other users who are not the files owner or in the group designated in the group section</p>
+</li>
+<li>
+<p>each of the sections in the 9 letters breaks down into 3 letters</p>
+</li>
+<li>rwx = read write execute</li>
+<li><code>r--</code> = someone can modify the contents of a file but not modify it or execute it</li>
+<li><code>-w-</code> = someone can make changes to a file but not read the contents or execute it</li>
+<li><code>--x</code> = someone can run the file, as in a command or program, but not read or write it</li>
+<li>d may be included at the beginning of the 9 letters to signify a directory</li>
+<li>l may be included to signify the file is a link</li>
+</ul>
+<div class="highlight"><pre><span></span><code>rwxrwxrwx file1
+
+rwxr-xr-x file2
+</code></pre></div>
+<ul>
+<li>chmod = changes the permission mode string</li>
+<li>chown = changes the owner of a file</li>
+<li>
+<p>chgrp = changes the group of a file</p>
+</li>
+<li>
+<p>chmod can be used in different ways</p>
+</li>
+<li>
+<p>octal notation: </p>
+<ul>
+<li>uses 3 values to represent rwx, such as (755 644 777)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>read(4)</th>
+<th>write(2)</th>
+<th>execute(1)</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user</td>
+<td>r</td>
+<td>w</td>
+<td>x</td>
+<td>7</td>
+</tr>
+<tr>
+<td>group</td>
+<td>r</td>
+<td>-</td>
+<td>x</td>
+<td>5</td>
+</tr>
+<tr>
+<td>others</td>
+<td>r</td>
+<td>-</td>
+<td>x</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>read(4)</th>
+<th>write(2)</th>
+<th>execute(1)</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user</td>
+<td>r</td>
+<td>w</td>
+<td>x</td>
+<td>7</td>
+</tr>
+<tr>
+<td>group</td>
+<td>r</td>
+<td>-</td>
+<td>x</td>
+<td>5</td>
+</tr>
+<tr>
+<td>others</td>
+<td>r</td>
+<td>-</td>
+<td>-</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>read(4)</th>
+<th>write(2)</th>
+<th>execute(1)</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user</td>
+<td>r</td>
+<td>w</td>
+<td>x</td>
+<td>7</td>
+</tr>
+<tr>
+<td>group</td>
+<td>r</td>
+<td>w</td>
+<td>x</td>
+<td>7</td>
+</tr>
+<tr>
+<td>others</td>
+<td>r</td>
+<td>w</td>
+<td>x</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>octal table: </p>
+<table>
+<thead>
+<tr>
+<th>octal value</th>
+<th>mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>---</td>
+</tr>
+<tr>
+<td>1</td>
+<td>--x</td>
+</tr>
+<tr>
+<td>2</td>
+<td>-w-</td>
+</tr>
+<tr>
+<td>3</td>
+<td>-wx</td>
+</tr>
+<tr>
+<td>4</td>
+<td>r--</td>
+</tr>
+<tr>
+<td>5</td>
+<td>r-x</td>
+</tr>
+<tr>
+<td>6</td>
+<td>rw-</td>
+</tr>
+<tr>
+<td>7</td>
+<td>rwx</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>symbolic notation: </p>
+<ul>
+<li>uses a shorthand for user, group, others, and all (a=r g+w o-x)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>read(r)</th>
+<th>write(w)</th>
+<th>execute(x)</th>
+<th>mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user(u)</td>
+<td>+</td>
+<td>+</td>
+<td>x</td>
+<td>u+rwx</td>
+</tr>
+<tr>
+<td>group(g)</td>
+<td>=</td>
+<td></td>
+<td></td>
+<td>g=r</td>
+</tr>
+<tr>
+<td>others(o)</td>
+<td>-</td>
+<td></td>
+<td></td>
+<td>o-rwx</td>
+</tr>
+<tr>
+<td>all(a)</td>
+<td>=</td>
+<td>=</td>
+<td>=</td>
+<td>a=rwx</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><code>+</code> adds permission</p>
+</li>
+<li><code>-</code> removes permission</li>
+<li>
+<p><code>=</code> resets permissions to match new mode (removes previous mode)</p>
+</li>
+<li>
+<p>octal symbolic comparison table: </p>
+<table>
+<thead>
+<tr>
+<th>octal value</th>
+<th>symbolic value</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>777</td>
+<td>a=rwx</td>
+<td>rwxrwxrwx</td>
+</tr>
+<tr>
+<td>755</td>
+<td>u=rwx, g=rx, o=rx</td>
+<td>rwxr-xr-x</td>
+</tr>
+<tr>
+<td>644</td>
+<td>u=rw, g=r, o=r</td>
+<td>rw-r--r--</td>
+</tr>
+<tr>
+<td>700</td>
+<td>u=rwx, g-rwx, o-rwx</td>
+<td>rwx------</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>using octal notation is similar to using symbolic = all the time</p>
+<table>
+<thead>
+<tr>
+<th>original mode</th>
+<th>symbolic value</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rw-r--r--</td>
+<td>+x</td>
+<td>rwxr-xr-x</td>
+</tr>
+<tr>
+<td>rwxrwxrwx</td>
+<td>g=w, o=r</td>
+<td>rwx-w-r--</td>
+</tr>
+<tr>
+<td>rwxr-----</td>
+<td>g+w, o+r</td>
+<td>rwxrw-r--</td>
+</tr>
+<tr>
+<td>rwxrwxrwx</td>
+<td>a-x</td>
+<td>rw-rw-rw-</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h3 id="modify-file-permissions">modify file permissions<a class="headerlink" href="#modify-file-permissions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>there is no single standard on default permissions in users home directory and they vary by distro</li>
+<li>755, 644, 700 are common</li>
+</ul>
+<h3 id="create-hard-and-symbolic-links">create hard and symbolic links<a class="headerlink" href="#create-hard-and-symbolic-links" title="Permanent link">&para;</a></h3>
+<ul>
+<li>links are files that reference other files</li>
+<li>used to avoid having multiple copies of the same file in different places</li>
+<li>
+<p>we keep 1 file in 1 location, and then add a little pointer or link to other places where we want the file to appear</p>
+</li>
+<li>
+<p>2 types of links, hard links and soft / symbolic links</p>
+</li>
+<li>a hard link points to specific data (by inode) on the disk</li>
+<li>a soft link or symbolic link (symlink) points to another file</li>
+<li>the 2 types of links work in different ways </li>
+</ul>
+<p><div class="highlight"><pre><span></span><code>ln -s source-file.txt source-file-link.txt
+</code></pre></div>
+- if you edit source-file-link.txt you would be editing source-file.txt as well 
+- of either file is moved, the link will break and source-file-link.txt will no longer point to source-file.txt
+- source-file-link.txt would hold in memory a relative path to source-file.txt, so if either file moves, the relative path is no longer accurate</p>
+<div class="highlight"><pre><span></span><code>ln -s /home/user/absolute-path.txt soft-link.txt
+</code></pre></div>
+<ul>
+<li>if we use an absolute path, source-file-link.txt can be moved anywhere and it will still appropriately point to source-file.txt, but moving the source-file.txt would still break the link</li>
+</ul>
+<div class="highlight"><pre><span></span><code>ln source-file2.txt file2-hard-link.txt
+</code></pre></div>
+<ul>
+<li>all files are pointers to a spot in memory which actually contains the data</li>
+<li>a hard link creates another pointer to the data that the first file is pointing at </li>
+</ul>
+<h2 id="tasks-tools">tasks &amp; tools<a class="headerlink" href="#tasks-tools" title="Permanent link">&para;</a></h2>
+<h3 id="unix-philosophy">Unix philosophy<a class="headerlink" href="#unix-philosophy" title="Permanent link">&para;</a></h3>
+<ul>
+<li>tools should do 1 thing and do it well </li>
+<li>in this case, doing something well means being a well behaved citizen of the ecosystem of tools that operate using text interfaces</li>
+<li>the tool should expect to take in a file or stream and output text in a reasonable format once it's done processing or doing whatever action that particular tool does</li>
+<li>this philosophy suggests that we shouldn't have tools that try to do too much</li>
+<li>we don't want 1 single tool or program that reads files and separates the text into another file and renames the file and compresses it into an archive when it's done, or one that tries to do everything anyone could possibly want to do </li>
+<li>tools should be designed to be used together in different ways </li>
+<li>the standard GNU coreutils follow this pattern</li>
+<li>we do not want to think of these tools as multifunction swiss army knives</li>
+<li>we want to think of these tools as a well-stocked kitchen of chef's tools</li>
+<li>we can open a can with a little Swiss Army Knife attachment, or try to chop a tomato with a tiny blade, but none of these tools would do a job particularly well, we want tools that will give us the ability to make meals we are proud of and that can work together easily and be used in different combinations to do whatever we need</li>
+<li>think of an assembly line where 1 machine does 1 task and the passes on to the next specialized machine, rather than 1 robot doing different tasks on the same item, it would not be nearly as efficient </li>
+<li>having separate dedicated tools allows us to pick appropriate tools from our toolbox to do exactly what we need to do </li>
+<li>we want to be able to incorporate the right tools into doing a task as flexibly as possible</li>
+</ul>
+<h3 id="using-pipes">using pipes<a class="headerlink" href="#using-pipes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>pipes take the output of 1 command and send it to another</li>
+<li>think of commands as little processing units that do 1 particular thing and pipes as connections between those units </li>
+<li>we can use pipes to take the output of the cat command and then instead of displaying the text on the screen, pass the result to the sort command</li>
+</ul>
+<div class="highlight"><pre><span></span><code>cat users.txt <span class="p">|</span> sort -u <span class="p">|</span> ...
+</code></pre></div>
+<ul>
+<li>
+<p>the pipe character is represented by a vertical bar</p>
+</li>
+<li>
+<p>below pipes hello to wc and tells use there is 1 line, 1 word, and 6 characters</p>
+</li>
+<li>wc counts the invisible newline (\n) character that is at the end of every new line in a text file</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> hello <span class="p">|</span> wc
+<span class="m">1</span>       <span class="m">1</span>       <span class="m">6</span>
+</code></pre></div>
+<ul>
+<li>you can pipe anything to anything else and usually it will do what you expect</li>
+</ul>
+<h3 id="cat-head-tail-less">cat head tail less<a class="headerlink" href="#cat-head-tail-less" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>cat: </p>
+<ul>
+<li>concatenate means to link together</li>
+<li>can be used to output text file contents to the screen or to another program</li>
+</ul>
+</li>
+<li>
+<p>head, tail: </p>
+<ul>
+<li>view lines from the beginning or end of a file</li>
+<li>head my-file.txt = outputs first 10 lines of file</li>
+<li>head -n5 my-file.txt = outputs first 5 lines of file</li>
+<li>less my-file.txt = outputs last 10 lines of file</li>
+<li>less -n5 my-file.txt = outputs last 5 lines of file</li>
+</ul>
+</li>
+<li>
+<p>less:</p>
+<ul>
+<li>displays text one page or screenful at a time and provides navigation controls</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>cat -n text.txt  <span class="p">|</span> tail -n5
+     <span class="m">9</span>  saf
+    <span class="m">10</span>  asdf
+    <span class="m">11</span>  asd
+    <span class="m">12</span>  f
+    <span class="m">13</span>  asd
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>tail -n5 text.txt <span class="p">|</span> cat -n 
+     <span class="m">1</span>  saf
+     <span class="m">2</span>  asdf
+     <span class="m">3</span>  asd
+     <span class="m">4</span>  f
+     <span class="m">5</span>  asd
+</code></pre></div>
+<h3 id="search-with-grep">search with grep<a class="headerlink" href="#search-with-grep" title="Permanent link">&para;</a></h3>
+<ul>
+<li>grep = get regular expression</li>
+<li>grep command searches files for matching patterns</li>
+<li>match patterns can be regular expressions</li>
+<li>-n will output line numbers as well </li>
+<li>-i will make search insensitive</li>
+<li>-v will only output lines NOT matching our search</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="m">1</span>:the purple dog
+<span class="m">4</span>:the moon 
+<span class="m">5</span>:i am the blah
+<span class="m">8</span>:the 
+<span class="m">10</span>:what <span class="k">in</span> the world 
+<span class="m">11</span>:i am the 
+<span class="m">12</span>:of the year
+<span class="m">13</span>:the <span class="m">1</span> 
+<span class="m">14</span>:the <span class="m">2</span>
+<span class="m">16</span>:the <span class="m">5</span>
+</code></pre></div>
+<ul>
+<li>grep -E "[jklo]" test.txt = finds all lines containing either j k l or o</li>
+<li>grep -E "\w{9,}" test.txt = finds all lines containing words with 9 or more characters</li>
+</ul>
+<h3 id="awk-sed-sort">awk sed sort<a class="headerlink" href="#awk-sed-sort" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>one of the tasks of a system administrator, systems analyst, scientist, or programmer is to make use of data from various logs or outputs</p>
+</li>
+<li>
+<p>awk:</p>
+<ul>
+<li>is commonly used to extract specific text from a file according to a rule</li>
+<li>awk programs can be written from the command line or stored in a file </li>
+</ul>
+</li>
+<li>
+<p>sed:</p>
+<ul>
+<li>a stream editor</li>
+<li>excels at changing data as it flows through a command pipeline, or in place in a file</li>
+</ul>
+</li>
+<li>
+<p>we can use either tool in a command pipeline or just by themselves</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>cat random-users.txt               
+Name    Id    Team 
+Scott   <span class="m">314</span>   Purple
+Ananti  <span class="m">991</span>   Orange
+Jian    <span class="m">3127</span>  Purple 
+Miguel  <span class="m">671</span>   Green
+Wes     <span class="m">1337</span>  Orange
+Anne    <span class="m">556</span>   Green
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{print $2}&#39;</span> random-users.txt
+Id
+<span class="m">314</span>
+<span class="m">991</span>
+<span class="m">3127</span>
+<span class="m">671</span>
+<span class="m">1337</span>
+<span class="m">556</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{print $2 &quot;\t&quot; $1}&#39;</span> random-users.txt
+Id  Name
+<span class="m">314</span> Scott
+<span class="m">991</span> Ananti
+<span class="m">3127</span> Jian
+<span class="m">671</span> Miguel
+<span class="m">1337</span> Wes
+<span class="m">556</span> Anne
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{print $2 &quot;\t&quot; $1}&#39;</span> random-users.txt <span class="p">|</span> sort -n
+Id  Name
+<span class="m">314</span> Scott
+<span class="m">556</span> Anne
+<span class="m">671</span> Miguel
+<span class="m">991</span> Ananti
+<span class="m">1337</span> Wes
+<span class="m">3127</span> Jian
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sed s/Orange/Red/ random-users.txt 
+Name    Id    Team 
+Scott   <span class="m">314</span>   Purple
+Ananti  <span class="m">991</span>   Red
+Jian    <span class="m">3127</span>  Purple 
+Miguel  <span class="m">671</span>   Green
+Wes     <span class="m">1337</span>  Red
+Anne    <span class="m">556</span>   Green
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sort random-users.txt             
+Ananti  <span class="m">991</span>   Orange
+Anne    <span class="m">556</span>   Green
+Jian    <span class="m">3127</span>  Purple 
+Miguel  <span class="m">671</span>   Green
+Name    Id    Team 
+Scott   <span class="m">314</span>   Purple
+Wes     <span class="m">1337</span>  Orange
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># sorting second column by first character</span>
+sort -k2 random-users.txt
+Wes     <span class="m">1337</span>  Orange
+Jian    <span class="m">3127</span>  Purple 
+Scott   <span class="m">314</span>   Purple
+Anne    <span class="m">556</span>   Green
+Miguel  <span class="m">671</span>   Green
+Ananti  <span class="m">991</span>   Orange
+Name    Id    Team 
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sort -k2 -n random-users.txt
+Name    Id    Team 
+Scott   <span class="m">314</span>   Purple
+Anne    <span class="m">556</span>   Green
+Miguel  <span class="m">671</span>   Green
+Ananti  <span class="m">991</span>   Orange
+Wes     <span class="m">1337</span>  Orange
+Jian    <span class="m">3127</span>  Purple 
+</code></pre></div>
+<ul>
+<li>rev = prints text in reverse sequence </li>
+<li>tac = concatenates or displays files in reverse</li>
+<li>tr = translates or modifies individual characters according to arguments</li>
+</ul>
+<h3 id="tar-and-zip-archives">tar and zip archives<a class="headerlink" href="#tar-and-zip-archives" title="Permanent link">&para;</a></h3>
+<ul>
+<li>in the early days of computer systems and still today, data that needed to be archived for safe keeping was recorded to back-up tapes and stored in a closet or basement (or ideally in a more suitable and secure location)</li>
+<li>in order to store files on a linear medium like tape, files are recorded to the tape 1 after another, in sequence, like songs on an audio cassette </li>
+<li>instead of using a tape, we can also create a file that contains other files in this sequence</li>
+<li>.tar = tape archive files</li>
+<li>.tar files are common for distributing, sharing, and archiving files on linux systems</li>
+<li>it is much easier (in many ways), to send 1 large file than several small files</li>
+<li>.tar files often do not involve any compression, but there are ways to incorporate compression into a .tar file </li>
+<li>compression tries to reduce the size of a file using some mathematical tricks</li>
+<li>if using compression with a tar archive, you will often see that the file is named with and extension to indicate what kind of compression is being used</li>
+<li>compressed formats = .tar.gz, .tgz, .tar.bz2, + others</li>
+<li>.tar.gz, .tgz = a tar file with g-zipped compression</li>
+<li>.tar.bz2 = a tar file with b-zipped compression</li>
+</ul>
+<div class="highlight"><pre><span></span><code>tar -cvf new-tar.tar my-folder
+
+<span class="c1"># -c option says create an archive</span>
+<span class="c1"># -v option tells tar to be verbose</span>
+<span class="c1"># -f options tells tar to output the tar to specified file name</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>tar -caf new-gz-tar.tar.gz my-folder
+
+<span class="c1"># -a option says use compression method specified by file extension (.gz)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>tar -caf new-bz-tar.tar.bz2 my-folder
+
+<span class="c1"># works with other compression methods such as b-zipped as well</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>tar -xf my-tar.tar.gz -C tar-directory
+
+<span class="c1"># unpacks tar to specified directory</span>
+</code></pre></div>
+<ul>
+<li>the zip and unzip commands can create and open compressed data archive files called zip files</li>
+<li>the zip format is more cross platform friendly</li>
+</ul>
+<div class="highlight"><pre><span></span><code>zip -r my-zip.zip my-folder
+
+<span class="c1"># -r option to zip directory and all files inside</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>unzip my-zip.zip
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>unzip my-zip.zip -d my-zip-directory
+</code></pre></div>
+<h3 id="output-redirection">output redirection<a class="headerlink" href="#output-redirection" title="Permanent link">&para;</a></h3>
+<ul>
+<li>text in a shell travels through 1 of 3 streams</li>
+<li>text can be redirected to the screen or to files</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>stream</th>
+<th>number</th>
+<th>usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>standard input(stdin)</td>
+<td>0</td>
+<td>text input</td>
+</tr>
+<tr>
+<td>standard output(stdout)</td>
+<td>1</td>
+<td>text output</td>
+</tr>
+<tr>
+<td>standard error(stdin)</td>
+<td>2</td>
+<td>error text</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>ls
+CNAME  code-examples  deploy.sh  docs  mkdocs.yml  README.md  requirements.txt  src  venv
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>ls &gt; std-output.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>ls fake-file        
+ls: cannot access <span class="s1">&#39;fake-file&#39;</span>: No such file or directory
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>ls fake-file &gt; std-output.txt        
+ls: cannot access <span class="s1">&#39;fake-file&#39;</span>: No such file or directory
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>ls fake-file <span class="m">2</span>&gt; std-err.txt        
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&gt;std-err.txt 
+
+<span class="c1"># erases std-err.txt contents </span>
+</code></pre></div>
+<ul>
+<li><code>&gt;</code> replaces content in file</li>
+<li><code>&gt;&gt;</code> adds to content in file</li>
+</ul>
+<h3 id="environment-variables-and-path">environment variables and PATH<a class="headerlink" href="#environment-variables-and-path" title="Permanent link">&para;</a></h3>
+<ul>
+<li>env = look at environment variables, such as PATH</li>
+<li>echo $PATH = outputs PATH variable</li>
+<li>PATH = a list of files or directories where the shell looks for commands / programs / scripts</li>
+<li>which = shows location of specified command</li>
+<li>we can modify where the system looks for executables</li>
+<li>sometimes when adding software we might want to add the path to that software (like nvm, cargo)</li>
+<li>we can edit PATH in ~/.bash_profile ~/.bashrc ~/.zshrc among other places</li>
+</ul>
+<h2 id="more-advanced-topics">more advanced topics<a class="headerlink" href="#more-advanced-topics" title="Permanent link">&para;</a></h2>
+<h3 id="linux-distribution-info">Linux distribution info<a class="headerlink" href="#linux-distribution-info" title="Permanent link">&para;</a></h3>
+<ul>
+<li>find files with distribution release information</li>
+</ul>
+<div class="highlight"><pre><span></span><code>ls -l /etc/*release
+-rw-r--r-- <span class="m">1</span> root root <span class="m">104</span> Aug  <span class="m">4</span> <span class="m">07</span>:53 /etc/lsb-release
+lrwxrwxrwx <span class="m">1</span> root root  <span class="m">21</span> Jan  <span class="m">5</span> <span class="m">09</span>:33 /etc/os-release -&gt; ../usr/lib/os-release
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>cat /etc/lsb-release           
+<span class="nv">DISTRIB_ID</span><span class="o">=</span>Ubuntu
+<span class="nv">DISTRIB_RELEASE</span><span class="o">=</span><span class="m">20</span>.04
+<span class="nv">DISTRIB_CODENAME</span><span class="o">=</span>focal
+<span class="nv">DISTRIB_DESCRIPTION</span><span class="o">=</span><span class="s2">&quot;Ubuntu 20.04.3 LTS&quot;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>cat /etc/os-release 
+<span class="nv">NAME</span><span class="o">=</span><span class="s2">&quot;Ubuntu&quot;</span>
+<span class="nv">VERSION</span><span class="o">=</span><span class="s2">&quot;20.04.3 LTS (Focal Fossa)&quot;</span>
+<span class="nv">ID</span><span class="o">=</span>ubuntu
+<span class="nv">ID_LIKE</span><span class="o">=</span>debian
+<span class="nv">PRETTY_NAME</span><span class="o">=</span><span class="s2">&quot;Ubuntu 20.04.3 LTS&quot;</span>
+<span class="nv">VERSION_ID</span><span class="o">=</span><span class="s2">&quot;20.04&quot;</span>
+<span class="nv">HOME_URL</span><span class="o">=</span><span class="s2">&quot;https://www.ubuntu.com/&quot;</span>
+<span class="nv">SUPPORT_URL</span><span class="o">=</span><span class="s2">&quot;https://help.ubuntu.com/&quot;</span>
+<span class="nv">BUG_REPORT_URL</span><span class="o">=</span><span class="s2">&quot;https://bugs.launchpad.net/ubuntu/&quot;</span>
+<span class="nv">PRIVACY_POLICY_URL</span><span class="o">=</span><span class="s2">&quot;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&quot;</span>
+<span class="nv">VERSION_CODENAME</span><span class="o">=</span>focal
+<span class="nv">UBUNTU_CODENAME</span><span class="o">=</span>focal
+</code></pre></div>
+<ul>
+<li>uname = find version of linux kernel in use</li>
+</ul>
+<div class="highlight"><pre><span></span><code>uname -a          
+Linux justin-HP-Laptop-15-dw1xxx <span class="m">5</span>.11.0-46-generic <span class="c1">#51~20.04.1-Ubuntu SMP Fri Jan 7 06:51:40 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>uname -r
+<span class="m">5</span>.11.0-46-generic
+</code></pre></div>
+<h3 id="hardware-and-disk-information">hardware and disk information<a class="headerlink" href="#hardware-and-disk-information" title="Permanent link">&para;</a></h3>
+<ul>
+<li>memory information</li>
+</ul>
+<div class="highlight"><pre><span></span><code>free -h 
+              total        used        free      shared  buff/cache   available
+Mem:          <span class="m">3</span>.6Gi       <span class="m">1</span>.9Gi       153Mi       271Mi       <span class="m">1</span>.6Gi       <span class="m">1</span>.2Gi
+Swap:         <span class="m">2</span>.0Gi       862Mi       <span class="m">1</span>.2Gi
+</code></pre></div>
+<ul>
+<li>
+<p>cat /proc/cpuinfo = output processor resources</p>
+</li>
+<li>
+<p>df = report file system disk space usage</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>df -h 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            <span class="m">1</span>.8G     <span class="m">0</span>  <span class="m">1</span>.8G   <span class="m">0</span>% /dev
+tmpfs           374M  <span class="m">1</span>.7M  372M   <span class="m">1</span>% /run
+/dev/sda2       117G   54G   58G  <span class="m">49</span>% /
+tmpfs           <span class="m">1</span>.9G     <span class="m">0</span>  <span class="m">1</span>.9G   <span class="m">0</span>% /dev/shm
+tmpfs           <span class="m">5</span>.0M  <span class="m">4</span>.0K  <span class="m">5</span>.0M   <span class="m">1</span>% /run/lock
+tmpfs           <span class="m">1</span>.9G     <span class="m">0</span>  <span class="m">1</span>.9G   <span class="m">0</span>% /sys/fs/cgroup
+/dev/loop2       56M   56M     <span class="m">0</span> <span class="m">100</span>% /snap/core18/2253
+/dev/loop1      128K  128K     <span class="m">0</span> <span class="m">100</span>% /snap/bare/5
+/dev/loop4       56M   56M     <span class="m">0</span> <span class="m">100</span>% /snap/core18/2284
+/dev/loop0      218M  218M     <span class="m">0</span> <span class="m">100</span>% /snap/code/85
+/dev/loop3       62M   62M     <span class="m">0</span> <span class="m">100</span>% /snap/core20/1270
+/dev/loop5      100M  100M     <span class="m">0</span> <span class="m">100</span>% /snap/core/11993
+/dev/loop6      165M  165M     <span class="m">0</span> <span class="m">100</span>% /snap/gnome-3-28-1804/161
+/dev/loop7       33M   33M     <span class="m">0</span> <span class="m">100</span>% /snap/snapd/12704
+/dev/loop8      128K  128K     <span class="m">0</span> <span class="m">100</span>% /snap/hello-world/29
+/dev/loop9       29M   29M     <span class="m">0</span> <span class="m">100</span>% /snap/muccadoro/3
+/dev/loop10      99M   99M     <span class="m">0</span> <span class="m">100</span>% /snap/neovide/120
+/dev/loop11      72M   72M     <span class="m">0</span> <span class="m">100</span>% /snap/lunatask/8
+/dev/loop12     128K  128K     <span class="m">0</span> <span class="m">100</span>% /snap/software-boutique/54
+/dev/loop13      66M   66M     <span class="m">0</span> <span class="m">100</span>% /snap/gtk-common-themes/1519
+/dev/loop14      44M   44M     <span class="m">0</span> <span class="m">100</span>% /snap/snapd/14295
+/dev/loop15      11M   11M     <span class="m">0</span> <span class="m">100</span>% /snap/nvim/1722
+/dev/loop16      64M   64M     <span class="m">0</span> <span class="m">100</span>% /snap/pomotroid/6
+/dev/sda1       511M  <span class="m">5</span>.3M  506M   <span class="m">2</span>% /boot/efi
+tmpfs           374M   80K  374M   <span class="m">1</span>% /run/user/1000
+</code></pre></div>
+<ul>
+<li>lshw = list hardware</li>
+</ul>
+<h3 id="package-manager">package manager<a class="headerlink" href="#package-manager" title="Permanent link">&para;</a></h3>
+<ul>
+<li>apt search tree = searches for all packages with tree in name or description</li>
+<li>apt show tree = shows information for package tree</li>
+</ul>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../directories/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Directories" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Directories
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../linux-programs/" class="md-footer__link md-footer__link--next" aria-label="Next: Advanced" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Advanced
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/justinsgithub" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/lovejustintyler" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/justinaawd" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "content.tabs.link"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.22074ed6.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.01de222e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
+      
+        <script src="https://justinsgithub.github.io/static/docs.justintylers.com/javascript/termynal.js"></script>
+      
+        <script src="https://justinsgithub.github.io/static/docs.justintylers.com/javascript/custom.js"></script>
+      
+    
+  </body>
+</html>

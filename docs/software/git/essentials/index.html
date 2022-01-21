@@ -1,0 +1,2745 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Learning Documentation">
+      
+      
+      
+        <link rel="canonical" href="https://docs.justintylers.com/software/git/essentials/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.7">
+    
+    
+      
+        <title>Git Essentials - Justins Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.cd566b2a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://justinsgithub.github.io/static/docs.justintylers.com/css/termynal.css">
+    
+      <link rel="stylesheet" href="https://justinsgithub.github.io/static/docs.justintylers.com/css/custom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#git-essentials" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Justins Docs" class="md-header__button md-logo" aria-label="Justins Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Justins Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Git Essentials
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/justinsgithub/learning-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    justinsgithub/learning-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Justins Docs" class="md-nav__button md-logo" aria-label="Justins Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Justins Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/justinsgithub/learning-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    justinsgithub/learning-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Study Documentation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essential-css/" class="md-nav__link">
+        CSS Essentials
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Computer Science
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Computer Science" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Computer Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-science/digital-information/" class="md-nav__link">
+        Digital Information
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-science/programming/" class="md-nav__link">
+        Programming
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Computer Technology
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Computer Technology" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Computer Technology
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          HTTP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="HTTP" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          HTTP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-technology/HTTP/http-essentials/" class="md-nav__link">
+        Essentials
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-technology/HTTP/http-terminology/" class="md-nav__link">
+        Terminology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-technology/HTTP/headers/" class="md-nav__link">
+        Headers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-technology/HTTP/requests-responses/" class="md-nav__link">
+        Requests & Responses
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-technology/data-types/" class="md-nav__link">
+        Data Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-technology/data-structures/" class="md-nav__link">
+        Data Structures
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-technology/terms/" class="md-nav__link">
+        Terms
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Creative
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Creative" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Creative
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../creative/emojis/" class="md-nav__link">
+        Emojis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../creative/writing-blogs/" class="md-nav__link">
+        Writing Blogs
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/code-snips/" class="md-nav__link">
+        Code Snips
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/directories/" class="md-nav__link">
+        Directories
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/command-line/" class="md-nav__link">
+        Command Line
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/linux-programs/" class="md-nav__link">
+        Advanced
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/zsh/" class="md-nav__link">
+        Zsh
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Resources
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Resources" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Resources
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/resources/" class="md-nav__link">
+        Learning Resources
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/learning-software/" class="md-nav__link">
+        Learning Tips
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Programming Langs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Programming Langs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Programming Langs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1" type="checkbox" id="__nav_8_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_1">
+          JavaScript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_1">
+          <span class="md-nav__icon md-icon"></span>
+          JavaScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../program-langs/javascript/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../program-langs/javascript/functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../program-langs/javascript/objects/" class="md-nav__link">
+        Classes & Objects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../program-langs/javascript/code-challenges/" class="md-nav__link">
+        Code Challenges
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2" type="checkbox" id="__nav_8_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_2">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_2">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../program-langs/python/code-challenges/" class="md-nav__link">
+        Code Challenges
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../program-langs/python/data-structures-and-algorithms/" class="md-nav__link">
+        Class Queue Deque
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../program-langs/python/dsa/" class="md-nav__link">
+        DSA
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_3" type="checkbox" id="__nav_8_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_3">
+          Rust
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Rust" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_3">
+          <span class="md-nav__icon md-icon"></span>
+          Rust
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../program-langs/rust/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../program-langs/rust/datatypes/" class="md-nav__link">
+        Datatypes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../program-langs/rust/basics/" class="md-nav__link">
+        VFCL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../program-langs/rust/ownership/" class="md-nav__link">
+        Ownership
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../program-langs/rust/code-examples/" class="md-nav__link">
+        Code Examples
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../program-langs/rust/mini-projects/" class="md-nav__link">
+        Mini Projects
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Software
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Software" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docker/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2" type="checkbox" id="__nav_9_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_2">
+          Git
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Git" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_2">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Git Essentials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Git Essentials
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-git" class="md-nav__link">
+    what is Git?
+  </a>
+  
+    <nav class="md-nav" aria-label="what is Git?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-control" class="md-nav__link">
+    version control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#history-behind-git" class="md-nav__link">
+    history behind Git
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#about-distributed-version-control" class="md-nav__link">
+    about distributed version control
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-setup" class="md-nav__link">
+    Git setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Git setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-configuration" class="md-nav__link">
+    basic configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-completion" class="md-nav__link">
+    auto-completion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-help" class="md-nav__link">
+    Git help
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialize-a-repository" class="md-nav__link">
+    initialize a repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-git-files-are-stored" class="md-nav__link">
+    where git files are stored
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#committing" class="md-nav__link">
+    committing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-concepts-and-architecture" class="md-nav__link">
+    Git concepts and architecture
+  </a>
+  
+    <nav class="md-nav" aria-label="Git concepts and architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-three-trees" class="md-nav__link">
+    the three trees
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-workflows" class="md-nav__link">
+    Git workflows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hash-values-sha-1" class="md-nav__link">
+    hash values (SHA-1)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-head-pointer" class="md-nav__link">
+    the HEAD pointer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#make-changes-to-files" class="md-nav__link">
+    make changes to files
+  </a>
+  
+    <nav class="md-nav" aria-label="make changes to files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-files" class="md-nav__link">
+    add files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-files" class="md-nav__link">
+    edit files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-changes-with-diff" class="md-nav__link">
+    view changes with diff
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-only-stages-changes" class="md-nav__link">
+    view only stages changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-files" class="md-nav__link">
+    delete files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#move-and-rename-files" class="md-nav__link">
+    move and rename files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-git-with-a-real-project" class="md-nav__link">
+    use Git with a real project
+  </a>
+  
+    <nav class="md-nav" aria-label="use Git with a real project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-explore-california-website" class="md-nav__link">
+    the Explore California website
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialize-git" class="md-nav__link">
+    initialize Git
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-file-edits" class="md-nav__link">
+    view file edits
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-and-commit-shortcut" class="md-nav__link">
+    stage and commit shortcut
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-a-commit" class="md-nav__link">
+    view a commit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compare-commits" class="md-nav__link">
+    compare commits
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiline-commit-messages" class="md-nav__link">
+    multiline commit messages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-atomic-commits" class="md-nav__link">
+    make atomic commits
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#undo-changes" class="md-nav__link">
+    undo changes
+  </a>
+  
+    <nav class="md-nav" aria-label="undo changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#undo-working-directory-changes" class="md-nav__link">
+    undo working directory changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unstage-files" class="md-nav__link">
+    unstage files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amend-commits" class="md-nav__link">
+    amend commits
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-old-versions" class="md-nav__link">
+    retrieve old versions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revert-a-commit" class="md-nav__link">
+    revert a commit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-untracked-files" class="md-nav__link">
+    remove untracked files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ignore-files" class="md-nav__link">
+    ignore files
+  </a>
+  
+    <nav class="md-nav" aria-label="ignore files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-gitignore-files" class="md-nav__link">
+    use .gitignore files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ideas-on-what-to-ignore" class="md-nav__link">
+    ideas on what to ignore
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#globally-ignored-files" class="md-nav__link">
+    globally ignored files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignore-tracked-files" class="md-nav__link">
+    ignore tracked files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#track-empty-directories" class="md-nav__link">
+    track empty directories
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-pages/" class="md-nav__link">
+        GitHub Pages
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_3" type="checkbox" id="__nav_9_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_3">
+          NodeJS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="NodeJS" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_3">
+          <span class="md-nav__icon md-icon"></span>
+          NodeJS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nodejs/static-server/" class="md-nav__link">
+        Static Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nodejs/essentials/" class="md-nav__link">
+        Essentials
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_4" type="checkbox" id="__nav_9_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_4">
+          React
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="React" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_4">
+          <span class="md-nav__icon md-icon"></span>
+          React
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../react/design-patterns/" class="md-nav__link">
+        Design Patterns
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../react/getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../react/essentials/" class="md-nav__link">
+        Essentials
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../react/hooks-descriptions/" class="md-nav__link">
+        Hooks Descriptions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../react/hooks-examples/" class="md-nav__link">
+        Hooks Examples
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../react/software-architecture/" class="md-nav__link">
+        Software Architecture
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_5" type="checkbox" id="__nav_9_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_5">
+          TypeScript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="TypeScript" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_5">
+          <span class="md-nav__icon md-icon"></span>
+          TypeScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../typescript/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_6" type="checkbox" id="__nav_9_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_6">
+          Vim
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Vim" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_6">
+          <span class="md-nav__icon md-icon"></span>
+          Vim
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vim/nvim-lua-config/" class="md-nav__link">
+        Nvim Lua Config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vim/learning-vim/" class="md-nav__link">
+        New Learnings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vim/nvim-config/" class="md-nav__link">
+        Nvim Config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vim/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vim/snips/" class="md-nav__link">
+        Vim Commands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vim/spacevim-config/" class="md-nav__link">
+        SpaceVim Config
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quicknotes/" class="md-nav__link">
+        Quick Notes
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-git" class="md-nav__link">
+    what is Git?
+  </a>
+  
+    <nav class="md-nav" aria-label="what is Git?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-control" class="md-nav__link">
+    version control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#history-behind-git" class="md-nav__link">
+    history behind Git
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#about-distributed-version-control" class="md-nav__link">
+    about distributed version control
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-setup" class="md-nav__link">
+    Git setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Git setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-configuration" class="md-nav__link">
+    basic configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-completion" class="md-nav__link">
+    auto-completion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-help" class="md-nav__link">
+    Git help
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialize-a-repository" class="md-nav__link">
+    initialize a repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-git-files-are-stored" class="md-nav__link">
+    where git files are stored
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#committing" class="md-nav__link">
+    committing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-concepts-and-architecture" class="md-nav__link">
+    Git concepts and architecture
+  </a>
+  
+    <nav class="md-nav" aria-label="Git concepts and architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-three-trees" class="md-nav__link">
+    the three trees
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-workflows" class="md-nav__link">
+    Git workflows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hash-values-sha-1" class="md-nav__link">
+    hash values (SHA-1)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-head-pointer" class="md-nav__link">
+    the HEAD pointer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#make-changes-to-files" class="md-nav__link">
+    make changes to files
+  </a>
+  
+    <nav class="md-nav" aria-label="make changes to files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-files" class="md-nav__link">
+    add files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-files" class="md-nav__link">
+    edit files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-changes-with-diff" class="md-nav__link">
+    view changes with diff
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-only-stages-changes" class="md-nav__link">
+    view only stages changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-files" class="md-nav__link">
+    delete files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#move-and-rename-files" class="md-nav__link">
+    move and rename files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-git-with-a-real-project" class="md-nav__link">
+    use Git with a real project
+  </a>
+  
+    <nav class="md-nav" aria-label="use Git with a real project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-explore-california-website" class="md-nav__link">
+    the Explore California website
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialize-git" class="md-nav__link">
+    initialize Git
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-file-edits" class="md-nav__link">
+    view file edits
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-and-commit-shortcut" class="md-nav__link">
+    stage and commit shortcut
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-a-commit" class="md-nav__link">
+    view a commit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compare-commits" class="md-nav__link">
+    compare commits
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiline-commit-messages" class="md-nav__link">
+    multiline commit messages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-atomic-commits" class="md-nav__link">
+    make atomic commits
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#undo-changes" class="md-nav__link">
+    undo changes
+  </a>
+  
+    <nav class="md-nav" aria-label="undo changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#undo-working-directory-changes" class="md-nav__link">
+    undo working directory changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unstage-files" class="md-nav__link">
+    unstage files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amend-commits" class="md-nav__link">
+    amend commits
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-old-versions" class="md-nav__link">
+    retrieve old versions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revert-a-commit" class="md-nav__link">
+    revert a commit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-untracked-files" class="md-nav__link">
+    remove untracked files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ignore-files" class="md-nav__link">
+    ignore files
+  </a>
+  
+    <nav class="md-nav" aria-label="ignore files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-gitignore-files" class="md-nav__link">
+    use .gitignore files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ideas-on-what-to-ignore" class="md-nav__link">
+    ideas on what to ignore
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#globally-ignored-files" class="md-nav__link">
+    globally ignored files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignore-tracked-files" class="md-nav__link">
+    ignore tracked files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#track-empty-directories" class="md-nav__link">
+    track empty directories
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="git-essentials">Git Essentials<a class="headerlink" href="#git-essentials" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Git helps you to manage the code in a project as you develop new features, helps to find and fix problems, and simplifies collaboration with other developers, whether working in an office or remotely </li>
+</ul>
+<h2 id="what-is-git">what is Git?<a class="headerlink" href="#what-is-git" title="Permanent link">&para;</a></h2>
+<ul>
+<li>software that tracks changes you make to files and directories</li>
+<li>keeps track of project versions</li>
+</ul>
+<h3 id="version-control">version control<a class="headerlink" href="#version-control" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Git is a VCS (version control system) or SCM (source code management) tool</li>
+<li>VCS and SCM are often used pretty interchangeably</li>
+</ul>
+<h3 id="history-behind-git">history behind Git<a class="headerlink" href="#history-behind-git" title="Permanent link">&para;</a></h3>
+<ul>
+<li>there are 5 different VCS that predate Git</li>
+<li>
+<p>SCCS = Source Code Control System:</p>
+<ul>
+<li>1972: closed source, free with Unix</li>
+<li>stored original version and sets of changes</li>
+<li>was not the first but first to become popular </li>
+<li>released in 1972 and was developed by AT&amp;T</li>
+<li>it was bundled free with the Unix operating system</li>
+<li>Unix was also free so it spread quickly to places such as universities and SCCS went along with it </li>
+<li>universities taught their students version control using SCCS so when they left the university to go work in jobs, the VCS they were familiar with and that they took with them was SCCS</li>
+<li>SCCS saves the original document but then instead of saving the whole document a second time, it just saves a snapshot of what the changes were</li>
+</ul>
+</li>
+<li>
+<p>SCCS stayed dominant until the early 80's, when RCS was developed </p>
+</li>
+<li>
+<p>RCS = Revision Control System:</p>
+<ul>
+<li>1982: open source</li>
+<li>made lots of improvements over SCCS</li>
+<li>it was cross platform whereas SCCS was Unix only</li>
+<li>with the rise of the personal computer it was important to have a version control system that would also work on PCs</li>
+<li>it was also more intuitive, had a cleaner syntax with fewer commands and more features</li>
+<li>most importantly it was faster and alot of the speed increase came from the fact that it used a smarter storage strategy than SCCS</li>
+<li>RCS kept the most recent file in it's whole form and it you wanted to go backwards in time and you wanted previous versions, then you applied the change snapshots to go in reverse</li>
+<li>this new tracking method was alot faster because most of the time you want to look at the most current document</li>
+</ul>
+</li>
+<li>
+<p>a problem with RCS and SCCS were they only allowed work on 1 file at a time, which CVS allowed you to do </p>
+</li>
+<li>
+<p>CVS = Concurrent Versions System: </p>
+<ul>
+<li>1986 - 1990: open source </li>
+<li>multiple files, entire project</li>
+<li>multi-user repositories</li>
+<li>could put the repo on a remote server and more than 1 user can work on the same file at the same time, they can work concurrently</li>
+</ul>
+</li>
+<li>
+<p>SVN = Apache Subversion:</p>
+<ul>
+<li>2000: open source </li>
+<li>track text and images</li>
+<li>tracked file changes collectively </li>
+<li>watched changes to a directory as a whole</li>
+<li>actually took snapshots of the directory, not just the files</li>
+<li>tracked the changes of a directory</li>
+<li>would change the entire project and all files back to a previous version instead of just a single file at a time</li>
+</ul>
+</li>
+<li>
+<p>BitKeeper SCM:</p>
+<ul>
+<li>2000: closed source, proprietary</li>
+<li>had a free community version</li>
+<li>a company owned it and sold it</li>
+<li>it had distributed version control</li>
+<li>the free version was used for the source code management of the Linux kernel from 2002 to 2005</li>
+<li>it was controversial to use a proprietary SCM for an open-source project</li>
+<li>in 2005 the community version stopped being free</li>
+</ul>
+</li>
+<li>
+<p>Git:</p>
+<ul>
+<li>April 2005 </li>
+<li>created by Linus Torvalds, written from scratch to replace BitKeeper </li>
+<li>distributed version control</li>
+<li>open-source and free software</li>
+<li>faster than other SCM's (100 times in some cases)</li>
+<li>better safeguards against data corruption</li>
+</ul>
+</li>
+<li>
+<p>Git had an explosion in popularity</p>
+</li>
+<li>GitHub launched in 2008 to host Git repositories </li>
+<li>in 2009 there were over 50,000 repositories with 100,000 users</li>
+<li>in 2011 there were over 2 million repos, over 1 million users</li>
+<li>2018 GitHub purchased by Microsoft</li>
+<li>2019 over 57 million repos, over 28 million users</li>
+</ul>
+<h3 id="about-distributed-version-control">about distributed version control<a class="headerlink" href="#about-distributed-version-control" title="Permanent link">&para;</a></h3>
+<ul>
+<li>different users each maintain their own repositories instead of working from a central repo</li>
+<li>changes are stored as sets or patches </li>
+<li>focused on tracking changes, not the versions of the documents</li>
+<li>previous VCS would track the changes to get from version to version of each different file </li>
+<li>Git focuses on these change sets and capturing those sets as discrete units</li>
+<li>those change sets can be exchanged between repositories</li>
+<li>"merge in change sets" or "apply patches"</li>
+<li>no single master repository </li>
+<li>many working copies, each with their own combination of change sets</li>
+<li>no need to communicate with a central server, faster, no network access required to submit changes</li>
+<li>no single point of failure</li>
+<li>encourages participation and forking of projects </li>
+<li>developers can work independently, make improvements or fix bugs, submit change sets for inclusion or rejection</li>
+</ul>
+<h2 id="git-setup">Git setup<a class="headerlink" href="#git-setup" title="Permanent link">&para;</a></h2>
+<h3 id="basic-configuration">basic configuration<a class="headerlink" href="#basic-configuration" title="Permanent link">&para;</a></h3>
+<ul>
+<li>3 places Git stores configuration information, depending how widely we want these configurations to apply</li>
+<li>
+<p>system level configuration:</p>
+<ul>
+<li>/etc/gitconfig</li>
+<li>these are configs that will apply to every user of this user by default</li>
+<li>each user can override it with their own custom configurations, but these are the default if they don't</li>
+</ul>
+</li>
+<li>
+<p>user level config:</p>
+<ul>
+<li>~/.gitconfig</li>
+<li>configs that will apply only to a single user, which is going to be most of us, most of the time, working as a single user on a machine</li>
+</ul>
+</li>
+<li>
+<p>project level config:</p>
+<ul>
+<li>my-project/.git/config </li>
+<li>we can have configurations that apply only to that project</li>
+</ul>
+</li>
+<li>
+<p>git provides commands to edit configs easily</p>
+</li>
+<li>git config --system </li>
+<li>git config --global </li>
+<li>
+<p>git config (inside of a project directory)</p>
+</li>
+<li>
+<p>git config --global user.name "first-name last-name"</p>
+</li>
+<li>git config --global user.email "my-email@example.com"</li>
+<li>git config --global core.editor "vim"</li>
+<li>
+<p>git config --global color.ui true</p>
+</li>
+<li>
+<p>git config --list = lists all possible configurations</p>
+</li>
+<li>
+<p>git config user.name = shows name </p>
+</li>
+<li>git config user.email = shows email</li>
+</ul>
+<h3 id="auto-completion">auto-completion<a class="headerlink" href="#auto-completion" title="Permanent link">&para;</a></h3>
+<ul>
+<li>go to https://github.com/git/git/tree/master/contrib/completion</li>
+<li>click on git-completion for your shell </li>
+<li>follow instructions </li>
+<li>do the same for git-prompt.sh as well</li>
+</ul>
+<h3 id="git-help">Git help<a class="headerlink" href="#git-help" title="Permanent link">&para;</a></h3>
+<ul>
+<li>a useful tool for finding out more information about git</li>
+<li>git help $SUBJECT-YOU-NEED-HELP-ON</li>
+<li>gives you a convenient interface to access manual pages</li>
+</ul>
+<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<h3 id="initialize-a-repository">initialize a repository<a class="headerlink" href="#initialize-a-repository" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>git init
+Initialized empty Git repository <span class="k">in</span> /home/justin/Projects/avim/.git/
+</code></pre></div>
+<h3 id="where-git-files-are-stored">where git files are stored<a class="headerlink" href="#where-git-files-are-stored" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>ls -l .git
+total <span class="m">112</span>
+drwxr-xr-x <span class="m">2</span> justin justin  <span class="m">4096</span> Jan <span class="m">18</span> <span class="m">15</span>:36 branches
+-rw-r--r-- <span class="m">1</span> justin justin   <span class="m">267</span> Jan <span class="m">18</span> <span class="m">15</span>:36 config
+-rw-r--r-- <span class="m">1</span> justin justin    <span class="m">73</span> Jan <span class="m">18</span> <span class="m">15</span>:36 description
+-rw-r--r-- <span class="m">1</span> justin justin    <span class="m">21</span> Jan <span class="m">18</span> <span class="m">15</span>:36 HEAD
+drwxr-xr-x <span class="m">2</span> justin justin  <span class="m">4096</span> Jan <span class="m">18</span> <span class="m">15</span>:36 hooks
+-rw-r--r-- <span class="m">1</span> justin justin <span class="m">70921</span> Jan <span class="m">18</span> <span class="m">15</span>:36 index
+drwxr-xr-x <span class="m">2</span> justin justin  <span class="m">4096</span> Jan <span class="m">18</span> <span class="m">15</span>:36 info
+drwxr-xr-x <span class="m">3</span> justin justin  <span class="m">4096</span> Jan <span class="m">18</span> <span class="m">15</span>:36 logs
+drwxr-xr-x <span class="m">4</span> justin justin  <span class="m">4096</span> Jan <span class="m">18</span> <span class="m">15</span>:36 objects
+-rw-r--r-- <span class="m">1</span> justin justin   <span class="m">112</span> Jan <span class="m">18</span> <span class="m">15</span>:36 packed-refs
+drwxr-xr-x <span class="m">5</span> justin justin  <span class="m">4096</span> Jan <span class="m">18</span> <span class="m">15</span>:36 refs
+</code></pre></div>
+<ul>
+<li>git centralizes everything into this one directory</li>
+</ul>
+<h3 id="committing">committing<a class="headerlink" href="#committing" title="Permanent link">&para;</a></h3>
+<ul>
+<li>git add . = adds all files to be committed </li>
+<li>
+<p>git commit -m "committing"</p>
+</li>
+<li>
+<p>make changes </p>
+</li>
+<li>add changes </li>
+<li>
+<p>commit changes </p>
+</li>
+<li>
+<p>commit messages: </p>
+<ul>
+<li>short single-line summary (less than 50 characters)</li>
+<li>optionally followed by a blank line and a more complete description</li>
+<li>keep lines in longer descriptions less than 72 characters</li>
+<li>write commit messages in present tense not past tense</li>
+<li>"fix for a bug" or "fixes a bug" not "fixed a bug"</li>
+<li>bullet points are usually asterisk or hyphen </li>
+<li>can add tracking numbers from bugs or support requests</li>
+<li>can develop shorthand for organization </li>
+<li>"[css,js]"</li>
+<li>"bugfix:"</li>
+<li>"#38405 -"</li>
+<li>bad: "fix typo", good: "add missing hyphen in project section of HTML"</li>
+</ul>
+</li>
+<li>
+<p>got log = shows project commit history</p>
+</li>
+<li>got log -n5 = shows 5 most recent project commit history</li>
+<li>got log --grep="bug fix" shows commits with bug fix in message</li>
+<li>got log since=2022-01-010 shows commits since specified date</li>
+<li>got log until=2022-01-010 shows commits that happened up until specified date</li>
+<li>got log author="first-name" shows commits by authors with specified name</li>
+<li>every commit is given a unique id</li>
+</ul>
+<h2 id="git-concepts-and-architecture">Git concepts and architecture<a class="headerlink" href="#git-concepts-and-architecture" title="Permanent link">&para;</a></h2>
+<h3 id="the-three-trees">the three trees<a class="headerlink" href="#the-three-trees" title="Permanent link">&para;</a></h3>
+<ul>
+<li>repository, staging index, working</li>
+<li>make changes in working add files to staging and then commit to repository</li>
+<li>git only tracks changes that are committed </li>
+</ul>
+<h3 id="git-workflows">Git workflows<a class="headerlink" href="#git-workflows" title="Permanent link">&para;</a></h3>
+<ul>
+<li>make changes in working tree, add completed changes to staging tree, commit changes we want finalized</li>
+</ul>
+<h3 id="hash-values-sha-1">hash values (SHA-1)<a class="headerlink" href="#hash-values-sha-1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Git generates a checksum (the hash value) for each change set </li>
+<li>checksum algorithms convert data into a simple number, which we call a checksum</li>
+<li>the same data put into the same mathematical algorithm always returns the same result or the same checksum</li>
+<li>we call it a checksum because we can check and make sure that it's the same</li>
+<li>checksum is used to provide data integrity </li>
+<li>data integrity is fundamental</li>
+<li>changing data would change checksum </li>
+<li>Gits data integrity features are not included in all VCS</li>
+<li>each hash value is not only unique, it is directly tied to the contents that are inside of it </li>
+<li>Git uses the SHA-1 hash algorithm </li>
+<li>people refer to this value as being the SHA value (S-H-A)</li>
+<li>40-character hexadecimal string</li>
+</ul>
+<h3 id="the-head-pointer">the HEAD pointer<a class="headerlink" href="#the-head-pointer" title="Permanent link">&para;</a></h3>
+<ul>
+<li>HEAD is a reference variable Git maintains</li>
+<li>pointer to tip of current branch in repo</li>
+<li>last state of repo, what was last checked out </li>
+<li>points to parent of next commit where writing commit takes place</li>
+<li>the repository has nothing to do with the staging index or working directory, it is a way of tracking the current position in the repo</li>
+<li>
+<p>a good metaphor for the HEAD is the playback and record head on a cassette tape recorder </p>
+<ul>
+<li>as we start recording audio, the tape moves past the HEAD and it records onto it </li>
+<li>when the record head is stopped, is the place that it will start recording again if we press record a second time</li>
+<li>we can move around, move the head to different places, we can fast forward and rewind</li>
+<li>wherever the head is positioned when we hit record again, that is where it is going to start recording</li>
+<li>the HEAD pointer in Git is very similar</li>
+</ul>
+</li>
+<li>
+<p>by default the branch we are working on is the master branch, which is our main branch</p>
+</li>
+<li>when you make a new commit, the HEAD points to that commit</li>
+</ul>
+<h2 id="make-changes-to-files">make changes to files<a class="headerlink" href="#make-changes-to-files" title="Permanent link">&para;</a></h2>
+<h3 id="add-files">add files<a class="headerlink" href="#add-files" title="Permanent link">&para;</a></h3>
+<h3 id="edit-files">edit files<a class="headerlink" href="#edit-files" title="Permanent link">&para;</a></h3>
+<h3 id="view-changes-with-diff">view changes with diff<a class="headerlink" href="#view-changes-with-diff" title="Permanent link">&para;</a></h3>
+<h3 id="view-only-stages-changes">view only stages changes<a class="headerlink" href="#view-only-stages-changes" title="Permanent link">&para;</a></h3>
+<h3 id="delete-files">delete files<a class="headerlink" href="#delete-files" title="Permanent link">&para;</a></h3>
+<h3 id="move-and-rename-files">move and rename files<a class="headerlink" href="#move-and-rename-files" title="Permanent link">&para;</a></h3>
+<h2 id="use-git-with-a-real-project">use Git with a real project<a class="headerlink" href="#use-git-with-a-real-project" title="Permanent link">&para;</a></h2>
+<h3 id="the-explore-california-website">the Explore California website<a class="headerlink" href="#the-explore-california-website" title="Permanent link">&para;</a></h3>
+<h3 id="initialize-git">initialize Git<a class="headerlink" href="#initialize-git" title="Permanent link">&para;</a></h3>
+<h3 id="view-file-edits">view file edits<a class="headerlink" href="#view-file-edits" title="Permanent link">&para;</a></h3>
+<h3 id="stage-and-commit-shortcut">stage and commit shortcut<a class="headerlink" href="#stage-and-commit-shortcut" title="Permanent link">&para;</a></h3>
+<h3 id="view-a-commit">view a commit<a class="headerlink" href="#view-a-commit" title="Permanent link">&para;</a></h3>
+<h3 id="compare-commits">compare commits<a class="headerlink" href="#compare-commits" title="Permanent link">&para;</a></h3>
+<h3 id="multiline-commit-messages">multiline commit messages<a class="headerlink" href="#multiline-commit-messages" title="Permanent link">&para;</a></h3>
+<h3 id="make-atomic-commits">make atomic commits<a class="headerlink" href="#make-atomic-commits" title="Permanent link">&para;</a></h3>
+<h2 id="undo-changes">undo changes<a class="headerlink" href="#undo-changes" title="Permanent link">&para;</a></h2>
+<h3 id="undo-working-directory-changes">undo working directory changes<a class="headerlink" href="#undo-working-directory-changes" title="Permanent link">&para;</a></h3>
+<h3 id="unstage-files">unstage files<a class="headerlink" href="#unstage-files" title="Permanent link">&para;</a></h3>
+<h3 id="amend-commits">amend commits<a class="headerlink" href="#amend-commits" title="Permanent link">&para;</a></h3>
+<h3 id="retrieve-old-versions">retrieve old versions<a class="headerlink" href="#retrieve-old-versions" title="Permanent link">&para;</a></h3>
+<h3 id="revert-a-commit">revert a commit<a class="headerlink" href="#revert-a-commit" title="Permanent link">&para;</a></h3>
+<h3 id="remove-untracked-files">remove untracked files<a class="headerlink" href="#remove-untracked-files" title="Permanent link">&para;</a></h3>
+<h2 id="ignore-files">ignore files<a class="headerlink" href="#ignore-files" title="Permanent link">&para;</a></h2>
+<h3 id="use-gitignore-files">use .gitignore files<a class="headerlink" href="#use-gitignore-files" title="Permanent link">&para;</a></h3>
+<h3 id="ideas-on-what-to-ignore">ideas on what to ignore<a class="headerlink" href="#ideas-on-what-to-ignore" title="Permanent link">&para;</a></h3>
+<h3 id="globally-ignored-files">globally ignored files<a class="headerlink" href="#globally-ignored-files" title="Permanent link">&para;</a></h3>
+<h3 id="ignore-tracked-files">ignore tracked files<a class="headerlink" href="#ignore-tracked-files" title="Permanent link">&para;</a></h3>
+<h3 id="track-empty-directories">track empty directories<a class="headerlink" href="#track-empty-directories" title="Permanent link">&para;</a></h3>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../docker/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Docker" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Docker
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../github-pages/" class="md-footer__link md-footer__link--next" aria-label="Next: GitHub Pages" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              GitHub Pages
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/justinsgithub" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/lovejustintyler" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/justinaawd" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "content.tabs.link"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.22074ed6.min.js"}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.01de222e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
+      
+        <script src="https://justinsgithub.github.io/static/docs.justintylers.com/javascript/termynal.js"></script>
+      
+        <script src="https://justinsgithub.github.io/static/docs.justintylers.com/javascript/custom.js"></script>
+      
+    
+  </body>
+</html>

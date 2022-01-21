@@ -1,0 +1,134 @@
+site_name: Justins Docs
+site_description: Learning Documentation
+site_url: https://docs.justintylers.com/
+site_dir: 'docs'
+docs_dir: 'markdown'
+theme:
+  name: material
+  palette:
+  - scheme: default
+    primary: blue
+    accent: amber
+    toggle:
+      icon: material/lightbulb
+      name: Switch to light mode
+  - scheme: slate
+    primary: blue
+    accent: amber
+    toggle:
+      icon: material/lightbulb-outline
+      name: Switch to dark mode
+  features:
+  - search.suggest
+  - search.highlight
+  - content.tabs.link
+  icon:
+    repo: fontawesome/brands/github-alt
+  language: en
+repo_name: justinsgithub/learning-docs
+repo_url: https://github.com/justinsgithub/learning-docs
+edit_uri: ''
+plugins:
+- search
+nav:
+  - index.md
+  - CSS Essentials: essential-css.md
+  - Computer Science: 
+    - Digital Information: computer-science/digital-information.md
+    - Programming: computer-science/programming.md
+  - Computer Technology: 
+    - HTTP:
+      - Essentials: computer-technology/HTTP/http-essentials.md
+      - Terminology: computer-technology/HTTP/http-terminology.md
+      - Headers: computer-technology/HTTP/headers.md
+      - Requests & Responses: computer-technology/HTTP/requests-responses.md
+    - Data Types: computer-technology/data-types.md
+    - Data Structures: computer-technology/data-structures.md
+    - Terms: computer-technology/terms.md
+  - Creative: 
+    - Emojis: creative/emojis.md
+    - Writing Blogs: creative/writing-blogs.md
+  - Linux: 
+    - Code Snips: linux/code-snips.md
+    - Directories: linux/directories.md
+    - Command Line: linux/command-line.md
+    - Advanced: linux/linux-programs.md
+    - Zsh: linux/zsh.md
+  - Resources:
+    - Learning Resources: resources/resources.md
+    - Learning Tips: resources/learning-software.md
+  - Programming Langs:
+    - JavaScript:
+      - Overview: program-langs/javascript/index.md 
+      - Functions:  program-langs/javascript/functions.md
+      - Classes & Objects:  program-langs/javascript/objects.md
+      - Code Challenges: program-langs/javascript/code-challenges.md
+    - Python:
+      - Code Challenges: program-langs/python/code-challenges.md
+      - Class Queue Deque: program-langs/python/data-structures-and-algorithms.md
+      - DSA: program-langs/python/dsa.md
+    - Rust:
+      - Overview: program-langs/rust/index.md 
+      - Datatypes: program-langs/rust/datatypes.md 
+      - VFCL: program-langs/rust/basics.md 
+      - Ownership: program-langs/rust/ownership.md 
+      - Code Examples: program-langs/rust/code-examples.md 
+      - Mini Projects: program-langs/rust/mini-projects.md
+  - Software:
+    - Docker: software/docker.md
+    - Git: 
+      - Git Essentials: software/git/essentials.md  
+      - GitHub Pages: software/git/github-pages.md  
+    - NodeJS: 
+      - Static Server: software/nodejs/static-server.md  
+      - Essentials: software/nodejs/essentials.md  
+    - React: 
+      - Design Patterns: software/react/design-patterns.md
+      - Getting Started: software/react/getting-started.md
+      - Essentials: software/react/essentials.md
+      - Hooks Descriptions: software/react/hooks-descriptions.md
+      - Hooks Examples: software/react/hooks-examples.md
+      - Software Architecture: software/react/software-architecture.md
+    - TypeScript:
+      - Overview: software/typescript/index.md 
+    - Vim: 
+      - Nvim Lua Config: software/vim/nvim-lua-config.md
+      - New Learnings: software/vim/learning-vim.md
+      - Nvim Config: software/vim/nvim-config.md
+      - Overview: software/vim/index.md
+      - Vim Commands: software/vim/snips.md
+      - SpaceVim Config: software/vim/spacevim-config.md
+  - Quick Notes: quicknotes.md
+markdown_extensions:
+- toc:
+    permalink: true
+- markdown.extensions.codehilite:
+    guess_lang: false
+- mdx_include:
+    base_path: code
+- admonition
+- codehilite
+- extra
+- pymdownx.superfences:
+    custom_fences:
+    - name: mermaid
+      class: mermaid
+      format: !!python/name:pymdownx.superfences.fence_code_format ''
+- pymdownx.tabbed
+extra:
+  social:
+  - icon: fontawesome/brands/github-alt
+    link: https://github.com/justinsgithub
+  - icon: fontawesome/brands/twitter
+    link: https://twitter.com/lovejustintyler
+  - icon: fontawesome/brands/linkedin
+    link: https://www.linkedin.com/in/justinaawd
+
+extra_css:
+    - 'https://justinsgithub.github.io/static/docs.justintylers.com/css/termynal.css'
+    - 'https://justinsgithub.github.io/static/docs.justintylers.com/css/custom.css'
+
+extra_javascript:
+    - 'https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js'
+    - 'https://justinsgithub.github.io/static/docs.justintylers.com/javascript/termynal.js'
+    - 'https://justinsgithub.github.io/static/docs.justintylers.com/javascript/custom.js'
