@@ -1,4 +1,3 @@
---vim.cmd"colorscheme codemonkey"
 vim.cmd [[
 try
   colorscheme codemonkey
