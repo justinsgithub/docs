@@ -89,10 +89,10 @@ touch public/index.html
 - create babel.rc file 
 
 ```javascript
-{! react/modern-projects/frontend/.babel.rc !}
+{! react/modern-projects/frontend/.babelrc !}
 ```
 
-### index.js and app component
+### index.js and App component
 
 - npm i react react-dom
 
@@ -100,11 +100,6 @@ touch public/index.html
 
 ```javascript
 {! react/modern-projects/frontend/src/App.js !}
-```
-
-- App.css
-```javascript
-{! react/modern-projects/frontend/src/App.css !}
 ```
 
 - index.js 
