@@ -202,12 +202,50 @@ and it makes a copy of that in the Linux Kernel for each container, so each cont
     
 - Docker offers an extensive set of networking options for really controlling exactly how your containers connect to each other and making sure that it is secure and just the way you want it 
 
-
-### legacy linking
-
 ### images 
 
+- docker image shows availabla images on machine
+- tagging gives images names
+- `docker commit` tags images for you 
+-  `docker commit $container-id $my-image-name`
+- example name structure = `registry.example.com:port/organization/image-name:versio-tag`, you can leave out the parts you don't need
+- usually organization/name is enough for tagging your images
+- images come from `docker pull` which is automatically done for you by `docker run`
+    - available as a separate command if you need to do offline work and you wanna pull some images in advance
+    - `docker push` is the opposite of `docker push`
+
+- cleaning up
+    - images can build up very quickly
+    - `docker rmi $image-name:tag` 
+    - `docker rmi $image-name` 
+
 ### volumes
+
+- sort of like shared folders
+- virtual "disks" to store and share data
+- virtual disks that you can store data in and share them between the containers and between containers and the host machine, or both
+- 2 main varieties of volume / virtual disks:   
+    - persistent 
+    - ephemeral, these exist as long as the container is using them, but when no container is using them, but when no container is using them, they evaporate, not permanent
+
+- not part of images, not included when you download an image or upload an image, your local data, local to the host machine 
+
+- sharing data with the host:
+    - "shared folders" the the hose
+    - sharing a "single file" into a container, make sure the file exists locally before hand or docker will assume it is a folder
+    - similar to shared folders in things like virtual box
+
+- when creating data inside of the container, it will share data with the host
+
+```shell
+docker run -ti -v /home/justin/Desktop:/shared-folder ubuntu bash 
+```
+
+- sharing between containers:
+    - volume-from
+    - shared disks that exist only as long as they are being used
+    - can between containers
+    - `docker run -ti --volumes-from $image-name ubuntu bash`
 
 ### docker registries
 

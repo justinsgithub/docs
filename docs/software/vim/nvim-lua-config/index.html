@@ -1345,7 +1345,21 @@
   
     <li class="md-nav__item">
       <a href="../../typescript/" class="md-nav__link">
-        Overview
+        Intro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../typescript/essentials/" class="md-nav__link">
+        Essentials
       </a>
     </li>
   
@@ -1971,7 +1985,13 @@
 <span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;A-j&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;Esc&gt;:m .+1&lt;CR&gt;==gi&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
 <span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;A-k&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;Esc&gt;:m .-2&lt;CR&gt;==gi&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
 
-<span class="c1">-- single press indent</span>
+<span class="c1">-- New tab</span>
+<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;S-t&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;:tabnew&lt;CR&gt;&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
+
+<span class="c1">-- Correct spelling error</span>
+<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;A-z&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;1z=&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
+
+<span class="c1">-- Single press indent</span>
 <span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;&lt;&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
 <span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&gt;&gt;&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
 
@@ -2110,6 +2130,8 @@
   <span class="n">use</span> <span class="s2">&quot;lunarvim/darkplus.nvim&quot;</span>
   <span class="n">use</span> <span class="s2">&quot;folke/tokyonight.nvim&quot;</span>
   <span class="n">use</span> <span class="s2">&quot;rebelot/kanagawa.nvim&quot;</span>
+  <span class="n">use</span> <span class="s1">&#39;tanvirtin/monokai.nvim&#39;</span>
+
 
   <span class="c1">-- cmp plugins</span>
   <span class="n">use</span> <span class="s2">&quot;hrsh7th/nvim-cmp&quot;</span> <span class="c1">-- The completion plugin</span>
@@ -2157,7 +2179,7 @@
 </ul>
 <div class="highlight"><pre><span></span><code><span class="n">vim</span><span class="p">.</span><span class="n">cmd</span> <span class="s">[[</span>
 <span class="s">try</span>
-<span class="s">  colorscheme codemonkey</span>
+<span class="s">  colorscheme monokai</span>
 <span class="s">catch /^Vim\%((\a\+)\)\=:E185/</span>
 <span class="s"> colorscheme default</span>
 <span class="s">set background=dark</span>
@@ -2379,7 +2401,7 @@ git clone git@github.com:ChristianChiarulli/Neovim-from-scratch.git ~/.config/nv
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../typescript/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview" rel="prev">
+        <a href="../../typescript/essentials/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Essentials" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -2388,7 +2410,7 @@ git clone git@github.com:ChristianChiarulli/Neovim-from-scratch.git ~/.config/nv
               <span class="md-footer__direction">
                 Previous
               </span>
-              Overview
+              Essentials
             </div>
           </div>
         </a>

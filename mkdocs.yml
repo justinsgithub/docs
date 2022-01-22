@@ -90,7 +90,8 @@ nav:
       - Hooks Examples: software/react/hooks-examples.md
       - Software Architecture: software/react/software-architecture.md
     - TypeScript:
-      - Overview: software/typescript/index.md 
+      - Intro: software/typescript/index.md 
+      - Essentials: software/typescript/essentials.md 
     - Vim: 
       - Nvim Lua Config: software/vim/nvim-lua-config.md
       - New Learnings: software/vim/learning-vim.md

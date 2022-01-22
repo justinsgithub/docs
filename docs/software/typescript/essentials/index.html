@@ -17,7 +17,7 @@
     
     
       
-        <title>TypeScript Essentials - Justins Docs</title>
+        <title>Essentials - Justins Docs</title>
       
     
     
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TypeScript Essentials
+              Essentials
             
           </span>
         </div>
@@ -1035,12 +1035,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
       
       
       
@@ -1314,12 +1316,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_5" type="checkbox" id="__nav_9_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_5" type="checkbox" id="__nav_9_5" checked>
       
       
       
@@ -1343,8 +1347,489 @@
   
     <li class="md-nav__item">
       <a href="../" class="md-nav__link">
-        Overview
+        Intro
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Essentials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Essentials
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducing-ts" class="md-nav__link">
+    introducing TS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#es6-language-features" class="md-nav__link">
+    ES6 language features
+  </a>
+  
+    <nav class="md-nav" aria-label="ES6 language features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reviewing-es6-language-features" class="md-nav__link">
+    reviewing ES6 language features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-optional-parameters" class="md-nav__link">
+    default / optional parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-strings" class="md-nav__link">
+    template strings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#let-and-const" class="md-nav__link">
+    let and const
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forof-loops" class="md-nav__link">
+    for...of loops
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lambdas" class="md-nav__link">
+    lambdas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#destructuring" class="md-nav__link">
+    destructuring
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spread-operator" class="md-nav__link">
+    spread operator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computed-properties" class="md-nav__link">
+    computed properties
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-fundamentals" class="md-nav__link">
+    type fundamentals
+  </a>
+  
+    <nav class="md-nav" aria-label="type fundamentals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#js-types" class="md-nav__link">
+    JS types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-type-inference" class="md-nav__link">
+    understanding type inference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specifying-js-types" class="md-nav__link">
+    specifying JS types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specifying-function-parameter-types" class="md-nav__link">
+    specifying function parameter types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-types" class="md-nav__link">
+    custom types
+  </a>
+  
+    <nav class="md-nav" aria-label="custom types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defining-custom-types-with-interfaces" class="md-nav__link">
+    defining custom types with interfaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-interfaces-to-describe-functions" class="md-nav__link">
+    using interfaces to describe functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extending-interface-definitions" class="md-nav__link">
+    extending interface definitions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-constant-values-with-enums" class="md-nav__link">
+    defining constant values with enums
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-anonymous-types" class="md-nav__link">
+    defining anonymous types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    classes
+  </a>
+  
+    <nav class="md-nav" aria-label="classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#understanding-prototypical-inheritance" class="md-nav__link">
+    understanding prototypical inheritance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-a-class" class="md-nav__link">
+    defining a class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applying-static-properties" class="md-nav__link">
+    applying static properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#making-properties-smarter-with-accessors" class="md-nav__link">
+    making properties smarter with accessors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inheriting-behavior" class="md-nav__link">
+    inheriting behavior
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementing-an-abstract-class" class="md-nav__link">
+    implementing an abstract class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controlling-visibility-with-access-modifiers" class="md-nav__link">
+    controlling visibility with access modifiers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementing-interfaces" class="md-nav__link">
+    implementing interfaces
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generics" class="md-nav__link">
+    generics
+  </a>
+  
+    <nav class="md-nav" aria-label="generics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introducing-generics" class="md-nav__link">
+    introducing generics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-generic-classes" class="md-nav__link">
+    creating generic classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applying-generic-constraints" class="md-nav__link">
+    applying generic constraints
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modules" class="md-nav__link">
+    modules
+  </a>
+  
+    <nav class="md-nav" aria-label="modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#understanding-the-need-for-modules-in-js" class="md-nav__link">
+    understanding the need for modules in JS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organizing-your-code-with-namespaces" class="md-nav__link">
+    organizing your code with namespaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-namespaces-to-encapsulate-private-members" class="md-nav__link">
+    using namespaces to encapsulate private members
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-the-difference-between-internal-and-external-modules" class="md-nav__link">
+    understanding the difference between internal and external modules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-modules-using-commonjs-syntax" class="md-nav__link">
+    importing modules using CommonJS syntax
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-modules-using-ecmascript-2015-syntax" class="md-nav__link">
+    import modules using ECMAScript 2015 syntax
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loading-external-modules" class="md-nav__link">
+    loading external modules
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-application-development" class="md-nav__link">
+    real-world application development
+  </a>
+  
+    <nav class="md-nav" aria-label="real-world application development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intro-to-sample-js-app" class="md-nav__link">
+    intro to sample JS app
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#converting-js-code-to-ts" class="md-nav__link">
+    converting JS code to TS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-declaration-files" class="md-nav__link">
+    generating declaration files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referencing-3rd-party-libraries" class="md-nav__link">
+    referencing 3rd party libraries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#converting-to-external-modules" class="md-nav__link">
+    converting to external modules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging-ts-with-source-maps" class="md-nav__link">
+    debugging TS with source maps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decorators" class="md-nav__link">
+    decorators
+  </a>
+  
+    <nav class="md-nav" aria-label="decorators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementing-method-decorators" class="md-nav__link">
+    implementing method decorators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementing-class-decorators" class="md-nav__link">
+    implementing class decorators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementing-property-decorators" class="md-nav__link">
+    implementing property decorators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementing-decorator-factories" class="md-nav__link">
+    implementing decorator factories
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1529,13 +2014,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuring-your-environment" class="md-nav__link">
-    configuring your environment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#es6-language-features" class="md-nav__link">
     ES6 language features
   </a>
@@ -1544,8 +2022,64 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    
+  <a href="#reviewing-es6-language-features" class="md-nav__link">
+    reviewing ES6 language features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-optional-parameters" class="md-nav__link">
+    default / optional parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-strings" class="md-nav__link">
+    template strings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#let-and-const" class="md-nav__link">
+    let and const
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forof-loops" class="md-nav__link">
+    for...of loops
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lambdas" class="md-nav__link">
+    lambdas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#destructuring" class="md-nav__link">
+    destructuring
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spread-operator" class="md-nav__link">
+    spread operator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computed-properties" class="md-nav__link">
+    computed properties
   </a>
   
 </li>
@@ -1560,12 +2094,87 @@
     type fundamentals
   </a>
   
+    <nav class="md-nav" aria-label="type fundamentals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#js-types" class="md-nav__link">
+    JS types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-type-inference" class="md-nav__link">
+    understanding type inference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specifying-js-types" class="md-nav__link">
+    specifying JS types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specifying-function-parameter-types" class="md-nav__link">
+    specifying function parameter types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#custom-types" class="md-nav__link">
     custom types
   </a>
+  
+    <nav class="md-nav" aria-label="custom types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defining-custom-types-with-interfaces" class="md-nav__link">
+    defining custom types with interfaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-interfaces-to-describe-functions" class="md-nav__link">
+    using interfaces to describe functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extending-interface-definitions" class="md-nav__link">
+    extending interface definitions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-constant-values-with-enums" class="md-nav__link">
+    defining constant values with enums
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-anonymous-types" class="md-nav__link">
+    defining anonymous types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1574,12 +2183,101 @@
     classes
   </a>
   
+    <nav class="md-nav" aria-label="classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#understanding-prototypical-inheritance" class="md-nav__link">
+    understanding prototypical inheritance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-a-class" class="md-nav__link">
+    defining a class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applying-static-properties" class="md-nav__link">
+    applying static properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#making-properties-smarter-with-accessors" class="md-nav__link">
+    making properties smarter with accessors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inheriting-behavior" class="md-nav__link">
+    inheriting behavior
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementing-an-abstract-class" class="md-nav__link">
+    implementing an abstract class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controlling-visibility-with-access-modifiers" class="md-nav__link">
+    controlling visibility with access modifiers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementing-interfaces" class="md-nav__link">
+    implementing interfaces
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#generics" class="md-nav__link">
     generics
   </a>
+  
+    <nav class="md-nav" aria-label="generics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introducing-generics" class="md-nav__link">
+    introducing generics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-generic-classes" class="md-nav__link">
+    creating generic classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applying-generic-constraints" class="md-nav__link">
+    applying generic constraints
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1588,6 +2286,61 @@
     modules
   </a>
   
+    <nav class="md-nav" aria-label="modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#understanding-the-need-for-modules-in-js" class="md-nav__link">
+    understanding the need for modules in JS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organizing-your-code-with-namespaces" class="md-nav__link">
+    organizing your code with namespaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-namespaces-to-encapsulate-private-members" class="md-nav__link">
+    using namespaces to encapsulate private members
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-the-difference-between-internal-and-external-modules" class="md-nav__link">
+    understanding the difference between internal and external modules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-modules-using-commonjs-syntax" class="md-nav__link">
+    importing modules using CommonJS syntax
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-modules-using-ecmascript-2015-syntax" class="md-nav__link">
+    import modules using ECMAScript 2015 syntax
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loading-external-modules" class="md-nav__link">
+    loading external modules
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1595,12 +2348,94 @@
     real-world application development
   </a>
   
+    <nav class="md-nav" aria-label="real-world application development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intro-to-sample-js-app" class="md-nav__link">
+    intro to sample JS app
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#converting-js-code-to-ts" class="md-nav__link">
+    converting JS code to TS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-declaration-files" class="md-nav__link">
+    generating declaration files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referencing-3rd-party-libraries" class="md-nav__link">
+    referencing 3rd party libraries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#converting-to-external-modules" class="md-nav__link">
+    converting to external modules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging-ts-with-source-maps" class="md-nav__link">
+    debugging TS with source maps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#decorators" class="md-nav__link">
     decorators
   </a>
+  
+    <nav class="md-nav" aria-label="decorators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementing-method-decorators" class="md-nav__link">
+    implementing method decorators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementing-class-decorators" class="md-nav__link">
+    implementing class decorators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementing-property-decorators" class="md-nav__link">
+    implementing property decorators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementing-decorator-factories" class="md-nav__link">
+    implementing decorator factories
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1652,17 +2487,293 @@
 <li>in the static world you cannot just call a "quack" method on any object, you must first explicitly define a type that has that "quack" method as well as any parameters that need to be passed into that method, not to mention the value that the "quack" method will return to its callers</li>
 </ul>
 </li>
+<li>
+<p>tsconfig.json</p>
+</li>
+<li>
+<p>a configuration object with config values </p>
+</li>
+<li>typescript compiler automatically looks for this file when it starts and if it does it treats the whole folder and any subfolders as one project</li>
+<li>with this file we no longer have to tell typescript which files to watch when running <code>tsc -w</code></li>
 </ul>
-<h2 id="configuring-your-environment">configuring your environment<a class="headerlink" href="#configuring-your-environment" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;compilerOptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;target&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;es5&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <h2 id="es6-language-features">ES6 language features<a class="headerlink" href="#es6-language-features" title="Permanent link">&para;</a></h2>
-<h3 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h3 id="reviewing-es6-language-features">reviewing ES6 language features<a class="headerlink" href="#reviewing-es6-language-features" title="Permanent link">&para;</a></h3>
+<ul>
+<li>TS provides the ability to leverage a handful of ECMAScript 6 and ES7 features that aren't yet widely supported and compile them down to ES5 compatible JS</li>
+</ul>
+<h3 id="default-optional-parameters">default / optional parameters<a class="headerlink" href="#default-optional-parameters" title="Permanent link">&para;</a></h3>
+<ul>
+<li>allows you to specify a default value for a given a parameter</li>
+</ul>
+<h3 id="template-strings">template strings<a class="headerlink" href="#template-strings" title="Permanent link">&para;</a></h3>
+<ul>
+<li>allows inserting variables directly into strings, gives ability to more easily programmatically render HTML to the DOM</li>
+</ul>
+<h3 id="let-and-const">let and const<a class="headerlink" href="#let-and-const" title="Permanent link">&para;</a></h3>
+<ul>
+<li>the var keyword has sometimes undesirable behavior, it is accessible outside of scopes that other languages would never make possible</li>
+<li>using the let keyword changes variable assignment to behave more like other programming language</li>
+<li>const means to create a variable and not let it change</li>
+</ul>
+<h3 id="forof-loops">for...of loops<a class="headerlink" href="#forof-loops" title="Permanent link">&para;</a></h3>
+<ul>
+<li>used to loop over an array with smoother syntax</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;learn typescript&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;learn typescript more&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;practice typescript&quot;</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">index</span> <span class="ow">in</span> <span class="nx">array</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">index</span><span class="p">];</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">index</span><span class="si">}</span><span class="sb">: </span><span class="si">${</span><span class="nx">value</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">value</span> <span class="k">of</span> <span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">value</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="lambdas">lambdas<a class="headerlink" href="#lambdas" title="Permanent link">&para;</a></h3>
+<ul>
+<li>the <strong><em>this</em></strong> keyword has strange behavior compared to most programming languages</li>
+<li>arrow functions allow us to get around the <strong><em>this</em></strong> keyword with cleaner syntax</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">container</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">container2</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;container2&#39;</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">Counter</span><span class="p">(</span><span class="nx">el</span><span class="p">){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">count</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
+
+    <span class="nx">el</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">count</span><span class="p">;</span>
+
+    <span class="kd">let</span> <span class="nx">_this</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+    <span class="nx">el</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> 
+
+        <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">_this</span><span class="p">.</span><span class="nx">count</span> <span class="o">+=</span> <span class="mf">1</span>
+            <span class="nx">el</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">_this</span><span class="p">.</span><span class="nx">count</span><span class="p">;</span>
+
+        <span class="p">}</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="ow">new</span> <span class="nx">Counter</span><span class="p">(</span><span class="nx">container</span><span class="p">)</span>
+
+<span class="kd">function</span> <span class="nx">Counter2</span><span class="p">(</span><span class="nx">el</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">count</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
+
+    <span class="nx">el</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">count</span><span class="p">;</span>
+
+    <span class="nx">el</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> 
+        <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">count</span> <span class="o">+=</span> <span class="mf">1</span><span class="p">;</span>
+            <span class="nx">el</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">count</span><span class="p">;</span>
+        <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="ow">new</span> <span class="nx">Counter2</span><span class="p">(</span><span class="nx">container2</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">filtered</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">1</span><span class="p">,</span> <span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">].</span><span class="nx">filter</span><span class="p">(</span><span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="o">&gt;</span> <span class="mf">0</span><span class="p">)</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">filtered</span><span class="p">)</span>
+</code></pre></div>
+- arrow "lambda" functions / anonymous functions return their output automatically</p>
+<h3 id="destructuring">destructuring<a class="headerlink" href="#destructuring" title="Permanent link">&para;</a></h3>
+<ul>
+<li>the ability to assign values to multiple variable from a single object with a single statement</li>
+<li>think of destructuring as the reverse of creating a bunch of variables and combining them into an array</li>
+<li>swapping values also becomes easier, instead of having to use a temporary value to hold the first value we swap</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[</span><span class="mf">123</span><span class="p">,</span> <span class="s2">&quot;learn typescript more&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">]</span>
+
+<span class="kd">var</span> <span class="p">[</span><span class="nx">id</span><span class="p">,</span> <span class="nx">chore</span><span class="p">,</span> <span class="nx">completed</span><span class="p">]</span> <span class="o">=</span> <span class="nx">array</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">chore</span><span class="p">,</span> <span class="nx">completed</span><span class="p">)</span>
+
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="s2">&quot;yes&quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="s2">&quot;no&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span>
+
+<span class="kd">var</span> <span class="nx">temp</span> <span class="o">=</span> <span class="nx">a</span><span class="p">;</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="nx">b</span><span class="p">;</span>
+<span class="nx">b</span> <span class="o">=</span> <span class="nx">temp</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="s2">&quot;yes&quot;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="s2">&quot;no&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">c</span> <span class="p">,</span><span class="nx">d</span> <span class="p">);</span>
+
+<span class="p">[</span> <span class="nx">c</span><span class="p">,</span> <span class="nx">d</span> <span class="p">]</span> <span class="o">=</span> <span class="p">[</span> <span class="nx">d</span><span class="p">,</span> <span class="nx">c</span> <span class="p">];</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">c</span> <span class="p">,</span> <span class="nx">d</span> <span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">todo</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="mf">123</span><span class="p">,</span>
+    <span class="nx">chore</span><span class="o">:</span> <span class="s2">&quot;learn more ts&quot;</span><span class="p">,</span>
+    <span class="nx">completed</span><span class="o">:</span> <span class="kc">false</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="p">{</span><span class="nx">chore</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">completed</span><span class="p">}</span> <span class="o">=</span> <span class="nx">todo</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span><span class="nx">chore</span><span class="p">,</span><span class="nx">completed</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>can use to destructure parameters as well </li>
+</ul>
+<h3 id="spread-operator">spread operator<a class="headerlink" href="#spread-operator" title="Permanent link">&para;</a></h3>
+<ul>
+<li>can use in a function to accept any number of arguments</li>
+<li>used for cleaner array syntax, such as adding and removing items, or adding 2 arrays together</li>
+</ul>
+<h3 id="computed-properties">computed properties<a class="headerlink" href="#computed-properties" title="Permanent link">&para;</a></h3>
+<ul>
+<li>allows you to define a property on an object with a name that is computed dynamically at runtime</li>
+<li>this allows to create dynamic variable names, which can be helpful when scraping users data and you want to use each users username as its variable name, however you do not know what all the usernames are going to be yet</li>
+</ul>
 <h2 id="type-fundamentals">type fundamentals<a class="headerlink" href="#type-fundamentals" title="Permanent link">&para;</a></h2>
+<h3 id="js-types">JS types<a class="headerlink" href="#js-types" title="Permanent link">&para;</a></h3>
+<ul>
+<li>primitive values (immutable) = boolean, number, string</li>
+<li>null / undefined</li>
+<li>object (many thought of types are actually just different kinds of objects)</li>
+<li>as an object orientated lang, JS offers the ability to share properties and behaviors between different types through inheritance, called prototypical inheritance</li>
+<li>prototypical inheritance means that an object is defined that contains the base properties and behavior to be shared and when new instances of that type are created, JS links those new instances to the properties and behaviors of the base class</li>
+<li>not all JS objects must be created from a constructor that has a prototype</li>
+<li>an object literal is a simple way to define a JS object </li>
+<li>an object literal is nothing more than a way to define an instantiate an object all at the same time </li>
+</ul>
+<h3 id="understanding-type-inference">understanding type inference<a class="headerlink" href="#understanding-type-inference" title="Permanent link">&para;</a></h3>
+<ul>
+<li>static analysis means that regardless of whether you explicitly define types or not, TS looks through your code doing its best to guess / infer what type any given object could be </li>
+<li>TS will automatically enforce inferred types</li>
+<li>TS will infer the type of function return values as well </li>
+<li>when TS cannot infer what a type might be, then it just calls it the any type, which is the most dynamic and nonrestrictive type available</li>
+<li>the any type is basically the default dynamic type of JS</li>
+<li>you can use any type to reassign variables to values of different types</li>
+<li>you lose any and all help that TS provides when using an any type, TS would not even catch things like misspellings so the any type should only be used when absolutely necessary </li>
+</ul>
+<h3 id="specifying-js-types">specifying JS types<a class="headerlink" href="#specifying-js-types" title="Permanent link">&para;</a></h3>
+<ul>
+<li>the more specific you are in your intent, the better the type system can help you find mistakes</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">arrayPlusString</span><span class="p">(</span><span class="nx">x</span>: <span class="kt">any</span><span class="p">[],</span> <span class="nx">y</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="kt">number</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">total</span>:<span class="kt">number</span> <span class="o">=</span> <span class="nx">x</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="nx">y</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">total</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="specifying-function-parameter-types">specifying function parameter types<a class="headerlink" href="#specifying-function-parameter-types" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>union types allow arguments to accept multiple types with the pipe operator (|)</p>
+</li>
+<li>
+<p>TS will limit methods on union types, use instanceof operator first if needed </p>
+<ul>
+<li>this is known as the type-guard syntax </li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">totalLength</span><span class="p">(</span><span class="nx">x</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">y</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="kt">number</span>
+<span class="kd">function</span> <span class="nx">totalLength</span><span class="p">(</span><span class="nx">x</span>:  <span class="kt">any</span><span class="p">[],</span> <span class="nx">y</span>:  <span class="kt">any</span><span class="p">[])</span><span class="o">:</span> <span class="kt">number</span>
+<span class="kd">function</span> <span class="nx">totalLength</span><span class="p">(</span><span class="nx">x</span><span class="o">:</span> <span class="p">(</span><span class="kt">string</span> <span class="o">|</span> <span class="nx">any</span><span class="p">[]),</span> <span class="nx">y</span><span class="o">:</span> <span class="p">(</span><span class="kt">string</span> <span class="o">|</span> <span class="nx">any</span><span class="p">[]))</span><span class="o">:</span> <span class="kt">number</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">total</span>:<span class="kt">number</span> <span class="o">=</span> <span class="nx">x</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="nx">y</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+
+    <span class="nx">x</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span> <span class="nx">x</span> <span class="ow">instanceof</span> <span class="nb">Array</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nx">x</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span> <span class="nx">x</span> <span class="ow">instanceof</span> <span class="nb">String</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nx">x</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span>
+    <span class="p">}</span>
+
+
+    <span class="k">return</span> <span class="nx">total</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">totalLength</span><span class="p">(</span><span class="s2">&quot;hello &quot;</span><span class="p">,</span> <span class="s2">&quot;there&quot;</span><span class="p">))</span>
+</code></pre></div>
+<ul>
+<li>function overloads allow us to define possible function parameter values before it is created</li>
+</ul>
 <h2 id="custom-types">custom types<a class="headerlink" href="#custom-types" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>you can define custom types that describe the data structures and behavior that your application uses</p>
+</li>
+<li>
+<p>TS defines 3 ways to define a custom type, interfaces, classes and enums</p>
+</li>
+</ul>
+<h3 id="defining-custom-types-with-interfaces">defining custom types with interfaces<a class="headerlink" href="#defining-custom-types-with-interfaces" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>an interface acts as a contract that describes the data and the behaviors that the object exposes for others to interact with </p>
+</li>
+<li>
+<p>interfaces are strictly used for compile-time checks only and have no effect on the code at runtime</p>
+</li>
+<li>
+<p>consider interfaces as a way to tell TS more information about objects to help you check more errors at build time, but do not ever rely on them being there at runtime </p>
+</li>
+<li>
+<p>the first thing that typescript does when it compiles the final JS output is to strip out all of the interface definitions</p>
+</li>
+<li>
+<p>normal syntax: <code>var todo:Todo = {};</code></p>
+</li>
+<li>
+<p>casting syntax: <code>var todo = &lt;Todo&gt;{};</code></p>
+</li>
+</ul>
+<h3 id="using-interfaces-to-describe-functions">using interfaces to describe functions<a class="headerlink" href="#using-interfaces-to-describe-functions" title="Permanent link">&para;</a></h3>
+<h3 id="extending-interface-definitions">extending interface definitions<a class="headerlink" href="#extending-interface-definitions" title="Permanent link">&para;</a></h3>
+<h3 id="defining-constant-values-with-enums">defining constant values with enums<a class="headerlink" href="#defining-constant-values-with-enums" title="Permanent link">&para;</a></h3>
+<h3 id="defining-anonymous-types">defining anonymous types<a class="headerlink" href="#defining-anonymous-types" title="Permanent link">&para;</a></h3>
 <h2 id="classes">classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
+<h3 id="understanding-prototypical-inheritance">understanding prototypical inheritance<a class="headerlink" href="#understanding-prototypical-inheritance" title="Permanent link">&para;</a></h3>
+<h3 id="defining-a-class">defining a class<a class="headerlink" href="#defining-a-class" title="Permanent link">&para;</a></h3>
+<h3 id="applying-static-properties">applying static properties<a class="headerlink" href="#applying-static-properties" title="Permanent link">&para;</a></h3>
+<h3 id="making-properties-smarter-with-accessors">making properties smarter with accessors<a class="headerlink" href="#making-properties-smarter-with-accessors" title="Permanent link">&para;</a></h3>
+<h3 id="inheriting-behavior">inheriting behavior<a class="headerlink" href="#inheriting-behavior" title="Permanent link">&para;</a></h3>
+<h3 id="implementing-an-abstract-class">implementing an abstract class<a class="headerlink" href="#implementing-an-abstract-class" title="Permanent link">&para;</a></h3>
+<h3 id="controlling-visibility-with-access-modifiers">controlling visibility with access modifiers<a class="headerlink" href="#controlling-visibility-with-access-modifiers" title="Permanent link">&para;</a></h3>
+<h3 id="implementing-interfaces">implementing interfaces<a class="headerlink" href="#implementing-interfaces" title="Permanent link">&para;</a></h3>
 <h2 id="generics">generics<a class="headerlink" href="#generics" title="Permanent link">&para;</a></h2>
+<h3 id="introducing-generics">introducing generics<a class="headerlink" href="#introducing-generics" title="Permanent link">&para;</a></h3>
+<h3 id="creating-generic-classes">creating generic classes<a class="headerlink" href="#creating-generic-classes" title="Permanent link">&para;</a></h3>
+<h3 id="applying-generic-constraints">applying generic constraints<a class="headerlink" href="#applying-generic-constraints" title="Permanent link">&para;</a></h3>
 <h2 id="modules">modules<a class="headerlink" href="#modules" title="Permanent link">&para;</a></h2>
+<h3 id="understanding-the-need-for-modules-in-js">understanding the need for modules in JS<a class="headerlink" href="#understanding-the-need-for-modules-in-js" title="Permanent link">&para;</a></h3>
+<h3 id="organizing-your-code-with-namespaces">organizing your code with namespaces<a class="headerlink" href="#organizing-your-code-with-namespaces" title="Permanent link">&para;</a></h3>
+<h3 id="using-namespaces-to-encapsulate-private-members">using namespaces to encapsulate private members<a class="headerlink" href="#using-namespaces-to-encapsulate-private-members" title="Permanent link">&para;</a></h3>
+<h3 id="understanding-the-difference-between-internal-and-external-modules">understanding the difference between internal and external modules<a class="headerlink" href="#understanding-the-difference-between-internal-and-external-modules" title="Permanent link">&para;</a></h3>
+<h3 id="importing-modules-using-commonjs-syntax">importing modules using CommonJS syntax<a class="headerlink" href="#importing-modules-using-commonjs-syntax" title="Permanent link">&para;</a></h3>
+<h3 id="import-modules-using-ecmascript-2015-syntax">import modules using ECMAScript 2015 syntax<a class="headerlink" href="#import-modules-using-ecmascript-2015-syntax" title="Permanent link">&para;</a></h3>
+<h3 id="loading-external-modules">loading external modules<a class="headerlink" href="#loading-external-modules" title="Permanent link">&para;</a></h3>
 <h2 id="real-world-application-development">real-world application development<a class="headerlink" href="#real-world-application-development" title="Permanent link">&para;</a></h2>
+<h3 id="intro-to-sample-js-app">intro to sample JS app<a class="headerlink" href="#intro-to-sample-js-app" title="Permanent link">&para;</a></h3>
+<h3 id="converting-js-code-to-ts">converting JS code to TS<a class="headerlink" href="#converting-js-code-to-ts" title="Permanent link">&para;</a></h3>
+<h3 id="generating-declaration-files">generating declaration files<a class="headerlink" href="#generating-declaration-files" title="Permanent link">&para;</a></h3>
+<h3 id="referencing-3rd-party-libraries">referencing 3rd party libraries<a class="headerlink" href="#referencing-3rd-party-libraries" title="Permanent link">&para;</a></h3>
+<h3 id="converting-to-external-modules">converting to external modules<a class="headerlink" href="#converting-to-external-modules" title="Permanent link">&para;</a></h3>
+<h3 id="debugging-ts-with-source-maps">debugging TS with source maps<a class="headerlink" href="#debugging-ts-with-source-maps" title="Permanent link">&para;</a></h3>
 <h2 id="decorators">decorators<a class="headerlink" href="#decorators" title="Permanent link">&para;</a></h2>
+<h3 id="implementing-method-decorators">implementing method decorators<a class="headerlink" href="#implementing-method-decorators" title="Permanent link">&para;</a></h3>
+<h3 id="implementing-class-decorators">implementing class decorators<a class="headerlink" href="#implementing-class-decorators" title="Permanent link">&para;</a></h3>
+<h3 id="implementing-property-decorators">implementing property decorators<a class="headerlink" href="#implementing-property-decorators" title="Permanent link">&para;</a></h3>
+<h3 id="implementing-decorator-factories">implementing decorator factories<a class="headerlink" href="#implementing-decorator-factories" title="Permanent link">&para;</a></h3>
 
               
             </article>
@@ -1672,6 +2783,41 @@
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Intro" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Intro
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../vim/nvim-lua-config/" class="md-footer__link md-footer__link--next" aria-label="Next: Nvim Lua Config" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Nvim Lua Config
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

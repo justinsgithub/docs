@@ -140,26 +140,14 @@ console.log(MyComponent)
 
 - reconciliation - DOM element:
     - there are some under the hood differences between what happens with native DOM elements and component elements, React makes a distinction to these 2 types of elements
-
-- in the below case the className is changing, React finds the DOM node and just changes the class name 
-    - no need to change anything else because it is all the same
-
-```javascript 
-<div                            <div
-    className="before"    =>        className="after" 
-    title="stuff"                   title="stuff"
-/>                              />
-```
-
-## rendering 
-
-## fiber
+    - when there is a native DOM element, a minor change is not a big deal, or adding / changing element attributes is done easily
+    - with a component, when something changes in the DOM React recursively looks at each child node 1 by 1 and decides if it needs to change anything 
+    - if there is a component with list item as children, react will compare li1 to li1 and only change if the li(n) is different from li(n)
+    - a problem happens if a list adds a li to the beginning of the list, then React none of the li(n) will be equivalent to each other any longer and React will re-render the entire list, which may not be noticeable with a small list, but as that list grows the cost would become more noticeable
+   - to avoid unnecessarily rendering any DOM elements, we can give each element a ***key*** so React compares items by it's key instead of text content
 
 
-
-
-
-
-
-
-
+- do not make component keys the list index: 
+    - if a list is reversed in the app, React will think every component changed and re-render the entire list
+    - another situation is the list items content change but the index of it does not so React does not change them
+    - if do not have a unique id for your data, use something like lodash which will create a UUID for each item in your data

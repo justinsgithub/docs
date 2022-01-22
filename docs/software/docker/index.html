@@ -1231,13 +1231,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#legacy-linking" class="md-nav__link">
-    legacy linking
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#images" class="md-nav__link">
     images
   </a>
@@ -1674,7 +1667,21 @@
   
     <li class="md-nav__item">
       <a href="../typescript/" class="md-nav__link">
-        Overview
+        Intro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../typescript/essentials/" class="md-nav__link">
+        Essentials
       </a>
     </li>
   
@@ -1980,13 +1987,6 @@
           <li class="md-nav__item">
   <a href="#container-networking" class="md-nav__link">
     container networking
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#legacy-linking" class="md-nav__link">
-    legacy linking
   </a>
   
 </li>
@@ -2496,9 +2496,68 @@ docker attach <span class="nv">$CONTAINER</span>-NAME
 <p>Docker offers an extensive set of networking options for really controlling exactly how your containers connect to each other and making sure that it is secure and just the way you want it </p>
 </li>
 </ul>
-<h3 id="legacy-linking">legacy linking<a class="headerlink" href="#legacy-linking" title="Permanent link">&para;</a></h3>
 <h3 id="images">images<a class="headerlink" href="#images" title="Permanent link">&para;</a></h3>
+<ul>
+<li>docker image shows availabla images on machine</li>
+<li>tagging gives images names</li>
+<li><code>docker commit</code> tags images for you </li>
+<li><code>docker commit $container-id $my-image-name</code></li>
+<li>example name structure = <code>registry.example.com:port/organization/image-name:versio-tag</code>, you can leave out the parts you don't need</li>
+<li>usually organization/name is enough for tagging your images</li>
+<li>
+<p>images come from <code>docker pull</code> which is automatically done for you by <code>docker run</code></p>
+<ul>
+<li>available as a separate command if you need to do offline work and you wanna pull some images in advance</li>
+<li><code>docker push</code> is the opposite of <code>docker push</code></li>
+</ul>
+</li>
+<li>
+<p>cleaning up</p>
+<ul>
+<li>images can build up very quickly</li>
+<li><code>docker rmi $image-name:tag</code> </li>
+<li><code>docker rmi $image-name</code> </li>
+</ul>
+</li>
+</ul>
 <h3 id="volumes">volumes<a class="headerlink" href="#volumes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>sort of like shared folders</li>
+<li>virtual "disks" to store and share data</li>
+<li>virtual disks that you can store data in and share them between the containers and between containers and the host machine, or both</li>
+<li>
+<p>2 main varieties of volume / virtual disks:   </p>
+<ul>
+<li>persistent </li>
+<li>ephemeral, these exist as long as the container is using them, but when no container is using them, but when no container is using them, they evaporate, not permanent</li>
+</ul>
+</li>
+<li>
+<p>not part of images, not included when you download an image or upload an image, your local data, local to the host machine </p>
+</li>
+<li>
+<p>sharing data with the host:</p>
+<ul>
+<li>"shared folders" the the hose</li>
+<li>sharing a "single file" into a container, make sure the file exists locally before hand or docker will assume it is a folder</li>
+<li>similar to shared folders in things like virtual box</li>
+</ul>
+</li>
+<li>
+<p>when creating data inside of the container, it will share data with the host</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>docker run -ti -v /home/justin/Desktop:/shared-folder ubuntu bash 
+</code></pre></div>
+<ul>
+<li>sharing between containers:<ul>
+<li>volume-from</li>
+<li>shared disks that exist only as long as they are being used</li>
+<li>can between containers</li>
+<li><code>docker run -ti --volumes-from $image-name ubuntu bash</code></li>
+</ul>
+</li>
+</ul>
 <h3 id="docker-registries">docker registries<a class="headerlink" href="#docker-registries" title="Permanent link">&para;</a></h3>
 <h2 id="building-docker-images">building Docker images<a class="headerlink" href="#building-docker-images" title="Permanent link">&para;</a></h2>
 <h3 id="what-are-dockerfiles">what are Dockerfiles?<a class="headerlink" href="#what-are-dockerfiles" title="Permanent link">&para;</a></h3>

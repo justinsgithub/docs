@@ -83,7 +83,13 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
--- single press indent
+-- New tab
+keymap("n", "<S-t>", ":tabnew<CR>", opts)
+
+-- Correct spelling error
+keymap("n", "<A-z>", "1z=", opts)
+
+-- Single press indent
 keymap("n", "<", "<<", opts)
 keymap("n", ">", ">>", opts)
 
