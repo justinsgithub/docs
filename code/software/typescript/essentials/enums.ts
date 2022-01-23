@@ -17,3 +17,8 @@ var todo: Todo = {
     state: TodoState.New
 };
 
+function deleteTodo (todo: Todo) {
+    if (todo.state != TodoState.Complete) {
+        throw "Can't delete incomplete task!"
+    }
+}

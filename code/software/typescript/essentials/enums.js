@@ -10,3 +10,5 @@ var todo = {
     name: "practice typescript",
     state: TodoState.New
 };
+function () { }
+delete ;

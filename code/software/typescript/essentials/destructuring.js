@@ -1,4 +1,3 @@
-/*
 var array = [123, "learn typescript more", false]
 
 var [id, chore, completed] = array;
@@ -29,7 +28,6 @@ var todo = {
     completed: false
 };
 
-var {chore, id, completed} = todo;
+var {id, chore, completed} = todo;
 
 console.log(id,chore,completed)
-*/

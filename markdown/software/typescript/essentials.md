@@ -79,7 +79,7 @@
 - swapping values also becomes easier, instead of having to use a temporary value to hold the first value we swap
 
 ```javascript
-{! software/typescript/essentials/destructuring.ts!}
+{! software/typescript/essentials/destructuring.js!}
 ```
 
 - can use to destructure parameters as well
@@ -184,21 +184,132 @@
   - these values might mean something to the developer writing it, but mean nothing to future developers working on the project unless there is some good comments explaining it, or they can infer meanings by studying the code
   - enums give us a way to describe these values so they are more efficient to use for ourselves and others down the road
 
-### defining anonymous types
+```typescript
+{! software/typescript/essentials/enums.ts !}
+```
+
+- you can declare interfaces right inline anywhere that accepts a type, which is called an anonymous type
 
 ## classes
 
 ### understanding prototypical inheritance
 
+- object-orientated functionality includes inheritance, abstraction, and encapsulation
+
+- TS does not introduce the concept of a class, ECMAScript 6 did
+
+- it is crucial to understand that although JS does have the class keyword syntax, it is all just syntactic sugar, and does not change the fact that JS is based on objects and prototypical inheritance
+
+- JS is prototype-based programming
+
+- prototype-based programming all starts with a special object called the prototype
+
+- if you want to share behavior between object instances, you define that behavior on the prototype object
+
+    - you then link other instances to that object
+
+- in JS objects are just bags of dynamic properties, which means accessing a member of an object is not as simple as testing whether or not that member exists
+
+    - whenever you attempt to access any member of an object, regardless of whether it is a method or a value field, JS tries as hard as it can to find the member that you are looking for 
+    
+    - first, JS looks for the member on the object itself, just like you asked it to 
+    
+    - if it finds a member with that name on the object you reference, then great. It acccess that member and its done 
+
+    - however if JS does not find a matching member on that object, it will not give up there 
+
+    - JS will then look at the object's prototype object to see if the member exists on that object 
+
+    - if a member of that name exists on the prototype, then JS refers to that member and it is done
+
+    - Otherwise it accesses the prototype's prototype, and the cycle continues all the way up the chain until reaches the root of everything, the object prototype
+
+    - Object.prototype is actually an object that you can see and interact with 
+
+    - if you type Object.prototype in the console, everything that you see will be available to all other JS objects 
+
+- where does this special prototype object come from, and how and when is it assigned to my objects? 
+
+    - most of the time the prototype is assigned to your objects for you 
+    
+    - the more complex answer is that there are actually quite a few ways that prototype objects get assigned 
+
+    - when JS creates any object, even an object literal, it automatically links its prototype object to the Object.prototype, the same is true about the other 2 special types of objects, functions and arrays
+
+    - when JS creates objects with functions and arrays, it links them to the Function.prototype and Array.prototype objects (respectively)
+
+    - this allows all functions and arrays to share common behavior, such as all arrays having the slice method and all functions having the bind method 
+
+- the most common way JS assigns a prototype to an object is with a constructor, which is really just a function that is called with the ***new*** keyword 
+
+- whem you initialize an object with a ***new*** keyword, JS does 3 things:
+
+    1. creates a new object 
+
+    2. sets the new object's prototype to the constructor functions prototype
+
+    3. executes the function that you called with the ***new*** keyword, referring to the new object as ***this*** within that method 
+
+
 ### defining a class
 
-### applying static properties
+- classes allow you to define prototypical behavior in a much simpler way 
+
+- original prototyping way: 
+
+```javascript
+{! software/typescript/essentials/prototyping.js !}
+```
+
+- you can use use all TS features to extend ECMAScript6 class syntax with additional static type information 
+
+- in the prototype based syntax, the constructor function is simply the function that you attach all of the prototype behavior to 
+
+- in order to define a constructor function using the class syntax, you simply define a method with the name ***constructor***  
+
+- at somepoint you may need to maintain a single same value across multiple components, ot many instances of 1 type of component 
+
+- in other languages you would refer to these kinds of variables at static members 
+
+- for years the easiest and most common way to implement static variables was to simply create a variable in the global namespace 
+
+- global variables are now generally considered to be considered bad practice, and avoided at all costs
+
+- modern JS the more accepted common practice of defining a static variable is to attach it to an object, especially the function that is going to use it the most 
+
+- prior to the ECMAScript6 syntax when creating a constructor function and attaching behavior to it via its prototype, the lastId variable would be attached directly onto the constructor function itself
+
+- new class way with TS:
+
+```typescript
+{! software/typescript/essentials/classes.ts !}
+```
 
 ### making properties smarter with accessors
 
+- getters and setters allow you access private properties
+
 ### inheriting behavior
 
+- a statemachine is a design pattern for managing state
+
+- use the extend keyword to extend a class
+
+- the reason for inheriting from a base class is to extend and / or override its behavior
+
+- you do not have to call constructor on the derived class, BUT if you do, you have to call it on the base class 
+
+- use the super keyword to call constructor on the base class 
+
+- make changes to methods by calling super inside of the method definition
+
 ### implementing an abstract class
+
+- an abstract class is a class that is only created to be a base class for future classes 
+
+- use the abstract keyword to implement
+
+- TS supports abstract classes, JS does not 
 
 ### controlling visibility with access modifiers
 

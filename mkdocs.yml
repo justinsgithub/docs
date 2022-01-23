@@ -34,17 +34,18 @@ nav:
   - index.md
   - CSS Essentials: essential-css.md
   - Computer Science: 
+    - Acronyms: computer-science/acronyms.md
     - Digital Information: computer-science/digital-information.md
     - Programming: computer-science/programming.md
-  - Computer Technology: 
+    - Internet: computer-science/internet.md
+    - Data Types: computer-science/data-types.md
+    - Data Structures: computer-science/data-structures.md
+    - Terms: computer-science/terms.md
     - HTTP:
-      - Essentials: computer-technology/HTTP/http-essentials.md
-      - Terminology: computer-technology/HTTP/http-terminology.md
-      - Headers: computer-technology/HTTP/headers.md
-      - Requests & Responses: computer-technology/HTTP/requests-responses.md
-    - Data Types: computer-technology/data-types.md
-    - Data Structures: computer-technology/data-structures.md
-    - Terms: computer-technology/terms.md
+      - Essentials: computer-science/HTTP/http-essentials.md
+      - Terminology: computer-science/HTTP/http-terminology.md
+      - Headers: computer-science/HTTP/headers.md
+      - Requests & Responses: computer-science/HTTP/requests-responses.md
   - Creative: 
     - Emojis: creative/emojis.md
     - Writing Blogs: creative/writing-blogs.md
