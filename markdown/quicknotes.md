@@ -4,8 +4,8 @@
 
 ## general
 
-
-- look into martext editor for editing markdown files
+- 32 gigabyte computer
+- look into nextjs for simple daily workouts application
 - look into bufferline bug deleting a file with buffer open and unsaved changes
 - finish react essentials testing
 - look at awk vi course

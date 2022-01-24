@@ -287,7 +287,7 @@
 
 ### making properties smarter with accessors
 
-- getters and setters allow you access private properties
+- getters and setters make it easier to apply logic when changing properties inside classes / objects 
 
 ### inheriting behavior
 
@@ -307,58 +307,234 @@
 
 - an abstract class is a class that is only created to be a base class for future classes 
 
-- use the abstract keyword to implement
+- use the abstract keyword to implement an abstract class 
+
+- use the abstract keyword before methods to define that any future derived classes need to implement their own version of that method 
 
 - TS supports abstract classes, JS does not 
 
 ### controlling visibility with access modifiers
 
+- the private keyword is an access modifier, used to hide members of a classfrom being accessed outside of that class
+
+- you can apply access modifiers to any member of a Typescript class, including constructor parameters, methods, properties, static properties, getters, setters
+
+- both the getter and the setter must be either private or public
+
+- TS offers 3 access modifiers to describe how much you want to protect the members of your classes
+
+- the access modifiers are private, protected, and public
+
+- the private modifier is the most restrictive modifier of the 3 
+
+    - placing a private modifier on a member means that only methods defined directly on the same class definition may access that member 
+
+    - TS will complain if any other type, including types that inherit or extend from that class, attempt access the member 
+
+- the protected modifier is smiliar to the private modifier in that only methods defined on the same class may access the member, but it expands this definition to any classes that inherit or extend from this class 
+
+- the public modifier is the least restrictive of all
+    
+    - a member with public access may be accessed from any other type 
+    
+    - the public modifier basically just decribes the default behavior of JS 
+    
+    - public is the default access modifier so you probably will not see it much 
+
+    - the 1 case you might see the public modifier more often is applying it to a constructor parameter
+
+- JS does not actually support access modifiers
+
+- TS is a superset of JS, which means that it does not change how JS works
+
+- TS is able to let us use access modifiers just for development, to ensure better practices and less bugs in our code, express our intent and work with other developers and our code better in the future
+
 ### implementing interfaces
+
+- the primary reason that interfaces exist in a statically typed langauge is to attach them to classes 
+
+- because TS understands and implements JS native duck typing behavior, you do not actually have to do anything in order to make use of an interface 
+
+    - by simply applying the interface to the variables and the return values in which you expect to adhere to that interface, TS will automatically inspect every object that you attempt to assign to that variable or attempt to return as a return value 
+
+    - when the object structure matches the interface you've defined, then it really does not matter what the type of the object is, everything is fine 
+
+    - if the object structure does not match the interface, such as missing properties or methods that the interface expects, or the type of properties do not match, TS will yell at you, that you have attempted to use an object that does not match the interface 
+
+- even though you don't always have to apply type information for TS to work, the more explicit you are, the better
+
+- a class can implement multiple interfaces at once 
 
 ## generics
 
 ### introducing generics
 
+- TS offers generics, which C# and Java offer as well
+
+- generics are a way to create functions and classes that define a behavior that can be reused across many different types, while retaining the full information about that type
+
+- create a generic by using `<$name>` after the function name but before the parameter parenthesis, this tells TS that you will be referring to a generic type in this function and you will be referring to that type by $name 
+
+- many people use `<T>` by covention, but any variable name is acceptable 
+
+- with a generic type defined, it can be used throughout the method any place that a regular type would be used, like on the methods parameter
+
+- a generic type is good for telling TS that the input type and return type of a function will always be the same 
+
+- a generic type is not a specific type but is determined by TS each time it is used in a function to do things like ensure matching types of a parameter value and return value in a function where it could accept any time (such as a JSON.stringify function) 
+
+- whenever you see a place in your application where you seem to be copying the same code over and over, and all you are doing differently in each version is simply changing which type you are using, then that might be a great oppurtunity to reduce that duplicated code into a single generic function 
+
+```typescript
+function clone<T>(value: T): T {
+    let serialized = JSON.stringify(value);
+    return JSON.parse(serialized);
+}
+```
+
 ### creating generic classes
 
+- generics can be applied to classes as well 
+
+- TS treats the JS builtin Array type as a generic class 
+
+- below is just 2 different syntax for exactly the same thing
+
+```typescript
+var syntax1: number[] = [ 1, 2, 3 ]
+
+var syntax2: Array<number> = [ 1, 2, 3 ]
+```
+
+- generic classes are good for key value pair classes
+
+```typescript
+class KeyValuePair<Tkey, Tvalue> {
+
+    constructor( public key: Tkey, public value: Tvalue ){}
+
+}
+
+let pair01 = new KeyValuePair('id', 1);
+let pair02 = new KeyValuePair('joined', Date.now());
+let pair03 = new KeyValuePair('name', 'jack');
+
+let pair1 = new KeyValuePair<string, 1>('id', 1);
+let pair2 = new KeyValuePair<number, Date>('joined', new Date(Date.now()));
+let pair3 = new KeyValuePair<string, string>('name', 'jack');
+
+class KeyValuePairPrinte<T, U> {
+    constructor(private pairs: KeyValuePair<T, U>[]) {}
+
+    print() {
+        for (let p of this.pairs) {
+            console.log(`${p.key}: ${p.value}`)
+        }
+    }
+}
+
+```
+
+- a great way to group generic methods that all operate on the same types of objects
+
 ### applying generic constraints
+
+- TS offers the concept of generic restraints that you can apply to your generic type parameters, to dissallow certain types of values
+
+- apply generic constraints with the ***extends*** keyword
+
+- you can place restraints on your generic types to limit the type parameters that consumers of your generic functions or classes can apply
+
+- you cannot refer to generic parameters that you defined in the same type list
 
 ## modules
 
 ### understanding the need for modules in JS
 
+- JS has been around for over 20 years  
+
+- only recently has the industry started to really take JS seriously and started to apply patterns, practices, and development standards for working in the browser 
+
+- a big problem that exists is putting all of your code in the global namespace
+
+- putting all of your code in the global namespace encourages you to create all sorts of dependencies between components simply because you can
+
+- global namespace is bad because:
+
+    - encourages implicit sharing between components
+
+    - difficult to determine component boundaries
+
+    - difficult to determine component dependencies
+
+- global namespace can create what is known as ***spaghetti*** code, where your entire application just becomes 1 giant ball of intertwined threads, without anyway of telling where one component begins and another ends
+
+- to avoid spaghetti code, many first class languages have some kind of mechanism to modularize code, to keep components seperate from one another and distinguish between 2 components that may share the same name but are otherwise completely different
+
+- learning JS design patterns is an awesome free book
+
+- JS encapsulattion methods: 
+
+    - module pattern / revealing module pattern 
+
+    - namespaces
+
+    - ECMAScript 2015 modules / module loaders
+
 ### organizing your code with namespaces
+
+- TS offers a few ways to better encapsulate and organize your code
+
+- namespaces is the simplest way to organize your code better 
+
+- putting variables inside of a namespace will hide that variable from code outside of the namespace 
 
 ### using namespaces to encapsulate private members
 
+
+- seperate classes into different files and place variables inside namespace to make completely private from any other code in the project
+
+- the namepspace approach is also referred to as the "internal module approach"
+
 ### understanding the difference between internal and external modules
 
-### importing modules using CommonJS syntax
+- internal vs external modules approach:
 
-### import modules using ECMAScript 2015 syntax
+    - both encourage encapsulation and organization
 
-### loading external modules
+    - internal uses namespaces to scope variables 
 
-## real-world application development
+    - external uses the file itself to scope variables
 
-### intro to sample JS app
+    - all modules are only available within the namespace by default and must be exported to be available to other modules 
 
-### converting JS code to TS
+- TS supports CommonJS syntax and ECMAScript 2015 syntax
 
-### generating declaration files
+### using modules
 
-### referencing 3rd party libraries
+- add module option to tsconfig
 
-### converting to external modules
+- CommonJS = `import Model = require('./model');`
+
+- ECMAScript 2015 = `import * as Model from './model';` or `import { Todo, User } from './model'`
+
+
+### extras
 
 ### debugging TS with source maps
 
-## decorators
+- an emerging browser feature 
 
-### implementing method decorators
+- allows language compilers to tell browsers where exactly a particular variable or expression lives in the original source code, regardless what that source code is 
 
-### implementing class decorators
+- setting the sourceMap complier option to true creates an additional map file along with every JS file 
 
-### implementing property decorators
+### decorators
 
-### implementing decorator factories
+- a proposed ECMAScript syntax that allow you to implement the decorator design pattern to modify the behavior of a class, method, property, or parameter in a declarative fashion 
+
+- this powerful approach allows you to define common behavior in a central place and then easily apply it across your application to reduce duplicate code and make your code more readable and maintable, all at the same time 
+
+- a decorator is just a function with a special signature
+
+- decorators support 4 different targets, classes, methods, properties, parameters
