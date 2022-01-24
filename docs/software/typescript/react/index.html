@@ -1299,6 +1299,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../react/state-management/" class="md-nav__link">
+        State Management
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1402,9 +1416,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#handling-state" class="md-nav__link">
-    handling state
+  <a href="#general" class="md-nav__link">
+    general
   </a>
+  
+    <nav class="md-nav" aria-label="general">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#react" class="md-nav__link">
+    React
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typescript" class="md-nav__link">
+    TypeScript
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1630,9 +1664,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#handling-state" class="md-nav__link">
-    handling state
+  <a href="#general" class="md-nav__link">
+    general
   </a>
+  
+    <nav class="md-nav" aria-label="general">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#react" class="md-nav__link">
+    React
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typescript" class="md-nav__link">
+    TypeScript
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1694,9 +1748,36 @@
 <ul>
 <li><code>npx create-react-app --template typescript react-with-typescript</code></li>
 </ul>
-<h2 id="handling-state">handling state<a class="headerlink" href="#handling-state" title="Permanent link">&para;</a></h2>
+<h2 id="general">general<a class="headerlink" href="#general" title="Permanent link">&para;</a></h2>
+<h3 id="react">React<a class="headerlink" href="#react" title="Permanent link">&para;</a></h3>
 <ul>
-<li>useState hook is responsible for storing data inside of a component </li>
+<li>
+<p><code>componentWillMount()</code> = will run before your component mounts</p>
+</li>
+<li>
+<p><code>componentDidMount()</code> = will run after your component mounts</p>
+</li>
+</ul>
+<h3 id="typescript">TypeScript<a class="headerlink" href="#typescript" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>a tuple is an array that can have more than 1 type</p>
+</li>
+<li>
+<p>enums is an object with specific types, like modeling data</p>
+</li>
+<li>
+<p>readOnly = items that can only be read once and then you cannot change it </p>
+</li>
+<li>
+<p>if you create an interface with readonly Properties, it means these props in your component can only be created once and not be changed after the fact</p>
+</li>
+<li>
+<p>HOC = Higher-Order Components, functions that take a component and return a new one </p>
+</li>
+<li>
+<p>when you have components that are similar but have slight differences, this is a good case for an HOC</p>
+</li>
 </ul>
 <h2 id="project-files">project files<a class="headerlink" href="#project-files" title="Permanent link">&para;</a></h2>
 <h3 id="packagejson">package.json<a class="headerlink" href="#packagejson" title="Permanent link">&para;</a></h3>
@@ -1785,37 +1866,37 @@
   <span class="o">&lt;</span><span class="err">/React.StrictMode&gt;,</span>
   <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">)</span>
 <span class="p">);</span>
+        <span class="c1">//let firstValue: string = &quot;justin&quot;;</span>
+        <span class="c1">//let firstValue: number = 5;</span>
+        <span class="c1">//let firstValue: boolean = true;</span>
+        <span class="c1">//let firstValue: number[] = [1,2,3];</span>
+        <span class="c1">// let firstValue: Array&lt;string&gt; = [&quot;justin&quot;,&quot;tyler&quot;,&quot;angeles&quot;];</span>
 
-<span class="c1">// If you want to start measuring performance in your app, pass a function</span>
-<span class="c1">// to log results (for example: reportWebVitals(console.log))</span>
-<span class="c1">// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals</span>
+        <span class="c1">// tuple</span>
+        <span class="c1">// let aTuple: [string, number] = [&quot;justin&quot;, 26]</span>
+
 <span class="nx">reportWebVitals</span><span class="p">();</span>
 </code></pre></div>
 <h3 id="apptsx">App.tsx<a class="headerlink" href="#apptsx" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="nx">React</span> <span class="kr">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
 <span class="k">import</span> <span class="nx">logo</span> <span class="kr">from</span> <span class="s1">&#39;./logo.svg&#39;</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Message</span> <span class="kr">from</span> <span class="s1">&#39;./Message&#39;</span><span class="p">;</span>
 <span class="k">import</span> <span class="s1">&#39;./App.css&#39;</span><span class="p">;</span>
 
-<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s2">&quot;App&quot;</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">header</span> <span class="nx">className</span><span class="o">=</span><span class="s2">&quot;App-header&quot;</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">logo</span><span class="p">}</span> <span class="nx">className</span><span class="o">=</span><span class="s2">&quot;App-logo&quot;</span> <span class="nx">alt</span><span class="o">=</span><span class="s2">&quot;logo&quot;</span> <span class="o">/&gt;</span>
-        <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
-          <span class="nx">Edit</span> <span class="o">&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nx">src</span><span class="o">/</span><span class="nx">App</span><span class="p">.</span><span class="nx">tsx</span><span class="o">&lt;</span><span class="err">/code&gt; and save to reload.</span>
-        <span class="o">&lt;</span><span class="err">/p&gt;</span>
-        <span class="o">&lt;</span><span class="nx">a</span>
-          <span class="nx">className</span><span class="o">=</span><span class="s2">&quot;App-link&quot;</span>
-          <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;https://reactjs.org&quot;</span>
-          <span class="nx">target</span><span class="o">=</span><span class="s2">&quot;_blank&quot;</span>
-          <span class="nx">rel</span><span class="o">=</span><span class="s2">&quot;noopener noreferrer&quot;</span>
-        <span class="o">&gt;</span>
-          <span class="nx">Learn</span> <span class="nx">React</span>
-        <span class="o">&lt;</span><span class="err">/a&gt;</span>
-      <span class="o">&lt;</span><span class="err">/header&gt;</span>
-    <span class="o">&lt;</span><span class="err">/div&gt;</span>
-  <span class="p">);</span>
+<span class="kd">class</span> <span class="nx">App</span> <span class="k">extends</span> <span class="nx">Component</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">{</span>
+    <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s2">&quot;App&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">header</span> <span class="nx">className</span><span class="o">=</span><span class="s2">&quot;App-header&quot;</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">logo</span><span class="p">}</span> <span class="nx">className</span><span class="o">=</span><span class="s2">&quot;App-logo&quot;</span> <span class="nx">alt</span><span class="o">=</span><span class="s2">&quot;logo&quot;</span> <span class="o">/&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">Message</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;Justin&quot;</span> <span class="nx">message</span><span class="o">=</span><span class="s2">&quot;simple message&quot;</span><span class="o">/&gt;</span>
+                <span class="o">&lt;</span><span class="err">/header&gt;</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+        <span class="p">);</span>
+
+    <span class="p">}</span>
 <span class="p">}</span>
+
 
 <span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
 </code></pre></div>

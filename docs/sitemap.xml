@@ -256,17 +256,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.justintylers.com/software/react/modern-applications/</loc>
-         <lastmod>2022-01-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.justintylers.com/software/react/rendering-process/</loc>
          <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/software/react/software-architecture/</loc>
+         <lastmod>2022-01-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.justintylers.com/software/react/state-management/</loc>
          <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
     </url>

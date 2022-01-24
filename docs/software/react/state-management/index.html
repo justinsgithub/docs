@@ -10,14 +10,14 @@
       
       
       
-        <link rel="canonical" href="https://docs.justintylers.com/software/react/modern-applications/">
+        <link rel="canonical" href="https://docs.justintylers.com/software/react/state-management/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.7">
     
     
       
-        <title>Modern Projects with React - Justins Docs</title>
+        <title>State Management - Justins Docs</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#modern-projects-with-react" class="md-skip">
+        <a href="#managing-state-in-react" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Modern Projects with React
+              State Management
             
           </span>
         </div>
@@ -1029,12 +1029,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
       
       
       
@@ -1191,12 +1193,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_4" type="checkbox" id="__nav_8_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_4" type="checkbox" id="__nav_8_4" checked>
       
       
       
@@ -1292,6 +1296,232 @@
       <a href="../software-architecture/" class="md-nav__link">
         Software Architecture
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          State Management
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        State Management
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#most-popular-state-management-solutions" class="md-nav__link">
+    most popular state management solutions:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#existing-solutions-in-react" class="md-nav__link">
+    existing solutions in React
+  </a>
+  
+    <nav class="md-nav" aria-label="existing solutions in React">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avoid-prematurely-adding-state-management-packages" class="md-nav__link">
+    avoid prematurely adding state management packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-power-of-setstate" class="md-nav__link">
+    the power of setState()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-fetching-using-only-react" class="md-nav__link">
+    data fetching using only React
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avoid-the-pitfall-of-prop-drilling" class="md-nav__link">
+    avoid the pitfall of prop drilling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-context" class="md-nav__link">
+    defining context
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-context-api" class="md-nav__link">
+    using the context API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#react-hooks-refactoring" class="md-nav__link">
+    React Hooks: Refactoring
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evolution-of-state-management" class="md-nav__link">
+    Evolution of State Management
+  </a>
+  
+    <nav class="md-nav" aria-label="Evolution of State Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flux-wars-beginnings-of-redux" class="md-nav__link">
+    Flux wars: beginnings of Redux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#you-dont-need-redux" class="md-nav__link">
+    you don't need Redux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redux-feature" class="md-nav__link">
+    Redux feature
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redux-feature-container" class="md-nav__link">
+    Redux feature container
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#benefits-of-redux" class="md-nav__link">
+    benefits of Redux
+  </a>
+  
+    <nav class="md-nav" aria-label="benefits of Redux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#immutability-out-of-the-box" class="md-nav__link">
+    immutability out of the box
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits-of-redux-middleware" class="md-nav__link">
+    benefits of Redux middleware
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-state-should-live-in-your-components" class="md-nav__link">
+    where state should live in your components
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging-with-redux" class="md-nav__link">
+    debugging with Redux
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#react-and-redux-alternatives" class="md-nav__link">
+    React and Redux Alternatives
+  </a>
+  
+    <nav class="md-nav" aria-label="React and Redux Alternatives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mobx-ooj-statement-approach" class="md-nav__link">
+    MobX: OOJ statement approach
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apollo-link-state-state-management-with-graphql" class="md-nav__link">
+    Apollo Link State: state management with GraphQL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1544,30 +1774,65 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    overview
+  <a href="#most-popular-state-management-solutions" class="md-nav__link">
+    most popular state management solutions:
   </a>
   
-    <nav class="md-nav" aria-label="overview">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#existing-solutions-in-react" class="md-nav__link">
+    existing solutions in React
+  </a>
+  
+    <nav class="md-nav" aria-label="existing solutions in React">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#why-use-react-ecosystem" class="md-nav__link">
-    why use React ecosystem
+  <a href="#avoid-prematurely-adding-state-management-packages" class="md-nav__link">
+    avoid prematurely adding state management packages
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#separation-of-concerns" class="md-nav__link">
-    separation of concerns
+  <a href="#the-power-of-setstate" class="md-nav__link">
+    the power of setState()
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#react-ecosystem-tools" class="md-nav__link">
-    React ecosystem tools
+  <a href="#data-fetching-using-only-react" class="md-nav__link">
+    data fetching using only React
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avoid-the-pitfall-of-prop-drilling" class="md-nav__link">
+    avoid the pitfall of prop drilling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-context" class="md-nav__link">
+    defining context
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-context-api" class="md-nav__link">
+    using the context API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#react-hooks-refactoring" class="md-nav__link">
+    React Hooks: Refactoring
   </a>
   
 </li>
@@ -1578,79 +1843,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#basic-project" class="md-nav__link">
-    basic project
+  <a href="#evolution-of-state-management" class="md-nav__link">
+    Evolution of State Management
   </a>
   
-    <nav class="md-nav" aria-label="basic project">
+    <nav class="md-nav" aria-label="Evolution of State Management">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#building-react-project-from-scratch" class="md-nav__link">
-    building React project from scratch
+  <a href="#flux-wars-beginnings-of-redux" class="md-nav__link">
+    Flux wars: beginnings of Redux
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#react-entry-point" class="md-nav__link">
-    React entry point
+  <a href="#you-dont-need-redux" class="md-nav__link">
+    you don't need Redux
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#supporting-es6" class="md-nav__link">
-    supporting ES6
+  <a href="#redux-feature" class="md-nav__link">
+    Redux feature
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#indexjs-and-app-component" class="md-nav__link">
-    index.js and App component
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#building-serving-with-webpack" class="md-nav__link">
-    building &amp; serving with webpack
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hot-reloading-with-react-hot-loader" class="md-nav__link">
-    hot-reloading with react-hot-loader
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sample-app" class="md-nav__link">
-    sample app
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#todolist-component" class="md-nav__link">
-    todoList component
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#todolistitem-component" class="md-nav__link">
-    todoListItem component
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#newtodoform-component" class="md-nav__link">
-    newTodoForm component
+  <a href="#redux-feature-container" class="md-nav__link">
+    Redux feature container
   </a>
   
 </li>
@@ -1661,37 +1884,70 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#redux" class="md-nav__link">
-    Redux
+  <a href="#benefits-of-redux" class="md-nav__link">
+    benefits of Redux
   </a>
+  
+    <nav class="md-nav" aria-label="benefits of Redux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#immutability-out-of-the-box" class="md-nav__link">
+    immutability out of the box
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits-of-redux-middleware" class="md-nav__link">
+    benefits of Redux middleware
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-state-should-live-in-your-components" class="md-nav__link">
+    where state should live in your components
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging-with-redux" class="md-nav__link">
+    debugging with Redux
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#side-effects" class="md-nav__link">
-    side effects
+  <a href="#react-and-redux-alternatives" class="md-nav__link">
+    React and Redux Alternatives
+  </a>
+  
+    <nav class="md-nav" aria-label="React and Redux Alternatives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mobx-ooj-statement-approach" class="md-nav__link">
+    MobX: OOJ statement approach
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#selectors" class="md-nav__link">
-    selectors
+        
+          <li class="md-nav__item">
+  <a href="#apollo-link-state-state-management-with-graphql" class="md-nav__link">
+    Apollo Link State: state management with GraphQL
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#styled-components" class="md-nav__link">
-    styled-components
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#testing" class="md-nav__link">
-    testing
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1708,211 +1964,144 @@
               
                 
 
-<h1 id="modern-projects-with-react">Modern Projects with React<a class="headerlink" href="#modern-projects-with-react" title="Permanent link">&para;</a></h1>
-<h2 id="overview">overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<h3 id="why-use-react-ecosystem">why use React ecosystem<a class="headerlink" href="#why-use-react-ecosystem" title="Permanent link">&para;</a></h3>
-<ul>
-<li>a bit of a learning curve</li>
-<li>might seem a little cumbersome at first</li>
-<li>vanilla React was created as a way to create performant, modular user interfaces</li>
-<li>when it comes to the MVC, Reacts main concern falls squarely into the view portion</li>
-<li>provides straight-forward powerful way to take some data and display it in the users browser</li>
-<li>as well as efficiently update what the user sees whenever the data changes</li>
-<li>when it comes to how we load, store and manipulate that data that we are displaying, React does not really provide us with much guidance (which is somewhat on purpose)</li>
-<li>the idea behind the lack of opinion is that it allows React developers to make their own decision with respect to the best way to load data into their own application and tailor React to their exact use case</li>
-<li>React is purposefully designed to make their own data management decisions</li>
-<li>takes alot of experiment and thought to get right and in practice React developers do not put much thought into these decisions</li>
-<li>the end result is that all of this logic ends up getting crammed straight into the components themselves</li>
-<li>this means that in a React application we end up witht these huge tangled up components that contain all the logic for loading and managing their own data</li>
-<li>can make projects very hard to expand and maintain</li>
-<li>if you have already put a lot of thought into organizing your React code, then you might not need all the tools in the React ecosystem</li>
-</ul>
-<h3 id="separation-of-concerns">separation of concerns<a class="headerlink" href="#separation-of-concerns" title="Permanent link">&para;</a></h3>
-<ul>
-<li>this is the main idea behind most React ecosystem tools</li>
-<li>for most React tools the main purpose is to separate concerns and organize a React project better</li>
-</ul>
-<h3 id="react-ecosystem-tools">React ecosystem tools<a class="headerlink" href="#react-ecosystem-tools" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Redux:</li>
-<li>the most popular add-on in React ecosystem</li>
-<li>helps us manage the state of our React applications in an effective and relatively bug-free way</li>
-<li>
-<p>uses the Flux Architecture (a fancy name for a simple concept)</p>
-</li>
-<li>
-<p>Redux Thunk:</p>
-</li>
-<li>allows us to separate out the so-called side effects of our application</li>
-<li>side effects are permanent changes such as modifying user data on a server, or uploading an article for example</li>
-<li>network requests, etc</li>
-<li>the idea is that this avoids us putting the logic directly inside out components (separation of concerns)</li>
-<li>our components are meant to display our data and that is it</li>
-<li>
-<p>components should not be worrying about making network requests and Thunk gives us a place to put this logic</p>
-</li>
-<li>
-<p>selectors (Reselect):</p>
-</li>
-<li>
-<p>abstract away the details of how our data is stored in the state</p>
-</li>
-<li>
-<p>styled components:</p>
-</li>
-<li>a better way of styling our components instead of using separate CSS files, particularly when the appearance of a component depends on the state in some way</li>
-</ul>
-<h2 id="basic-project">basic project<a class="headerlink" href="#basic-project" title="Permanent link">&para;</a></h2>
-<h3 id="building-react-project-from-scratch">building React project from scratch<a class="headerlink" href="#building-react-project-from-scratch" title="Permanent link">&para;</a></h3>
+<h1 id="managing-state-in-react">Managing State in React<a class="headerlink" href="#managing-state-in-react" title="Permanent link">&para;</a></h1>
 <ul>
 <li>
-<p>without create-react-app</p>
-</li>
-<li>
-<p>what do we need to create a React app?:</p>
-<ol>
-<li>index.html, sent to the client and what React renders our app into</li>
-<li>support for ES6, to use modern JS syntax</li>
-<li>webpack, to build our app and use things like CSS styles, and serve our app during development</li>
-<li>root component, the base of our component tree, like a container that holds the rest of our application components</li>
-<li>react-hot-loader, to see the changes that we make to our app immediately in development without having to refresh our app everytime</li>
-</ol>
+<p>immutability = not modifying a variable after it is created</p>
+<ul>
+<li>in Redux specifically, it means not mutating states directly</li>
+</ul>
 </li>
 </ul>
-<h3 id="react-entry-point">React entry point<a class="headerlink" href="#react-entry-point" title="Permanent link">&para;</a></h3>
-<ul>
-<li>create and setup directory that will hold React project</li>
-</ul>
-<div class="highlight"><pre><span></span><code>mkdir ~/react-project
-<span class="nb">cd</span> ~/react-project 
-npm init -y 
-git init 
-mkdir public
-mkdir src
-touch public/index.html
-</code></pre></div>
-<ul>
-<li>index.html</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;icon&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;%PUBLIC_URL%/favicon.ico&quot;</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;theme-color&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;#000000&quot;</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span>
-      <span class="na">name</span><span class="o">=</span><span class="s">&quot;description&quot;</span>
-      <span class="na">content</span><span class="o">=</span><span class="s">&quot;Web site created using create-react-app&quot;</span>
-    <span class="p">/&gt;</span>
-    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;apple-touch-icon&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;%PUBLIC_URL%/logo192.png&quot;</span> <span class="p">/&gt;</span>
-    <span class="cm">&lt;!--</span>
-<span class="cm">      manifest.json provides metadata used when your web app is installed on a</span>
-<span class="cm">      user&#39;s mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/</span>
-<span class="cm">    --&gt;</span>
-    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;manifest&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;%PUBLIC_URL%/manifest.json&quot;</span> <span class="p">/&gt;</span>
-    <span class="cm">&lt;!--</span>
-<span class="cm">      Notice the use of %PUBLIC_URL% in the tags above.</span>
-<span class="cm">      It will be replaced with the URL of the `public` folder during the build.</span>
-<span class="cm">      Only files inside the `public` folder can be referenced from the HTML.</span>
-
-<span class="cm">      Unlike &quot;/favicon.ico&quot; or &quot;favicon.ico&quot;, &quot;%PUBLIC_URL%/favicon.ico&quot; will</span>
-<span class="cm">      work correctly both with client-side routing and a non-root public URL.</span>
-<span class="cm">      Learn how to configure a non-root public URL by running `npm run build`.</span>
-<span class="cm">    --&gt;</span>
-    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>React App<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">noscript</span><span class="p">&gt;</span>You need to enable JavaScript to run this app.<span class="p">&lt;/</span><span class="nt">noscript</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;root&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="cm">&lt;!--</span>
-<span class="cm">      This HTML file is a template.</span>
-<span class="cm">      If you open it directly in the browser, you will see an empty page.</span>
-
-<span class="cm">      You can add webfonts, meta tags, or analytics to this file.</span>
-<span class="cm">      The build step will place the bundled scripts into the &lt;body&gt; tag.</span>
-
-<span class="cm">      To begin the development, run `npm start` or `yarn start`.</span>
-<span class="cm">      To create a production bundle, use `npm run build` or `yarn build`.</span>
-<span class="cm">    --&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div>
-<h3 id="supporting-es6">supporting ES6<a class="headerlink" href="#supporting-es6" title="Permanent link">&para;</a></h3>
+<h3 id="most-popular-state-management-solutions">most popular state management solutions:<a class="headerlink" href="#most-popular-state-management-solutions" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p><code>npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/preset-react</code></p>
+<p>React:</p>
+<ul>
+<li>built in state management solutions</li>
+</ul>
 </li>
 <li>
-<p>create babel.rc file</p>
-</li>
-</ul>
-<h3 id="indexjs-and-app-component">index.js and App component<a class="headerlink" href="#indexjs-and-app-component" title="Permanent link">&para;</a></h3>
+<p>Redux:</p>
 <ul>
 <li>
-<p>npm i react react-dom</p>
+<p>most popular option, emphasizes one-way data flow and immutability </p>
 </li>
 <li>
-<p>App.js</p>
+<p>which means every time you change state, such as changing information on a user profile, what is returned to React is a copy of the old state with just the new thing changed, not simply the modification </p>
+</li>
+<li>
+<p>that might sound redundant or wasteful, but there are some great benefits that include undo and redo functionality and better debuggability</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="nx">React</span> <span class="kr">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">hot</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;react-hot-loader&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">styled</span> <span class="kr">from</span> <span class="s1">&#39;styled-components&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">TodoList</span> <span class="kr">from</span> <span class="s1">&#39;./todos/TodoList&#39;</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">AppContainer</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">div</span><span class="sb">`</span>
-<span class="sb">    margin: 1rem;</span>
-<span class="sb">    font-family: Arial, Helvetica, sans-serif;</span>
-<span class="sb">    color: #222222;</span>
-<span class="sb">    width: 100vw;</span>
-<span class="sb">    height: 100vh;</span>
-<span class="sb">`</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">AppContainer</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">TodoList</span> <span class="o">/&gt;</span>
-    <span class="o">&lt;</span><span class="err">/AppContainer&gt;</span>
-<span class="p">);</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">hot</span><span class="p">(</span><span class="nx">module</span><span class="p">)(</span><span class="nx">App</span><span class="p">);</span>
-</code></pre></div>
+</li>
+<li>
+<p>MobX:</p>
 <ul>
-<li>index.js</li>
+<li>
+<p>appeals to those with knowledge and background in object orientated programming </p>
+</li>
+<li>
+<p>uses the observer pattern which allows the system to build a dependency tree among different parts of state</p>
+</li>
+<li>
+<p>produces free rendering of components by just keeping track of what needs mutated</p>
+</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="nx">React</span> <span class="kr">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">ReactDOM</span> <span class="kr">from</span> <span class="s1">&#39;react-dom&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">persistStore</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;redux-persist&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">PersistGate</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;redux-persist/lib/integration/react&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Provider</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;react-redux&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">configureStore</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;./store&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">App</span> <span class="kr">from</span> <span class="s1">&#39;./App.js&#39;</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">configureStore</span><span class="p">();</span>
-<span class="kd">const</span> <span class="nx">persistor</span> <span class="o">=</span> <span class="nx">persistStore</span><span class="p">(</span><span class="nx">store</span><span class="p">);</span>
-
-<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">Provider</span> <span class="nx">store</span><span class="o">=</span><span class="p">{</span><span class="nx">store</span><span class="p">}</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">PersistGate</span>
-            <span class="nx">loading</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Loading</span><span class="p">...</span><span class="o">&lt;</span><span class="err">/div&gt;}</span>
-            <span class="nx">persistor</span><span class="o">=</span><span class="p">{</span><span class="nx">persistor</span><span class="p">}</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="nx">App</span> <span class="o">/&gt;</span>
-        <span class="o">&lt;</span><span class="err">/PersistGate&gt;</span>
-    <span class="o">&lt;</span><span class="err">/Provider&gt;,</span>
-    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">),</span>
-<span class="p">);</span>
-</code></pre></div>
-<h3 id="building-serving-with-webpack">building &amp; serving with webpack<a class="headerlink" href="#building-serving-with-webpack" title="Permanent link">&para;</a></h3>
-<h3 id="hot-reloading-with-react-hot-loader">hot-reloading with react-hot-loader<a class="headerlink" href="#hot-reloading-with-react-hot-loader" title="Permanent link">&para;</a></h3>
-<h3 id="sample-app">sample app<a class="headerlink" href="#sample-app" title="Permanent link">&para;</a></h3>
-<h3 id="todolist-component">todoList component<a class="headerlink" href="#todolist-component" title="Permanent link">&para;</a></h3>
-<h3 id="todolistitem-component">todoListItem component<a class="headerlink" href="#todolistitem-component" title="Permanent link">&para;</a></h3>
-<h3 id="newtodoform-component">newTodoForm component<a class="headerlink" href="#newtodoform-component" title="Permanent link">&para;</a></h3>
-<h2 id="redux">Redux<a class="headerlink" href="#redux" title="Permanent link">&para;</a></h2>
-<h2 id="side-effects">side effects<a class="headerlink" href="#side-effects" title="Permanent link">&para;</a></h2>
-<h2 id="selectors">selectors<a class="headerlink" href="#selectors" title="Permanent link">&para;</a></h2>
-<h2 id="styled-components">styled-components<a class="headerlink" href="#styled-components" title="Permanent link">&para;</a></h2>
-<h2 id="testing">testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
+</li>
+<li>
+<p>Apollo and GraphQL</p>
+</li>
+</ul>
+<h2 id="existing-solutions-in-react">existing solutions in React<a class="headerlink" href="#existing-solutions-in-react" title="Permanent link">&para;</a></h2>
+<h3 id="avoid-prematurely-adding-state-management-packages">avoid prematurely adding state management packages<a class="headerlink" href="#avoid-prematurely-adding-state-management-packages" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>as soon as you extend beyond basically functionality there is typically some need for a state management solution</p>
+</li>
+<li>
+<p>the main reason to use a state management solution, is that it manages business logic</p>
+</li>
+<li>
+<p>presentation logic:</p>
+<ul>
+<li>
+<p>logic that is associated with how components appear on a page </p>
+</li>
+<li>
+<p>when should a modal pop up? </p>
+</li>
+<li>
+<p>when should the color of a button change?</p>
+</li>
+<li>
+<p>does not have to do with the purpose of the application </p>
+</li>
+<li>
+<p>think of logic that is agnostic towards the applications purpose</p>
+</li>
+</ul>
+</li>
+<li>
+<p>business logic:</p>
+<ul>
+<li>
+<p>handling, manipulating, and storing business objects</p>
+</li>
+<li>
+<p>for example like in a todo app where a user needs to login, it could mean things like user accounts or items in a todo list </p>
+</li>
+<li>
+<p>unlike presentation logic, this is logic that is application-specific</p>
+</li>
+</ul>
+</li>
+<li>
+<p>handling business logic is the most common use case for introducing a state management library</p>
+</li>
+<li>
+<p>figuring out where to connect presentation and business logic can be pretty tricky: </p>
+<ul>
+<li>
+<p>we can run into all kinds of problems to solve</p>
+</li>
+<li>
+<p>how do we persist state for users between sessions?  </p>
+</li>
+<li>
+<p>how does React know that our data has changed and that we need to re-render the component</p>
+</li>
+</ul>
+</li>
+<li>
+<p>state management makes opinionated decisions for us, that allow us to work in a consistent system</p>
+</li>
+<li>
+<p>if you do not use a state management system, this would mean you store every part of your business logic in a React state</p>
+<ul>
+<li>this is not best practice </li>
+</ul>
+</li>
+</ul>
+<h3 id="the-power-of-setstate">the power of setState()<a class="headerlink" href="#the-power-of-setstate" title="Permanent link">&para;</a></h3>
+<h3 id="data-fetching-using-only-react">data fetching using only React<a class="headerlink" href="#data-fetching-using-only-react" title="Permanent link">&para;</a></h3>
+<h3 id="avoid-the-pitfall-of-prop-drilling">avoid the pitfall of prop drilling<a class="headerlink" href="#avoid-the-pitfall-of-prop-drilling" title="Permanent link">&para;</a></h3>
+<h3 id="defining-context">defining context<a class="headerlink" href="#defining-context" title="Permanent link">&para;</a></h3>
+<h3 id="using-the-context-api">using the context API<a class="headerlink" href="#using-the-context-api" title="Permanent link">&para;</a></h3>
+<h3 id="react-hooks-refactoring">React Hooks: Refactoring<a class="headerlink" href="#react-hooks-refactoring" title="Permanent link">&para;</a></h3>
+<h2 id="evolution-of-state-management">Evolution of State Management<a class="headerlink" href="#evolution-of-state-management" title="Permanent link">&para;</a></h2>
+<h3 id="flux-wars-beginnings-of-redux">Flux wars: beginnings of Redux<a class="headerlink" href="#flux-wars-beginnings-of-redux" title="Permanent link">&para;</a></h3>
+<h3 id="you-dont-need-redux">you don't need Redux<a class="headerlink" href="#you-dont-need-redux" title="Permanent link">&para;</a></h3>
+<h3 id="redux-feature">Redux feature<a class="headerlink" href="#redux-feature" title="Permanent link">&para;</a></h3>
+<h3 id="redux-feature-container">Redux feature container<a class="headerlink" href="#redux-feature-container" title="Permanent link">&para;</a></h3>
+<h2 id="benefits-of-redux">benefits of Redux<a class="headerlink" href="#benefits-of-redux" title="Permanent link">&para;</a></h2>
+<h3 id="immutability-out-of-the-box">immutability out of the box<a class="headerlink" href="#immutability-out-of-the-box" title="Permanent link">&para;</a></h3>
+<h3 id="benefits-of-redux-middleware">benefits of Redux middleware<a class="headerlink" href="#benefits-of-redux-middleware" title="Permanent link">&para;</a></h3>
+<h3 id="where-state-should-live-in-your-components">where state should live in your components<a class="headerlink" href="#where-state-should-live-in-your-components" title="Permanent link">&para;</a></h3>
+<h3 id="debugging-with-redux">debugging with Redux<a class="headerlink" href="#debugging-with-redux" title="Permanent link">&para;</a></h3>
+<h2 id="react-and-redux-alternatives">React and Redux Alternatives<a class="headerlink" href="#react-and-redux-alternatives" title="Permanent link">&para;</a></h2>
+<h3 id="mobx-ooj-statement-approach">MobX: OOJ statement approach<a class="headerlink" href="#mobx-ooj-statement-approach" title="Permanent link">&para;</a></h3>
+<h3 id="apollo-link-state-state-management-with-graphql">Apollo Link State: state management with GraphQL<a class="headerlink" href="#apollo-link-state-state-management-with-graphql" title="Permanent link">&para;</a></h3>
 
               
             </article>
@@ -1922,6 +2111,41 @@ touch public/index.html
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../software-architecture/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Software Architecture" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Software Architecture
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../typescript/" class="md-footer__link md-footer__link--next" aria-label="Next: Intro" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Intro
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
