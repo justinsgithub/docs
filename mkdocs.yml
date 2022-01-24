@@ -90,6 +90,7 @@ nav:
       - Hooks Descriptions: software/react/hooks-descriptions.md
       - Hooks Examples: software/react/hooks-examples.md
       - Software Architecture: software/react/software-architecture.md
+      - State Management: software/react/state-management.md
     - TypeScript:
       - Intro: software/typescript/index.md 
       - Essentials: software/typescript/essentials.md 

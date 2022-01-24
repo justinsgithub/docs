@@ -10,8 +10,13 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+        //let firstValue: string = "justin";
+        //let firstValue: number = 5;
+        //let firstValue: boolean = true;
+        //let firstValue: number[] = [1,2,3];
+        // let firstValue: Array<string> = ["justin","tyler","angeles"];
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+        // tuple
+        // let aTuple: [string, number] = ["justin", 26]
+        
 reportWebVitals();

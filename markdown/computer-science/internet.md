@@ -212,7 +212,7 @@ CNAME record = canonical name record
 
 - the daemon for most web servers is the HTTPd program, or HTTP daemon
 
-- httpd does 1 thing, listens to requests that are routed to the server 
+- HTTPd does 1 thing, listens to requests that are routed to the server 
 
 ### hypertext and HTML
 
@@ -228,14 +228,89 @@ CNAME record = canonical name record
 
 - when you send information over the internet, it is publicly visible by default 
 
-- SSL = Secure Sockets Layer
+- SSL = Secure Sockets Layer, early version of security, created by Netscape
 
-- TSL = Transport Layer Security 
+- TLS = Transport Layer Security 
+
+- TLS performs a few basic things:
+
+    - it creates and verifies a connection from the client to the server
+
+    - it then creates and verifies the connection from the server to the client 
+
+    - this is called handshaking, when you shake hands, both hands need to reach out and grasp the other, so the greeting is verified by both sides
+
+    - when the handshake happens, TLS then encrypts the data that is being sent in both directions
+
+    - when it encrypts the message it is still able to preserve the header of the packets that will be used to transport the data since this all still needs to work on the TCP/IP protocol
+    
+- authentication is done using a security certificate 
+
+- a certificate is granted by a known security entity that verifies that the companies, servers, and networks are who they say they are
+
+- on that certificate it defines:
+    - the domain name that is allowed to use the certificate 
+    - a public key that is used to encrypt the message 
+    - the company that owns it 
+    - when it was issued
+    - when it expires
+
+- using the above information you are able to trust the certificate and send private information confidently between your computer and a server on the internet
 
 ## encryption
 
 ### Caesar's cypher and keys
 
+- messages that are transmitted over the internet using protocols like TCP/IP are visible to the rest of the network 
+
+- so any message could be intercepted and read as you request and send information 
+
+- servers that handle sensitive information or products that want to offer greater encryption, such as messaging apps, online shopping services, and banking applications, need to offer a way to encrypt 
+
+- one of the earliest ways of encryption was called Ceasars cipher, invented by Julius Ceaser
+
 ### improving security with longer keys
 
+- the more bits we add to a key, the more complex it becomes to solve 
+
+- for a long time keys on the internet were based on 128 bits 
+
+- using this each message as was decoded and transported over TCP/IP, via thousands or millions of packets, was considered secure 
+
+- with 128 bit keys there are 2 to the 128 power (339 decillion) combinations possible in the key, even then incredibly powerful computers were still able to crack security certificates that had 128-bit keys 
+
+- today there are 3 standard bit sizes for keys, 128-bit, 196-bit, 256-bit 
+
+- AES = Advanced Encryption standard
+
+- AES is a standard for how electronic data is encrypted in the United States and is recognized throughout the world 
+
+- AES is based on a cipher called the Rijndael, in this cipher, information is organized in a 4-by-4 matrix of bytes, and each matrix has a unique key that either substitutes values, shifts rows, or mixes columns to scramble the message 
+
+- each one offers a greater level of security than the other, but as computers get more and more advanced, faster and smarter , new ways to secure information will need to be created to make sure that your information is safe 
+
 ### symmetric and asymmetric keys
+
+- simple keys like Ceasars cipher require that both sides of the message agree and will be applied to the message before it is sent, this is called symmetric Security 
+
+- symmetric security works fine in situations where you have exchanged that information in private, but in the case of the internet, it wouldn't work 
+
+- if i want to establish a security key with a server, if i want to let that server know what the key is, i would need to send it to the server over an unsecure connection, so anyone could read what the security key is, and then potentially use it to intercept messages and crack them later on
+
+    - the trick to make this work is to have two keys 
+
+    - one that the sender uses to encrypt and send information, but is not able to be used to decrypt it 
+
+    - the other is a key that is only on the receiver's end, and can be used to decrypt all the information that it receives, this is called asymmetric security 
+
+    - as a sender encrypts and sends information, even if someone is able to find a key, it can be used to decrypt it, since the key works in only one way 
+
+    - the receiver with the second key can be used to decrypt all the messages 
+
+- cryptography and advanced mathematics make it possible to have a single master key that can be used to decrypt multiple messages, while having multiple other keys that can be used to encrypt content, these are called public keys and private keys 
+
+- public keys can be exchanged and shared, but they work only in one way 
+
+- the private key is the only way a message can be decrypted, but it is never shared since it could be used to crack any coded messages sent to the server 
+
+- when you are working with the internet and use secure servers using AES security keys and certificates, these are based on asymmetric security, where there are public keys that are used to encode information, and a private key, used to decode and decipher encrypted messages sent to the server 
