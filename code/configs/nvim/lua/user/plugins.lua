@@ -57,6 +57,7 @@ return packer.startup(function(use)
   use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
   use "goolord/alpha-nvim"
+  use "ray-x/lsp_signature.nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
   --use "Xuyuanp/nerdtree-git-plugin"
@@ -79,6 +80,8 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
+  use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine

@@ -43,13 +43,13 @@
 - App.js
 
 ```javascript
-{! software/react/design-patterns/src-split-screen-components/App.js !}
+{! software/react/design-patterns/src/split-screen-components/App.js !}
 ```
 
 - SplitScreen.js
 
 ```javascript
-{! software/react/design-patterns/src-split-screen-components/SplitScreen.js !}
+{! software/react/design-patterns/src/split-screen-components/SplitScreen.js !}
 ```
 
 ## list components
@@ -58,43 +58,43 @@
 -  App.js
 
 ```javascript
-{! software/react/design-patterns/lists/App.js!}
+{! software/react/design-patterns/src/lists/App.js!}
 ```
 
 - NumberedList.js
 
 ```javascript
-{! software/react/design-patterns/lists/NumberedList.js !}
+{! software/react/design-patterns/src/lists/NumberedList.js !}
 ```
 
 - RegularList.js
 
 ```javascript
-{! software/react/design-patterns/lists/RegularList.js !}
+{! software/react/design-patterns/src/lists/RegularList.js !}
 ```
 
 - SmallPersonListItem.js
 
 ```javascript
-{! software/react/design-patterns/lists/person/SmallPersonListItem.js !}
+{! software/react/design-patterns/src/lists/person/SmallPersonListItem.js !}
 ```
 
 - LargePersonListItem.js
 
 ```javascript
-{! software/react/design-patterns/lists/person/LargePersonListItem.js !}
+{! software/react/design-patterns/src/lists/person/LargePersonListItem.js !}
 ```
 
 - SmallProductListItem.js
 
 ```javascript
-{! software/react/design-patterns/lists/product/SmallProductListItem.js !}
+{! software/react/design-patterns/src/lists/product/SmallProductListItem.js !}
 ```
 
 - LargeProductListItem.js
 
 ```javascript
-{! software/react/design-patterns/lists/product/LargeProductListItem.js !}
+{! software/react/design-patterns/src/lists/product/LargeProductListItem.js !}
 ```
 ### modal components
 

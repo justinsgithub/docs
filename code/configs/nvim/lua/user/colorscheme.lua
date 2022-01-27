@@ -1,8 +1,11 @@
-vim.cmd [[
+-- monokai
+-- default
+
+vim.cmd([[
 try
-  colorscheme monokai
+  colorscheme monokai_soda
 catch /^Vim\%((\a\+)\)\=:E185/
  colorscheme default
 set background=dark
 endtry
-]]
+]])

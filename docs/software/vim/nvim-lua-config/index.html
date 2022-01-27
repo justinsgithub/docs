@@ -2140,6 +2140,7 @@
   <span class="n">use</span> <span class="s2">&quot;lewis6991/impatient.nvim&quot;</span>
   <span class="n">use</span> <span class="s2">&quot;lukas-reineke/indent-blankline.nvim&quot;</span>
   <span class="n">use</span> <span class="s2">&quot;goolord/alpha-nvim&quot;</span>
+  <span class="n">use</span> <span class="s2">&quot;ray-x/lsp_signature.nvim&quot;</span>
   <span class="n">use</span> <span class="s2">&quot;antoinemadec/FixCursorHold.nvim&quot;</span> <span class="c1">-- This is needed to fix lsp doc highlight</span>
   <span class="n">use</span> <span class="s2">&quot;folke/which-key.nvim&quot;</span>
   <span class="c1">--use &quot;Xuyuanp/nerdtree-git-plugin&quot;</span>
@@ -2162,6 +2163,8 @@
   <span class="n">use</span> <span class="s2">&quot;hrsh7th/cmp-cmdline&quot;</span> <span class="c1">-- cmdline completions</span>
   <span class="n">use</span> <span class="s2">&quot;saadparwaiz1/cmp_luasnip&quot;</span> <span class="c1">-- snippet completions</span>
   <span class="n">use</span> <span class="s2">&quot;hrsh7th/cmp-nvim-lsp&quot;</span>
+  <span class="n">use</span> <span class="p">{</span><span class="s1">&#39;tzachar/cmp-tabnine&#39;</span><span class="p">,</span> <span class="n">run</span><span class="o">=</span><span class="s1">&#39;./install.sh&#39;</span><span class="p">,</span> <span class="n">requires</span> <span class="o">=</span> <span class="s1">&#39;hrsh7th/nvim-cmp&#39;</span><span class="p">}</span>
+
 
   <span class="c1">-- snippets</span>
   <span class="n">use</span> <span class="s2">&quot;L3MON4D3/LuaSnip&quot;</span> <span class="c1">--snippet engine</span>
@@ -2199,14 +2202,17 @@
 <li>:colorscheme TAB will show you list of built in colorschemes</li>
 <li>custom colorscheme directory = ~/.local/share/nvim/site/pack/packer/start/colorschemes</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">vim</span><span class="p">.</span><span class="n">cmd</span> <span class="s">[[</span>
+<div class="highlight"><pre><span></span><code><span class="c1">-- monokai</span>
+<span class="c1">-- default</span>
+
+<span class="n">vim</span><span class="p">.</span><span class="n">cmd</span><span class="p">(</span><span class="s">[[</span>
 <span class="s">try</span>
-<span class="s">  colorscheme monokai</span>
+<span class="s">  colorscheme monokai_soda</span>
 <span class="s">catch /^Vim\%((\a\+)\)\=:E185/</span>
 <span class="s"> colorscheme default</span>
 <span class="s">set background=dark</span>
 <span class="s">endtry</span>
-<span class="s">]]</span>
+<span class="s">]]</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="bufferlinelua">bufferline.lua<a class="headerlink" href="#bufferlinelua" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">status_ok</span><span class="p">,</span> <span class="n">bufferline</span> <span class="o">=</span> <span class="nb">pcall</span><span class="p">(</span><span class="nb">require</span><span class="p">,</span> <span class="s2">&quot;bufferline&quot;</span><span class="p">)</span>

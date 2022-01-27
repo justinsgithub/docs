@@ -1854,34 +1854,34 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h3 id="indextsx">index.tsx<a class="headerlink" href="#indextsx" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="nx">React</span> <span class="kr">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">ReactDOM</span> <span class="kr">from</span> <span class="s1">&#39;react-dom&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="s1">&#39;./index.css&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">App</span> <span class="kr">from</span> <span class="s1">&#39;./App&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">reportWebVitals</span> <span class="kr">from</span> <span class="s1">&#39;./reportWebVitals&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="nx">React</span> <span class="kr">from</span> <span class="s1">&#39;react&#39;</span>
+<span class="k">import</span> <span class="nx">ReactDOM</span> <span class="kr">from</span> <span class="s1">&#39;react-dom&#39;</span>
+<span class="k">import</span> <span class="s1">&#39;./index.css&#39;</span>
+<span class="k">import</span> <span class="nx">App</span> <span class="kr">from</span> <span class="s1">&#39;./App&#39;</span>
+<span class="k">import</span> <span class="nx">reportWebVitals</span> <span class="kr">from</span> <span class="s1">&#39;./reportWebVitals&#39;</span>
 
 <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
   <span class="o">&lt;</span><span class="nx">React</span><span class="p">.</span><span class="nx">StrictMode</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="nx">App</span> <span class="o">/&gt;</span>
   <span class="o">&lt;</span><span class="err">/React.StrictMode&gt;,</span>
   <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">)</span>
-<span class="p">);</span>
-        <span class="c1">//let firstValue: string = &quot;justin&quot;;</span>
-        <span class="c1">//let firstValue: number = 5;</span>
-        <span class="c1">//let firstValue: boolean = true;</span>
-        <span class="c1">//let firstValue: number[] = [1,2,3];</span>
-        <span class="c1">// let firstValue: Array&lt;string&gt; = [&quot;justin&quot;,&quot;tyler&quot;,&quot;angeles&quot;];</span>
+<span class="p">)</span>
+<span class="c1">//let firstValue: string = &quot;justin&quot;;</span>
+<span class="c1">//let firstValue: number = 5;</span>
+<span class="c1">//let firstValue: boolean = true;</span>
+<span class="c1">//let firstValue: number[] = [1,2,3];</span>
+<span class="c1">// let firstValue: Array&lt;string&gt; = [&quot;justin&quot;,&quot;tyler&quot;,&quot;angeles&quot;];</span>
 
-        <span class="c1">// tuple</span>
-        <span class="c1">// let aTuple: [string, number] = [&quot;justin&quot;, 26]</span>
+<span class="c1">// tuple</span>
+<span class="c1">// let aTuple: [string, number] = [&quot;justin&quot;, 26]</span>
 
-<span class="nx">reportWebVitals</span><span class="p">();</span>
+<span class="nx">reportWebVitals</span><span class="p">()</span>
 </code></pre></div>
 <h3 id="apptsx">App.tsx<a class="headerlink" href="#apptsx" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
 <span class="k">import</span> <span class="nx">logo</span> <span class="kr">from</span> <span class="s1">&#39;./logo.svg&#39;</span><span class="p">;</span>
 <span class="k">import</span> <span class="nx">Message</span> <span class="kr">from</span> <span class="s1">&#39;./Message&#39;</span><span class="p">;</span>
-<span class="k">import</span> <span class="s1">&#39;./App.css&#39;</span><span class="p">;</span>
+<span class="k">import</span> <span class="s2">&quot;./index.css&quot;</span>
 
 <span class="kd">class</span> <span class="nx">App</span> <span class="k">extends</span> <span class="nx">Component</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">{</span>
     <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>

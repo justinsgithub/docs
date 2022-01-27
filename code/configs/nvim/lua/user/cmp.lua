@@ -15,6 +15,19 @@ local check_backspace = function()
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
 
+local tabnine = require('cmp_tabnine.config')
+tabnine:setup({
+	max_lines = 1000;
+	max_num_results = 20;
+	sort = true;
+	run_on_every_keystroke = true;
+	snippet_placeholder = '..';
+	ignored_file_types = { -- default is not to ignore
+		-- uncomment to ignore in lua:
+		-- lua = true
+	};
+})
+
 --   פּ ﯟ   some other good icons
 local kind_icons = {
   Text = "",

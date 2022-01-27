@@ -251,6 +251,15 @@ drwxr-xr-x 5 justin justin  4096 Jan 18 15:36 refs
 
 ### add files 
 
+- shows the status of repo 
+- untracked files mean they are not added to the repository and Git knows nothing about them
+- `git add` moves files to staging directory
+- `git reset HEAD <file>` to unstage files
+
+```shell 
+git status
+```
+
 ### edit files
 
 ### view changes with diff 
