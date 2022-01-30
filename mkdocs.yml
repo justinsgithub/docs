@@ -48,6 +48,7 @@ nav:
       - Requests & Responses: computer-science/HTTP/requests-responses.md
   - Creative: 
     - Emojis: creative/emojis.md
+    - SEO Fundamentals: creative/seo-fundamentals.md
     - Writing Blogs: creative/writing-blogs.md
   - Linux: 
     - Code Snips: linux/code-snips.md
@@ -68,6 +69,7 @@ nav:
       - Code Challenges: program-langs/python/code-challenges.md
       - Class Queue Deque: program-langs/python/data-structures-and-algorithms.md
       - DSA: program-langs/python/dsa.md
+      - DSA: program-langs/python/recursion.md
     - Rust:
       - Overview: program-langs/rust/index.md 
       - Datatypes: program-langs/rust/datatypes.md 
@@ -77,6 +79,7 @@ nav:
       - Mini Projects: program-langs/rust/mini-projects.md
   - Software:
     - Docker: software/docker.md
+    - ESLint Prettier: software/eslint-prettier.md
     - Git: 
       - Git Essentials: software/git/essentials.md  
       - GitHub Pages: software/git/github-pages.md  
@@ -84,11 +87,14 @@ nav:
       - Static Server: software/nodejs/static-server.md  
       - Essentials: software/nodejs/essentials.md  
     - React: 
+      - Authentication: software/react/authentication.md
+      - Color Changer: software/react/full-course/color-changer.md
       - Design Patterns: software/react/design-patterns.md
+      - Ecosystem: software/react/ecosystems.md
       - Getting Started: software/react/getting-started.md
       - Essentials: software/react/essentials.md
       - Hooks Descriptions: software/react/hooks-descriptions.md
-      - Hooks Examples: software/react/hooks-examples.md
+      - Rendering Process: software/react/rendering-process.md
       - Software Architecture: software/react/software-architecture.md
       - State Management: software/react/state-management.md
     - TypeScript:

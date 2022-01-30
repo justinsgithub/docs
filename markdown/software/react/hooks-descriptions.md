@@ -13,43 +13,13 @@
 - the initial value could be false to set the default state of an element to hide, so that it only shows when a user click on it
 - useState allows us to track the value of an element and modify our code to do things depending on the state of the useState variable
 
-```javascript 
-let [variableState, setVariableState] = useState(false)
-```
 
-### useReducer
+## useReducer
 
 - the most simple definition of a reducer function is that it takes the current state and returns a new state
 - useReducer takes in two arguments, the first is a function to change the state, and the second is the initial state
-- useReducer abstracts writing separate state changing functions and and makes our code even more concise, thank you React
+- useReducer abstracts writing separate state changing functions and makes our code even more concise, thank you React
  
-```javascript 
-import React,{useReducer} from "react";
-import "./App.css"
-
-
-function App() {
-    const [checkedState, changeCheckedState] = useReducer(
-         checkedState => !checkedState,
-        false
-    )
-
-
-    return (
-        <>
-            <input 
-                type="checkbox"
-                value={checkedState}
-                onChange={changeCheckedState}/>
-                <p>{checkedState ? "checked" : "not checked"}</p>
-        </>
-
-  );
-}
-
-export default App;
-```
-
 ## useCallback
 
 - useCallback allows us to use async functions and perform things like setState functions when its finished
