@@ -49,7 +49,7 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
-  use "moll/vim-bbye"
+  -- use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
  -- use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
@@ -65,16 +65,17 @@ return packer.startup(function(use)
   use "ryanoasis/vim-devicons"
 
   -- Colorschemes
-  use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  use "lunarvim/darkplus.nvim"
-  use "folke/tokyonight.nvim"
-  use "rebelot/kanagawa.nvim"
+  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
+  -- use "lunarvim/darkplus.nvim"
+  -- use "folke/tokyonight.nvim"
+  -- use "rebelot/kanagawa.nvim"
   use 'tanvirtin/monokai.nvim'
 
 
   use "onsails/lspkind-nvim"
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
+  use "hrsh7th/cmp-nvim-lua" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions

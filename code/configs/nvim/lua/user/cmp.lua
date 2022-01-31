@@ -76,6 +76,7 @@ cmp.setup({
 		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
+        { name = 'nvim_lua' },
 		--{ name = "cmdline" },
 		{ name = "cmp_tabnine" },
 	},
@@ -149,7 +150,7 @@ cmp.setup({
 				local menu = source_mapping[entry.source.name]
 				if entry.source.name == "cmp_tabnine" then
 					if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
-						menu = entry.completion_item.data.detail .. " " .. menu
+                        menu = entry.completion_item.data.detail .. " " .. menu
 					end
 					vim_item.kind = ""
 				end
