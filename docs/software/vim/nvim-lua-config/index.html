@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://docs.justintylers.com/software/vim/nvim-lua-config/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.7">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.9">
     
     
       
@@ -21,7 +21,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.cd566b2a.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2b4465f4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -900,7 +900,7 @@
   
     <li class="md-nav__item">
       <a href="../../../program-langs/python/dsa/" class="md-nav__link">
-        DSA
+        Data Structures & Algos
       </a>
     </li>
   
@@ -914,7 +914,7 @@
   
     <li class="md-nav__item">
       <a href="../../../program-langs/python/recursion/" class="md-nav__link">
-        DSA
+        Recursion
       </a>
     </li>
   
@@ -1277,20 +1277,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../react/full-course/color-changer/" class="md-nav__link">
-        Color Changer
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../react/design-patterns/" class="md-nav__link">
         Design Patterns
       </a>
@@ -1452,20 +1438,6 @@
     <li class="md-nav__item">
       <a href="../../typescript/essentials/" class="md-nav__link">
         Essentials
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../typescript/react/" class="md-nav__link">
-        React
       </a>
     </li>
   
@@ -1713,21 +1685,6 @@
   
 
     
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../quicknotes/" class="md-nav__link">
-        Quick Notes
-      </a>
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -1883,320 +1840,12 @@
 </code></pre></div>
 <h2 id="config-files">config files<a class="headerlink" href="#config-files" title="Permanent link">&para;</a></h2>
 <h3 id="nvim-treelua">nvim-tree.lua<a class="headerlink" href="#nvim-treelua" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1">-- following options are the default</span>
-<span class="c1">-- each of these are documented in `:help nvim-tree.OPTION_NAME`</span>
-
-<span class="c1">-- ctrl h / l move between window and explorer</span>
-<span class="c1">--  leader e to toggle tree </span>
-<span class="c1">-- a creates new file / folder</span>
-<span class="c1">-- r renames file / folder</span>
-<span class="c1">-- d deletes file / folder</span>
-
-<span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">.</span><span class="n">nvim_tree_icons</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-  <span class="n">symlink</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-  <span class="n">git</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">unstaged</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-    <span class="n">staged</span> <span class="o">=</span> <span class="s2">&quot;S&quot;</span><span class="p">,</span>
-    <span class="n">unmerged</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-    <span class="n">renamed</span> <span class="o">=</span> <span class="s2">&quot;➜&quot;</span><span class="p">,</span>
-    <span class="n">deleted</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-    <span class="n">untracked</span> <span class="o">=</span> <span class="s2">&quot;U&quot;</span><span class="p">,</span>
-    <span class="n">ignored</span> <span class="o">=</span> <span class="s2">&quot;◌&quot;</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="n">folder</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-    <span class="n">open</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-    <span class="n">empty</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-    <span class="n">empty_open</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-    <span class="n">symlink</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-  <span class="p">},</span>
-<span class="p">}</span>
-
-<span class="kd">local</span> <span class="n">status_ok</span><span class="p">,</span> <span class="n">nvim_tree</span> <span class="o">=</span> <span class="nb">pcall</span><span class="p">(</span><span class="nb">require</span><span class="p">,</span> <span class="s2">&quot;nvim-tree&quot;</span><span class="p">)</span>
-<span class="kr">if</span> <span class="ow">not</span> <span class="n">status_ok</span> <span class="kr">then</span>
-  <span class="kr">return</span>
-<span class="kr">end</span>
-
-<span class="kd">local</span> <span class="n">config_status_ok</span><span class="p">,</span> <span class="n">nvim_tree_config</span> <span class="o">=</span> <span class="nb">pcall</span><span class="p">(</span><span class="nb">require</span><span class="p">,</span> <span class="s2">&quot;nvim-tree.config&quot;</span><span class="p">)</span>
-<span class="kr">if</span> <span class="ow">not</span> <span class="n">config_status_ok</span> <span class="kr">then</span>
-  <span class="kr">return</span>
-<span class="kr">end</span>
-
-<span class="kd">local</span> <span class="n">tree_cb</span> <span class="o">=</span> <span class="n">nvim_tree_config</span><span class="p">.</span><span class="n">nvim_tree_callback</span>
-
-<span class="n">nvim_tree</span><span class="p">.</span><span class="n">setup</span> <span class="p">{</span>
-  <span class="n">disable_netrw</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="n">hijack_netrw</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="n">open_on_setup</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="n">ignore_ft_on_setup</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;startify&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;dashboard&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;alpha&quot;</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="n">auto_close</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">--changed to false</span>
-  <span class="n">open_on_tab</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="n">hijack_cursor</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="n">update_cwd</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="n">update_to_buf_dir</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">enable</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="n">auto_open</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="n">diagnostics</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">enable</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="n">icons</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="n">hint</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-      <span class="n">info</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-      <span class="n">warning</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-      <span class="nb">error</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-  <span class="p">},</span>
-  <span class="n">update_focused_file</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">enable</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="n">update_cwd</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="n">ignore_list</span> <span class="o">=</span> <span class="p">{},</span>
-  <span class="p">},</span>
-  <span class="n">system_open</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">cmd</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
-    <span class="n">args</span> <span class="o">=</span> <span class="p">{},</span>
-  <span class="p">},</span>
-  <span class="n">filters</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">dotfiles</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="n">custom</span> <span class="o">=</span> <span class="p">{},</span>
-  <span class="p">},</span>
-  <span class="n">git</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">enable</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="n">ignore</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="n">timeout</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="n">view</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">width</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
-    <span class="n">height</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
-    <span class="n">hide_root_folder</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="n">side</span> <span class="o">=</span> <span class="s2">&quot;left&quot;</span><span class="p">,</span>
-    <span class="n">auto_resize</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="n">mappings</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="n">custom_only</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="n">list</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="p">{</span> <span class="n">key</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;l&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;CR&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span> <span class="p">},</span> <span class="n">cb</span> <span class="o">=</span> <span class="n">tree_cb</span> <span class="s2">&quot;edit&quot;</span> <span class="p">},</span>
-        <span class="p">{</span> <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;h&quot;</span><span class="p">,</span> <span class="n">cb</span> <span class="o">=</span> <span class="n">tree_cb</span> <span class="s2">&quot;close_node&quot;</span> <span class="p">},</span>
-        <span class="p">{</span> <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;v&quot;</span><span class="p">,</span> <span class="n">cb</span> <span class="o">=</span> <span class="n">tree_cb</span> <span class="s2">&quot;vsplit&quot;</span> <span class="p">},</span>
-      <span class="p">},</span>
-    <span class="p">},</span>
-    <span class="n">number</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="n">relativenumber</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="n">trash</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">cmd</span> <span class="o">=</span> <span class="s2">&quot;trash&quot;</span><span class="p">,</span>
-    <span class="n">require_confirm</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="n">quit_on_open</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="n">git_hl</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="n">disable_window_picker</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="n">root_folder_modifier</span> <span class="o">=</span> <span class="s2">&quot;:t&quot;</span><span class="p">,</span>
-  <span class="n">show_icons</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">git</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="n">folders</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="n">files</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="n">folder_arrows</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="n">tree_width</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
-  <span class="p">},</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <ul>
 <li>keymaps.lua</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c1">-- yank in visual mode </span>
-
-<span class="c1">-- \ y</span>
-
-<span class="c1">-- leader key </span>
-
-<span class="c1">-- spc</span>
-
-<span class="c1">-- switch to window</span>
-<span class="c1">-- ctrl h / j / k / l</span>
-
-<span class="c1">--  save current file </span>
-<span class="c1">-- spc w</span>
-
-<span class="c1">-- resize current window </span>
-
-<span class="c1">-- ctrl left / down / up / right </span>
-
-<span class="c1">-- switch buffer </span>
-
-<span class="c1">-- shift h / l</span>
-
-<span class="c1">-- show / close error info</span>
-
-<span class="c1">-- g l</span>
-
-<span class="c1">-- toggle floating terminal </span>
-
-<span class="c1">-- spc t f</span>
-<span class="c1">-- ctrl \ = toggle terminal</span>
-
-<span class="c1">-- toggle node terminal</span>
-
-<span class="c1">-- spc t n</span>
-
-<span class="c1">-- misc </span>
-
-<span class="c1">-- g d = go to definition (where a binding was declared)</span>
-<span class="c1">-- spc l f = format document</span>
-<span class="c1">-- spc f = find and go to file</span>
-<span class="c1">-- spc F = find certain text inside of project</span>
-<span class="c1">-- spc t p = toggle python terminal</span>
-
-<span class="kd">local</span> <span class="n">opts</span> <span class="o">=</span> <span class="p">{</span> <span class="n">noremap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="n">silent</span> <span class="o">=</span> <span class="kc">true</span> <span class="p">}</span>
-
-<span class="kd">local</span> <span class="n">term_opts</span> <span class="o">=</span> <span class="p">{</span> <span class="n">silent</span> <span class="o">=</span> <span class="kc">true</span> <span class="p">}</span>
-
-<span class="c1">-- Shorten function name</span>
-<span class="kd">local</span> <span class="n">keymap</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_set_keymap</span>
-
-<span class="c1">--Remap space as leader key</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;Space&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;Nop&gt;&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">.</span><span class="n">mapleader</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span>
-<span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">.</span><span class="n">maplocalleader</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span>
-
-<span class="c1">-- Modes</span>
-<span class="c1">--   normal_mode = &quot;n&quot;,</span>
-<span class="c1">--   insert_mode = &quot;i&quot;,</span>
-<span class="c1">--   visual_mode = &quot;v&quot;,</span>
-<span class="c1">--   visual_block_mode = &quot;x&quot;,</span>
-<span class="c1">--   term_mode = &quot;t&quot;,</span>
-<span class="c1">--   command_mode = &quot;c&quot;,</span>
-
-<span class="c1">-- Normal --</span>
-
-<span class="c1">-- Buffers</span>
-
-
-<span class="kd">local</span> <span class="n">map</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_set_keymap</span>
-<span class="kd">local</span> <span class="n">opts</span> <span class="o">=</span> <span class="p">{</span> <span class="n">noremap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="n">silent</span> <span class="o">=</span> <span class="kc">true</span> <span class="p">}</span>
-
-<span class="c1">-- Move to previous/next</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;A-,&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;:BufferPrevious&lt;CR&gt;&#39;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;A-.&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;:BufferNext&lt;CR&gt;&#39;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="c1">-- Re-order to previous/next</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;A-&lt;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;:BufferMovePrevious&lt;CR&gt;&#39;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;A-&gt;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39; :BufferMoveNext&lt;CR&gt;&#39;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="c1">-- Goto buffer in position...</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;A-1&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;:BufferGoto 1&lt;CR&gt;&#39;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;A-2&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;:BufferGoto 2&lt;CR&gt;&#39;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;A-3&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;:BufferGoto 3&lt;CR&gt;&#39;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;A-4&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;:BufferGoto 4&lt;CR&gt;&#39;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;A-5&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;:BufferGoto 5&lt;CR&gt;&#39;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;A-6&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;:BufferGoto 6&lt;CR&gt;&#39;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;A-7&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;:BufferGoto 7&lt;CR&gt;&#39;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;A-8&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;:BufferGoto 8&lt;CR&gt;&#39;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;A-9&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;:BufferGoto 9&lt;CR&gt;&#39;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;A-0&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;:BufferLast&lt;CR&gt;&#39;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="c1">-- Close buffer</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;A-c&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;:BufferClose&lt;CR&gt;&#39;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="c1">-- Wipeout buffer</span>
-<span class="c1">--                 :BufferWipeout&lt;CR&gt;</span>
-<span class="c1">-- Close commands</span>
-<span class="c1">--                 :BufferCloseAllButCurrent&lt;CR&gt;</span>
-<span class="c1">--                 :BufferCloseBuffersLeft&lt;CR&gt;</span>
-<span class="c1">--                 :BufferCloseBuffersRight&lt;CR&gt;</span>
-<span class="c1">-- Magic buffer-picking mode</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;C-p&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;:BufferPick&lt;CR&gt;&#39;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="c1">-- Sort automatically by...</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;Space&gt;bb&#39;</span><span class="p">,</span> <span class="s1">&#39;:BufferOrderByBufferNumber&lt;CR&gt;&#39;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;Space&gt;bd&#39;</span><span class="p">,</span> <span class="s1">&#39;:BufferOrderByDirectory&lt;CR&gt;&#39;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;Space&gt;bl&#39;</span><span class="p">,</span> <span class="s1">&#39;:BufferOrderByLanguage&lt;CR&gt;&#39;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-
-<span class="c1">-- Other:</span>
-<span class="c1">-- :BarbarEnable - enables barbar (enabled by default)</span>
-<span class="c1">-- :BarbarDisable - very bad command, should never be used</span>
-
-<span class="c1">-- Better window navigation</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;C-h&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;C-w&gt;h&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;C-j&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;C-w&gt;j&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;C-k&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;C-w&gt;k&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;C-l&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;C-w&gt;l&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-
-<span class="c1">-- Resize with arrows</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;C-Up&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;:resize -2&lt;CR&gt;&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;C-Down&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;:resize +2&lt;CR&gt;&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;C-Left&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;:vertical resize -2&lt;CR&gt;&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;C-Right&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;:vertical resize +2&lt;CR&gt;&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-
-<span class="c1">-- Navigate buffers</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;S-l&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;:bnext&lt;CR&gt;&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;S-h&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;:bprevious&lt;CR&gt;&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-
-<span class="c1">-- Move text up and down</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;A-j&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;Esc&gt;:m .+1&lt;CR&gt;==gi&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;A-k&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;Esc&gt;:m .-2&lt;CR&gt;==gi&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-
-<span class="c1">-- New tab</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;S-t&gt;&lt;S-n&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;:tabnew&lt;CR&gt;&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-
-<span class="c1">-- Delete Buffer</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;S-b&gt;&lt;S-d&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;:Bdelete&lt;CR&gt;&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-
-<span class="c1">-- Correct spelling error</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;A-z&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;1z=&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-
-<span class="c1">-- Single press indent</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;&lt;&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&gt;&gt;&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-
-<span class="c1">-- Use proper movement keys</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;Up&gt;&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;Nop&gt;&quot;</span><span class="p">,</span><span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;Down&gt;&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;Nop&gt;&quot;</span><span class="p">,</span><span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;Left&gt;&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;Nop&gt;&quot;</span><span class="p">,</span><span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;Right&gt;&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;Nop&gt;&quot;</span><span class="p">,</span><span class="n">opts</span><span class="p">)</span>
-
-<span class="c1">-- Insert --</span>
-
-<span class="c1">-- use jk / kj instead of esc</span>
-<span class="c1">-- keymap(&quot;i&quot;, &quot;jk&quot;, &quot;&lt;ESC&gt;&quot;, opts)</span>
-<span class="c1">-- keymap(&quot;i&quot;, &quot;kj&quot;, &quot;&lt;ESC&gt;&quot;, opts)</span>
-<span class="c1">-- keymap(&quot;i&quot;, &quot;&lt;ESC&gt;&quot;, &quot;&lt;Nop&gt;&quot;, opts)</span>
-
-<span class="c1">-- Use proper movement keys</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;i&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;Up&gt;&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;Nop&gt;&quot;</span><span class="p">,</span><span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;i&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;Down&gt;&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;Nop&gt;&quot;</span><span class="p">,</span><span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;i&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;Left&gt;&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;Nop&gt;&quot;</span><span class="p">,</span><span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;i&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;Right&gt;&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;Nop&gt;&quot;</span><span class="p">,</span><span class="n">opts</span><span class="p">)</span>
-
-
-<span class="c1">-- Stay in indent mode</span>
-<span class="c1">-- Visual --</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;v&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;gv&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;v&quot;</span><span class="p">,</span> <span class="s2">&quot;&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&gt;gv&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-
-<span class="c1">-- Move text up and down</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;v&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;A-j&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;:m .+1&lt;CR&gt;==&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;v&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;A-k&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;:m .-2&lt;CR&gt;==&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;v&quot;</span><span class="p">,</span> <span class="s2">&quot;p&quot;</span><span class="p">,</span> <span class="s1">&#39;&quot;_dP&#39;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-
-<span class="c1">-- Visual Block --</span>
-
-<span class="c1">-- Move text up and down</span>
-
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;J&quot;</span><span class="p">,</span> <span class="s2">&quot;:move &#39;&gt;+1&lt;CR&gt;gv-gv&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;K&quot;</span><span class="p">,</span> <span class="s2">&quot;:move &#39;&lt;-2&lt;CR&gt;gv-gv&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;A-j&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;:move &#39;&gt;+1&lt;CR&gt;gv-gv&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;A-k&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;:move &#39;&lt;-2&lt;CR&gt;gv-gv&quot;</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-
-<span class="c1">-- Use proper movement keys</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;v&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;Up&gt;&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;Nop&gt;&quot;</span><span class="p">,</span><span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;v&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;Down&gt;&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;Nop&gt;&quot;</span><span class="p">,</span><span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;v&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;Left&gt;&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;Nop&gt;&quot;</span><span class="p">,</span><span class="n">opts</span><span class="p">)</span>
-<span class="n">keymap</span><span class="p">(</span><span class="s2">&quot;v&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;Right&gt;&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;Nop&gt;&quot;</span><span class="p">,</span><span class="n">opts</span><span class="p">)</span>
-
-<span class="c1">-- Terminal --</span>
-<span class="c1">-- Better terminal navigation</span>
-<span class="c1">-- keymap(&quot;t&quot;, &quot;&lt;C-h&gt;&quot;, &quot;&lt;C-\\&gt;&lt;C-N&gt;&lt;C-w&gt;h&quot;, term_opts)</span>
-<span class="c1">-- keymap(&quot;t&quot;, &quot;&lt;C-j&gt;&quot;, &quot;&lt;C-\\&gt;&lt;C-N&gt;&lt;C-w&gt;j&quot;, term_opts)</span>
-<span class="c1">-- keymap(&quot;t&quot;, &quot;&lt;C-k&gt;&quot;, &quot;&lt;C-\\&gt;&lt;C-N&gt;&lt;C-w&gt;k&quot;, term_opts)</span>
-<span class="c1">-- keymap(&quot;t&quot;, &quot;&lt;C-l&gt;&quot;, &quot;&lt;C-\\&gt;&lt;C-N&gt;&lt;C-w&gt;l&quot;, term_opts)</span>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <h3 id="pluginslua">plugins.lua<a class="headerlink" href="#pluginslua" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2210,131 +1859,7 @@
 <p>install plugins here</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">fn</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span>
-
-<span class="c1">-- Automatically install packer</span>
-<span class="kd">local</span> <span class="n">install_path</span> <span class="o">=</span> <span class="n">fn</span><span class="p">.</span><span class="n">stdpath</span> <span class="s2">&quot;data&quot;</span> <span class="o">..</span> <span class="s2">&quot;/site/pack/packer/start/packer.nvim&quot;</span>
-<span class="kr">if</span> <span class="n">fn</span><span class="p">.</span><span class="n">empty</span><span class="p">(</span><span class="n">fn</span><span class="p">.</span><span class="n">glob</span><span class="p">(</span><span class="n">install_path</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="kr">then</span>
-  <span class="n">PACKER_BOOTSTRAP</span> <span class="o">=</span> <span class="n">fn</span><span class="p">.</span><span class="n">system</span> <span class="p">{</span>
-    <span class="s2">&quot;git&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;clone&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;--depth&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;1&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;https://github.com/wbthomason/packer.nvim&quot;</span><span class="p">,</span>
-    <span class="n">install_path</span><span class="p">,</span>
-  <span class="p">}</span>
-  <span class="nb">print</span> <span class="s2">&quot;Installing packer close and reopen Neovim...&quot;</span>
-  <span class="n">vim</span><span class="p">.</span><span class="n">cmd</span> <span class="s">[[packadd packer.nvim]]</span>
-<span class="kr">end</span>
-
-<span class="c1">-- Autocommand that reloads neovim whenever you save the plugins.lua file</span>
-<span class="n">vim</span><span class="p">.</span><span class="n">cmd</span> <span class="s">[[</span>
-<span class="s">  augroup packer_user_config</span>
-<span class="s">    autocmd!</span>
-<span class="s">    autocmd BufWritePost plugins.lua source &lt;afile&gt; | PackerSync</span>
-<span class="s">  augroup end</span>
-<span class="s">]]</span>
-
-<span class="c1">-- Use a protected call so we don&#39;t error out on first use</span>
-<span class="kd">local</span> <span class="n">status_ok</span><span class="p">,</span> <span class="n">packer</span> <span class="o">=</span> <span class="nb">pcall</span><span class="p">(</span><span class="nb">require</span><span class="p">,</span> <span class="s2">&quot;packer&quot;</span><span class="p">)</span>
-<span class="kr">if</span> <span class="ow">not</span> <span class="n">status_ok</span> <span class="kr">then</span>
-  <span class="kr">return</span>
-<span class="kr">end</span>
-
-<span class="c1">-- Have packer use a popup window</span>
-
-<span class="c1">-- packer.init {</span>
-<span class="c1">--  display = {</span>
-<span class="c1">--    open_fn = function()</span>
-<span class="c1">--      return require(&quot;packer.util&quot;).float { border = &quot;rounded&quot; }</span>
-<span class="c1">--    end,</span>
-<span class="c1">--  },</span>
-<span class="c1">--}</span>
-
-<span class="c1">-- Install your plugins here</span>
-<span class="kr">return</span> <span class="n">packer</span><span class="p">.</span><span class="n">startup</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="n">use</span><span class="p">)</span>
-  <span class="c1">-- My plugins here</span>
-  <span class="n">use</span> <span class="s2">&quot;wbthomason/packer.nvim&quot;</span> <span class="c1">-- Have packer manage itself</span>
-  <span class="n">use</span> <span class="s2">&quot;nvim-lua/popup.nvim&quot;</span> <span class="c1">-- An implementation of the Popup API from vim in Neovim</span>
-  <span class="n">use</span> <span class="s2">&quot;nvim-lua/plenary.nvim&quot;</span> <span class="c1">-- Useful lua functions used ny lots of plugins</span>
-  <span class="n">use</span> <span class="s2">&quot;windwp/nvim-autopairs&quot;</span> <span class="c1">-- Autopairs, integrates with both cmp and treesitter</span>
-  <span class="n">use</span> <span class="s2">&quot;numToStr/Comment.nvim&quot;</span> <span class="c1">-- Easily comment stuff</span>
-  <span class="n">use</span> <span class="s2">&quot;kyazdani42/nvim-web-devicons&quot;</span>
-  <span class="n">use</span> <span class="s2">&quot;kyazdani42/nvim-tree.lua&quot;</span>
-  <span class="c1">-- use &quot;moll/vim-bbye&quot;</span>
-  <span class="n">use</span> <span class="s2">&quot;nvim-lualine/lualine.nvim&quot;</span>
- <span class="c1">-- use &quot;akinsho/toggleterm.nvim&quot;</span>
-  <span class="n">use</span> <span class="s2">&quot;ahmedkhalf/project.nvim&quot;</span>
-  <span class="n">use</span> <span class="s2">&quot;lewis6991/impatient.nvim&quot;</span>
-  <span class="n">use</span> <span class="s2">&quot;lukas-reineke/indent-blankline.nvim&quot;</span>
-  <span class="n">use</span> <span class="s2">&quot;goolord/alpha-nvim&quot;</span>
-  <span class="n">use</span> <span class="s2">&quot;ray-x/lsp_signature.nvim&quot;</span>
-  <span class="n">use</span> <span class="s2">&quot;antoinemadec/FixCursorHold.nvim&quot;</span> <span class="c1">-- This is needed to fix lsp doc highlight</span>
-  <span class="n">use</span> <span class="s2">&quot;folke/which-key.nvim&quot;</span>
-  <span class="c1">--use &quot;Xuyuanp/nerdtree-git-plugin&quot;</span>
-  <span class="c1">--use &quot;tiagofumo/vim-nerdtree-syntax-highlight&quot;</span>
-  <span class="n">use</span> <span class="s2">&quot;lilydjwg/colorizer&quot;</span>
-  <span class="n">use</span> <span class="s2">&quot;ryanoasis/vim-devicons&quot;</span>
-
-  <span class="c1">-- Colorschemes</span>
-  <span class="c1">-- use &quot;lunarvim/colorschemes&quot; -- A bunch of colorschemes you can try out</span>
-  <span class="c1">-- use &quot;lunarvim/darkplus.nvim&quot;</span>
-  <span class="c1">-- use &quot;folke/tokyonight.nvim&quot;</span>
-  <span class="c1">-- use &quot;rebelot/kanagawa.nvim&quot;</span>
-  <span class="n">use</span> <span class="s1">&#39;tanvirtin/monokai.nvim&#39;</span>
-
-
-  <span class="n">use</span> <span class="s2">&quot;onsails/lspkind-nvim&quot;</span>
-  <span class="c1">-- cmp plugins</span>
-  <span class="n">use</span> <span class="s2">&quot;hrsh7th/nvim-cmp&quot;</span> <span class="c1">-- The completion plugin</span>
-  <span class="n">use</span> <span class="s2">&quot;hrsh7th/cmp-nvim-lua&quot;</span> <span class="c1">-- The completion plugin</span>
-  <span class="n">use</span> <span class="s2">&quot;hrsh7th/cmp-buffer&quot;</span> <span class="c1">-- buffer completions</span>
-  <span class="n">use</span> <span class="s2">&quot;hrsh7th/cmp-path&quot;</span> <span class="c1">-- path completions</span>
-  <span class="n">use</span> <span class="s2">&quot;hrsh7th/cmp-cmdline&quot;</span> <span class="c1">-- cmdline completions</span>
-  <span class="n">use</span> <span class="s2">&quot;hrsh7th/cmp-nvim-lsp&quot;</span>
-  <span class="n">use</span> <span class="p">{</span><span class="s1">&#39;tzachar/cmp-tabnine&#39;</span><span class="p">,</span> <span class="n">requires</span> <span class="o">=</span> <span class="s1">&#39;hrsh7th/nvim-cmp&#39;</span><span class="p">}</span>
-
-
-  <span class="n">use</span> <span class="s2">&quot;saadparwaiz1/cmp_luasnip&quot;</span> <span class="c1">-- snippet completions</span>
-
-
-  <span class="c1">-- snippets</span>
-  <span class="n">use</span> <span class="s2">&quot;L3MON4D3/LuaSnip&quot;</span> <span class="c1">--snippet engine</span>
-  <span class="n">use</span> <span class="s2">&quot;rafamadriz/friendly-snippets&quot;</span> <span class="c1">-- a bunch of snippets to use</span>
-
-  <span class="c1">-- LSP</span>
-  <span class="n">use</span> <span class="s2">&quot;neovim/nvim-lspconfig&quot;</span> <span class="c1">-- enable LSP</span>
-  <span class="n">use</span> <span class="s2">&quot;williamboman/nvim-lsp-installer&quot;</span> <span class="c1">-- simple to use language server installer</span>
-  <span class="n">use</span> <span class="s2">&quot;tamago324/nlsp-settings.nvim&quot;</span> <span class="c1">-- language server settings defined in json for</span>
-  <span class="n">use</span> <span class="s2">&quot;jose-elias-alvarez/null-ls.nvim&quot;</span> <span class="c1">-- for formatters and linters</span>
-
-  <span class="c1">-- Telescope</span>
-  <span class="n">use</span> <span class="s2">&quot;nvim-telescope/telescope.nvim&quot;</span>
-
-  <span class="c1">-- Treesitter</span>
-  <span class="n">use</span> <span class="p">{</span>
-    <span class="s2">&quot;nvim-treesitter/nvim-treesitter&quot;</span><span class="p">,</span>
-    <span class="n">run</span> <span class="o">=</span> <span class="s2">&quot;:TSUpdate&quot;</span><span class="p">,</span>
-  <span class="p">}</span>
-  <span class="n">use</span> <span class="s2">&quot;JoosepAlviste/nvim-ts-context-commentstring&quot;</span>
-
-  <span class="c1">-- Git</span>
-  <span class="n">use</span> <span class="s2">&quot;lewis6991/gitsigns.nvim&quot;</span>
-
-<span class="c1">-- Recently added</span>
-<span class="n">use</span> <span class="p">{</span> <span class="s1">&#39;romgrk/barbar.nvim&#39;</span><span class="p">,</span> <span class="n">requires</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;kyazdani42/nvim-web-devicons&#39;</span><span class="p">}</span> <span class="p">}</span>
-<span class="n">use</span> <span class="p">{</span> <span class="s2">&quot;blackCauldron7/surround.nvim&quot;</span><span class="p">,</span>
-  <span class="n">config</span> <span class="o">=</span> <span class="kr">function</span><span class="p">()</span>
-    <span class="nb">require</span><span class="s2">&quot;surround&quot;</span><span class="p">.</span><span class="n">setup</span> <span class="p">{</span><span class="n">mappings_style</span> <span class="o">=</span> <span class="s2">&quot;sandwich&quot;</span><span class="p">}</span>
-  <span class="kr">end</span>
-<span class="p">}</span>
-
-  <span class="c1">-- Automatically set up your configuration after cloning packer.nvim</span>
-  <span class="c1">-- Put this at the end after all plugins</span>
-  <span class="kr">if</span> <span class="n">PACKER_BOOTSTRAP</span> <span class="kr">then</span>
-    <span class="nb">require</span><span class="p">(</span><span class="s2">&quot;packer&quot;</span><span class="p">).</span><span class="n">sync</span><span class="p">()</span>
-  <span class="kr">end</span>
-<span class="kr">end</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <h3 id="colorschemelua">colorscheme.lua<a class="headerlink" href="#colorschemelua" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2342,186 +1867,10 @@
 <li>:colorscheme TAB will show you list of built in colorschemes</li>
 <li>custom colorscheme directory = ~/.local/share/nvim/site/pack/packer/start/colorschemes</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c1">-- monokai</span>
-<span class="c1">-- default</span>
-
-<span class="n">vim</span><span class="p">.</span><span class="n">cmd</span><span class="p">(</span><span class="s">[[</span>
-<span class="s">try</span>
-<span class="s">  colorscheme monokai_soda</span>
-<span class="s">catch /^Vim\%((\a\+)\)\=:E185/</span>
-<span class="s"> colorscheme default</span>
-<span class="s">set background=dark</span>
-<span class="s">endtry</span>
-<span class="s">]]</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <h3 id="bufferlinelua">bufferline.lua<a class="headerlink" href="#bufferlinelua" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">status_ok</span><span class="p">,</span> <span class="n">bufferline</span> <span class="o">=</span> <span class="nb">pcall</span><span class="p">(</span><span class="nb">require</span><span class="p">,</span> <span class="s2">&quot;bufferline&quot;</span><span class="p">)</span>
-<span class="kr">if</span> <span class="ow">not</span> <span class="n">status_ok</span> <span class="kr">then</span>
-  <span class="kr">return</span>
-<span class="kr">end</span>
-
-<span class="n">bufferline</span><span class="p">.</span><span class="n">setup</span> <span class="p">{</span>
-  <span class="n">options</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">numbers</span> <span class="o">=</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="c1">-- | &quot;ordinal&quot; | &quot;buffer_id&quot; | &quot;both&quot; | function({ ordinal, id, lower, raise }): string,</span>
-    <span class="n">close_command</span> <span class="o">=</span> <span class="s2">&quot;Bdelete! %d&quot;</span><span class="p">,</span> <span class="c1">-- can be a string | function, see &quot;Mouse actions&quot;</span>
-    <span class="n">right_mouse_command</span> <span class="o">=</span> <span class="s2">&quot;Bdelete! %d&quot;</span><span class="p">,</span> <span class="c1">-- can be a string | function, see &quot;Mouse actions&quot;</span>
-    <span class="n">left_mouse_command</span> <span class="o">=</span> <span class="s2">&quot;buffer %d&quot;</span><span class="p">,</span> <span class="c1">-- can be a string | function, see &quot;Mouse actions&quot;</span>
-    <span class="n">middle_mouse_command</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="c1">-- can be a string | function, see &quot;Mouse actions&quot;</span>
-    <span class="c1">-- NOTE: this plugin is designed with this icon in mind,</span>
-    <span class="c1">-- and so changing this is NOT recommended, this is intended</span>
-    <span class="c1">-- as an escape hatch for people who cannot bear it for whatever reason</span>
-    <span class="n">indicator_icon</span> <span class="o">=</span> <span class="s2">&quot;▎&quot;</span><span class="p">,</span>
-    <span class="n">buffer_close_icon</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-    <span class="c1">-- buffer_close_icon = &#39;&#39;,</span>
-    <span class="n">modified_icon</span> <span class="o">=</span> <span class="s2">&quot;●&quot;</span><span class="p">,</span>
-    <span class="n">close_icon</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-    <span class="c1">-- close_icon = &#39;&#39;,</span>
-    <span class="n">left_trunc_marker</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-    <span class="n">right_trunc_marker</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-    <span class="c1">--- name_formatter can be used to change the buffer&#39;s label in the bufferline.</span>
-    <span class="c1">--- Please note some names can/will break the</span>
-    <span class="c1">--- bufferline so use this at your discretion knowing that it has</span>
-    <span class="c1">--- some limitations that will *NOT* be fixed.</span>
-    <span class="c1">-- name_formatter = function(buf)  -- buf contains a &quot;name&quot;, &quot;path&quot; and &quot;bufnr&quot;</span>
-    <span class="c1">--   -- remove extension from markdown files for example</span>
-    <span class="c1">--   if buf.name:match(&#39;%.md&#39;) then</span>
-    <span class="c1">--     return vim.fn.fnamemodify(buf.name, &#39;:t:r&#39;)</span>
-    <span class="c1">--   end</span>
-    <span class="c1">-- end,</span>
-    <span class="n">max_name_length</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
-    <span class="n">max_prefix_length</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="c1">-- prefix used when a buffer is de-duplicated</span>
-    <span class="n">tab_size</span> <span class="o">=</span> <span class="mi">21</span><span class="p">,</span>
-    <span class="n">diagnostics</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">-- | &quot;nvim_lsp&quot; | &quot;coc&quot;,</span>
-    <span class="n">diagnostics_update_in_insert</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="c1">-- diagnostics_indicator = function(count, level, diagnostics_dict, context)</span>
-    <span class="c1">--   return &quot;(&quot;..count..&quot;)&quot;</span>
-    <span class="c1">-- end,</span>
-    <span class="c1">-- NOTE: this will be called a lot so don&#39;t do any heavy processing here</span>
-    <span class="c1">-- custom_filter = function(buf_number)</span>
-    <span class="c1">--   -- filter out filetypes you don&#39;t want to see</span>
-    <span class="c1">--   if vim.bo[buf_number].filetype ~= &quot;&lt;i-dont-want-to-see-this&gt;&quot; then</span>
-    <span class="c1">--     return true</span>
-    <span class="c1">--   end</span>
-    <span class="c1">--   -- filter out by buffer name</span>
-    <span class="c1">--   if vim.fn.bufname(buf_number) ~= &quot;&lt;buffer-name-I-dont-want&gt;&quot; then</span>
-    <span class="c1">--     return true</span>
-    <span class="c1">--   end</span>
-    <span class="c1">--   -- filter out based on arbitrary rules</span>
-    <span class="c1">--   -- e.g. filter out vim wiki buffer from tabline in your work repo</span>
-    <span class="c1">--   if vim.fn.getcwd() == &quot;&lt;work-repo&gt;&quot; and vim.bo[buf_number].filetype ~= &quot;wiki&quot; then</span>
-    <span class="c1">--     return true</span>
-    <span class="c1">--   end</span>
-    <span class="c1">-- end,</span>
-    <span class="n">offsets</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span> <span class="n">filetype</span> <span class="o">=</span> <span class="s2">&quot;NvimTree&quot;</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">padding</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">}</span> <span class="p">},</span>
-    <span class="n">show_buffer_icons</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="n">show_buffer_close_icons</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="n">show_close_icon</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="n">show_tab_indicators</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="n">persist_buffer_sort</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">-- whether or not custom sorted buffers should persist</span>
-    <span class="c1">-- can also be a table containing 2 custom separators</span>
-    <span class="c1">-- [focused and unfocused]. eg: { &#39;|&#39;, &#39;|&#39; }</span>
-    <span class="n">separator_style</span> <span class="o">=</span> <span class="s2">&quot;thin&quot;</span><span class="p">,</span> <span class="c1">-- | &quot;thick&quot; | &quot;thin&quot; | { &#39;any&#39;, &#39;any&#39; },</span>
-    <span class="n">enforce_regular_tabs</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="n">always_show_bufferline</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="c1">-- sort_by = &#39;id&#39; | &#39;extension&#39; | &#39;relative_directory&#39; | &#39;directory&#39; | &#39;tabs&#39; | function(buffer_a, buffer_b)</span>
-    <span class="c1">--   -- add custom logic</span>
-    <span class="c1">--   return buffer_a.modified &gt; buffer_b.modified</span>
-    <span class="c1">-- end</span>
-  <span class="p">},</span>
-  <span class="n">highlights</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">fill</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="n">guifg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;fg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;#ff0000&quot;</span> <span class="p">},</span>
-      <span class="n">guibg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;bg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;TabLine&quot;</span> <span class="p">},</span>
-    <span class="p">},</span>
-    <span class="n">background</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="n">guifg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;fg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;TabLine&quot;</span> <span class="p">},</span>
-      <span class="n">guibg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;bg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;TabLine&quot;</span> <span class="p">},</span>
-    <span class="p">},</span>
-
-    <span class="c1">-- buffer_selected = {</span>
-    <span class="c1">--   guifg = {attribute=&#39;fg&#39;,highlight=&#39;#ff0000&#39;},</span>
-    <span class="c1">--   guibg = {attribute=&#39;bg&#39;,highlight=&#39;#0000ff&#39;},</span>
-    <span class="c1">--   gui = &#39;none&#39;</span>
-    <span class="c1">--   },</span>
-    <span class="n">buffer_visible</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="n">guifg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;fg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;TabLine&quot;</span> <span class="p">},</span>
-      <span class="n">guibg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;bg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;TabLine&quot;</span> <span class="p">},</span>
-    <span class="p">},</span>
-
-    <span class="n">close_button</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="n">guifg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;fg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;TabLine&quot;</span> <span class="p">},</span>
-      <span class="n">guibg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;bg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;TabLine&quot;</span> <span class="p">},</span>
-    <span class="p">},</span>
-    <span class="n">close_button_visible</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="n">guifg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;fg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;TabLine&quot;</span> <span class="p">},</span>
-      <span class="n">guibg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;bg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;TabLine&quot;</span> <span class="p">},</span>
-    <span class="p">},</span>
-    <span class="c1">-- close_button_selected = {</span>
-    <span class="c1">--   guifg = {attribute=&#39;fg&#39;,highlight=&#39;TabLineSel&#39;},</span>
-    <span class="c1">--   guibg ={attribute=&#39;bg&#39;,highlight=&#39;TabLineSel&#39;}</span>
-    <span class="c1">--   },</span>
-
-    <span class="n">tab_selected</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="n">guifg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;fg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;Normal&quot;</span> <span class="p">},</span>
-      <span class="n">guibg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;bg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;Normal&quot;</span> <span class="p">},</span>
-    <span class="p">},</span>
-    <span class="n">tab</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="n">guifg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;fg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;TabLine&quot;</span> <span class="p">},</span>
-      <span class="n">guibg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;bg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;TabLine&quot;</span> <span class="p">},</span>
-    <span class="p">},</span>
-    <span class="n">tab_close</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="c1">-- guifg = {attribute=&#39;fg&#39;,highlight=&#39;LspDiagnosticsDefaultError&#39;},</span>
-      <span class="n">guifg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;fg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;TabLineSel&quot;</span> <span class="p">},</span>
-      <span class="n">guibg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;bg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;Normal&quot;</span> <span class="p">},</span>
-    <span class="p">},</span>
-
-    <span class="n">duplicate_selected</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="n">guifg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;fg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;TabLineSel&quot;</span> <span class="p">},</span>
-      <span class="n">guibg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;bg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;TabLineSel&quot;</span> <span class="p">},</span>
-      <span class="n">gui</span> <span class="o">=</span> <span class="s2">&quot;italic&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="n">duplicate_visible</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="n">guifg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;fg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;TabLine&quot;</span> <span class="p">},</span>
-      <span class="n">guibg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;bg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;TabLine&quot;</span> <span class="p">},</span>
-      <span class="n">gui</span> <span class="o">=</span> <span class="s2">&quot;italic&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="n">duplicate</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="n">guifg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;fg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;TabLine&quot;</span> <span class="p">},</span>
-      <span class="n">guibg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;bg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;TabLine&quot;</span> <span class="p">},</span>
-      <span class="n">gui</span> <span class="o">=</span> <span class="s2">&quot;italic&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-
-    <span class="n">modified</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="n">guifg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;fg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;TabLine&quot;</span> <span class="p">},</span>
-      <span class="n">guibg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;bg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;TabLine&quot;</span> <span class="p">},</span>
-    <span class="p">},</span>
-    <span class="n">modified_selected</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="n">guifg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;fg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;Normal&quot;</span> <span class="p">},</span>
-      <span class="n">guibg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;bg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;Normal&quot;</span> <span class="p">},</span>
-    <span class="p">},</span>
-    <span class="n">modified_visible</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="n">guifg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;fg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;TabLine&quot;</span> <span class="p">},</span>
-      <span class="n">guibg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;bg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;TabLine&quot;</span> <span class="p">},</span>
-    <span class="p">},</span>
-
-    <span class="n">separator</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="n">guifg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;bg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;TabLine&quot;</span> <span class="p">},</span>
-      <span class="n">guibg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;bg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;TabLine&quot;</span> <span class="p">},</span>
-    <span class="p">},</span>
-    <span class="n">separator_selected</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="n">guifg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;bg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;Normal&quot;</span> <span class="p">},</span>
-      <span class="n">guibg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;bg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;Normal&quot;</span> <span class="p">},</span>
-    <span class="p">},</span>
-    <span class="c1">-- separator_visible = {</span>
-    <span class="c1">--   guifg = {attribute=&#39;bg&#39;,highlight=&#39;TabLine&#39;},</span>
-    <span class="c1">--   guibg = {attribute=&#39;bg&#39;,highlight=&#39;TabLine&#39;}</span>
-    <span class="c1">--   },</span>
-    <span class="n">indicator_selected</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="n">guifg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;fg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;LspDiagnosticsDefaultHint&quot;</span> <span class="p">},</span>
-      <span class="n">guibg</span> <span class="o">=</span> <span class="p">{</span> <span class="n">attribute</span> <span class="o">=</span> <span class="s2">&quot;bg&quot;</span><span class="p">,</span> <span class="n">highlight</span> <span class="o">=</span> <span class="s2">&quot;Normal&quot;</span> <span class="p">},</span>
-    <span class="p">},</span>
-  <span class="p">},</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <h2 id="details">details<a class="headerlink" href="#details" title="Permanent link">&para;</a></h2>
 <h3 id="setup">setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h3>
@@ -2569,7 +1918,7 @@ git clone git@github.com:ChristianChiarulli/Neovim-from-scratch.git ~/.config/nv
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../typescript/react/" class="md-footer__link md-footer__link--prev" aria-label="Previous: React" rel="prev">
+        <a href="../../typescript/essentials/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Essentials" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -2578,7 +1927,7 @@ git clone git@github.com:ChristianChiarulli/Neovim-from-scratch.git ~/.config/nv
               <span class="md-footer__direction">
                 Previous
               </span>
-              React
+              Essentials
             </div>
           </div>
         </a>
@@ -2655,7 +2004,7 @@ git clone git@github.com:ChristianChiarulli/Neovim-from-scratch.git ~/.config/nv
     <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "content.tabs.link"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.22074ed6.min.js"}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.01de222e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.960e086b.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
       
