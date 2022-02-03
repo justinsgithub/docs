@@ -33,6 +33,6 @@
 
 ### [Public Directory](https://www.justintylers.com) 
 ### [Development Portfolio](https://portfolio.justintylers.com) 
-### [LinkedIn](https://www.linkedin.com/in/justinaawd) 
+### [LinkedIn](https://www.linkedin.com/in/justintylers) 
 ### [Twitter](https://www.twitter.com/lovejustintyler)
 ### [GitHub](https://www.github.com/justinsgithub)

@@ -68,8 +68,8 @@ nav:
     - Python:
       - Code Challenges: program-langs/python/code-challenges.md
       - Class Queue Deque: program-langs/python/data-structures-and-algorithms.md
-      - DSA: program-langs/python/dsa.md
-      - DSA: program-langs/python/recursion.md
+      - Data Structures & Algos: program-langs/python/dsa.md
+      - Recursion: program-langs/python/recursion.md
     - Rust:
       - Overview: program-langs/rust/index.md 
       - Datatypes: program-langs/rust/datatypes.md 
@@ -88,7 +88,6 @@ nav:
       - Essentials: software/nodejs/essentials.md  
     - React: 
       - Authentication: software/react/authentication.md
-      - Color Changer: software/react/full-course/color-changer.md
       - Design Patterns: software/react/design-patterns.md
       - Ecosystem: software/react/ecosystems.md
       - Getting Started: software/react/getting-started.md
@@ -100,7 +99,6 @@ nav:
     - TypeScript:
       - Intro: software/typescript/index.md 
       - Essentials: software/typescript/essentials.md 
-      - React: software/typescript/react.md 
     - Vim: 
       - Nvim Lua Config: software/vim/nvim-lua-config.md
       - New Learnings: software/vim/learning-vim.md
@@ -108,14 +106,13 @@ nav:
       - Overview: software/vim/index.md
       - Vim Commands: software/vim/snips.md
       - SpaceVim Config: software/vim/spacevim-config.md
-  - Quick Notes: quicknotes.md
 markdown_extensions:
 - toc:
     permalink: true
 - markdown.extensions.codehilite:
     guess_lang: false
 - mdx_include:
-    base_path: code
+    base_path: src
 - admonition
 - codehilite
 - extra
