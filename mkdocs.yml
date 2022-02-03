@@ -100,7 +100,6 @@ nav:
       - Intro: software/typescript/index.md 
       - Essentials: software/typescript/essentials.md 
     - Vim: 
-      - Nvim Lua Config: software/vim/nvim-lua-config.md
       - New Learnings: software/vim/learning-vim.md
       - Nvim Config: software/vim/nvim-config.md
       - Overview: software/vim/index.md

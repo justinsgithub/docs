@@ -286,11 +286,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.justintylers.com/software/vim/nvim-lua-config/</loc>
-         <lastmod>2022-02-03</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.justintylers.com/software/vim/snips/</loc>
          <lastmod>2022-02-03</lastmod>
          <changefreq>daily</changefreq>
