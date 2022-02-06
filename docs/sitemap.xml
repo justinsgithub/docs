@@ -2,297 +2,302 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.justintylers.com/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/essential-css/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.justintylers.com/php-mysql/</loc>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/computer-science/acronyms/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/computer-science/data-structures/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/computer-science/data-types/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/computer-science/digital-information/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/computer-science/internet/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/computer-science/programming/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/computer-science/terms/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/computer-science/HTTP/headers/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/computer-science/HTTP/http-essentials/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/computer-science/HTTP/http-terminology/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/computer-science/HTTP/requests-responses/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/creative/emojis/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/creative/seo-fundamentals/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/creative/writing-blogs/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/linux/code-snips/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/linux/command-line/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/linux/directories/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/linux/linux-programs/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/linux/zsh/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/program-langs/javascript/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/program-langs/javascript/code-challenges/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/program-langs/javascript/functions/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/program-langs/javascript/objects/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/program-langs/python/code-challenges/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/program-langs/python/data-structures-and-algorithms/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/program-langs/python/dsa/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/program-langs/python/recursion/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/program-langs/rust/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/program-langs/rust/basics/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/program-langs/rust/code-examples/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/program-langs/rust/datatypes/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/program-langs/rust/mini-projects/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/program-langs/rust/ownership/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/resources/learning-software/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/resources/resources/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/software/docker/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/software/eslint-prettier/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/software/git/essentials/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/software/git/github-pages/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/software/nodejs/essentials/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/software/nodejs/static-server/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/software/react/authentication/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/software/react/design-patterns/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/software/react/ecosystems/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/software/react/essentials/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/software/react/getting-started/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/software/react/hooks-descriptions/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/software/react/rendering-process/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/software/react/software-architecture/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/software/react/state-management/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/software/typescript/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/software/typescript/essentials/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/software/vim/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/software/vim/learning-vim/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/software/vim/nvim-config/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/software/vim/snips/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justintylers.com/software/vim/spacevim-config/</loc>
-         <lastmod>2022-02-04</lastmod>
+         <lastmod>2022-02-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
