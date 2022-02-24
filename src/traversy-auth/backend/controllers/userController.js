@@ -3,8 +3,7 @@ const bcrypt = require('bcryptjs')
 const asyncHandler = require('express-async-handler')
 const User = require('../models/userModel')
 
-const generateUser = (id) =>
-  jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '30d' })
+const generateToken = (id) => jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '30d' })
 
 const registerUser = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body
@@ -30,8 +29,7 @@ const registerUser = asyncHandler(async (req, res) => {
   if (user) {
     res
       .status(201)
-      .json({
-        _id: user._id,
+      .json({ _id: user._id, // not really necessary to return anything but the token here
         name: user.name,
         email: user.email,
         token: generateToken(user._id),
@@ -53,12 +51,11 @@ const loginUser = asyncHandler(async (req, res) => {
     res.status(400)
     throw new Error('Invalid credentials')
   }
-
-  res.json({ message: 'login user' })
 })
 
 const getMe = asyncHandler(async (req, res) => {
-  res.json({ message: 'User data display' })
+  // middleware makes req.user available to this function, which is the user data from mongodb, which is email, name, _id
+  res.status(200).json(req.user)
 })
 
 module.exports = {
