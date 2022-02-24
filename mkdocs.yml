@@ -32,7 +32,6 @@ plugins:
 - search
 nav:
   - index.md
-  - CSS Essentials: essential-css.md
   - Computer Science: 
     - Acronyms: computer-science/acronyms.md
     - Digital Information: computer-science/digital-information.md
@@ -47,6 +46,7 @@ nav:
       - Headers: computer-science/HTTP/headers.md
       - Requests & Responses: computer-science/HTTP/requests-responses.md
   - Creative: 
+    - Camera Basics: creative/camera-basics.md
     - Emojis: creative/emojis.md
     - SEO Fundamentals: creative/seo-fundamentals.md
     - Writing Blogs: creative/writing-blogs.md
@@ -83,9 +83,6 @@ nav:
     - Git: 
       - Git Essentials: software/git/essentials.md  
       - GitHub Pages: software/git/github-pages.md  
-    - NodeJS: 
-      - Static Server: software/nodejs/static-server.md  
-      - Essentials: software/nodejs/essentials.md  
     - React: 
       - Authentication: software/react/authentication.md
       - Design Patterns: software/react/design-patterns.md

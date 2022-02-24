@@ -6,16 +6,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.justintylers.com/essential-css/</loc>
-         <lastmod>2022-02-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.justintylers.com/php-mysql/</loc>
-         <lastmod>2022-02-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.justintylers.com/computer-science/acronyms/</loc>
          <lastmod>2022-02-24</lastmod>
          <changefreq>daily</changefreq>
@@ -212,16 +202,6 @@
     </url>
     <url>
          <loc>https://docs.justintylers.com/software/git/github-pages/</loc>
-         <lastmod>2022-02-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.justintylers.com/software/nodejs/essentials/</loc>
-         <lastmod>2022-02-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.justintylers.com/software/nodejs/static-server/</loc>
          <lastmod>2022-02-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
