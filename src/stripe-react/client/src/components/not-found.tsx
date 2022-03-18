@@ -1,12 +1,9 @@
-import Layout from './shared/layout'
+import { CSSProperties } from 'react'
+import { Layout } from './shared/layout'
 
-const NotFound = () => {
-  const style: any = {
-    fontWeight: 'bold',
-    textAlign: 'center'
-  }
+const style: CSSProperties = { fontWeight: 'bold', textAlign: 'center' }
+
+export const NotFound = () => {
 
   return ( <Layout> <p style={style}> Nothing to see here... </p> </Layout>)
 }
-
-export default NotFound

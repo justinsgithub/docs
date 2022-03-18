@@ -1,12 +1,12 @@
 import { useContext } from 'react'
-import Layout from '../../shared/layout'
-import FeaturedProduct from '../../shared/featured-product'
-import { ProductsContext } from '../../../context/products-context'
+import { Layout } from '../../components/shared/layout'
+import FeaturedProduct from '../../components/shared/featured-product'
+import { ProductsContext } from '../../context/products-context'
 import './shop.styles.scss'
 
-const Shop = () => {
+export const Shop = () => {
   const { products } = useContext(ProductsContext)
-  const allProducts = products.map((product: any) => (
+  const allProducts = products.map((product) => (
     <FeaturedProduct {...product} key={product.id} />
   ))
 
@@ -19,5 +19,3 @@ const Shop = () => {
     </Layout>
   )
 }
-
-export default Shop

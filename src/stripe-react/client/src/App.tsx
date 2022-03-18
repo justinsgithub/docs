@@ -1,12 +1,12 @@
 import * as React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import HomePage from './components/home-page'
-import NotFound from './components/not-found'
-import Shop from './components/pages/shop/shop';
-import SingleProduct from './components/single-product/single-product';
+import { NotFound } from './components/not-found'
+import { Shop } from './pages/shop/shop';
+import { SingleProduct } from './components/single-product/single-product';
 import './App.scss';
 import { Checkout } from './components/checkout/checkout'
-import { CartPage } from './components/pages/cart-page/cart-page';
+import { CartPage } from './pages/cart-page/cart-page';
 
 const App: React.FC = ()  => {
   return (

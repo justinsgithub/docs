@@ -3,11 +3,11 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { ProductsContext } from "../../context/products-context";
 import { CartContext } from "../../context/cart-context";
 import { isInCart } from '../../helpers';
-import Layout from '../shared/layout'
+import { Layout } from '../shared/layout'
 import './single-product.styles.scss'
 import { ProductType } from '../../types/product-type'
 
-const SingleProduct = () => {
+export const SingleProduct = () => {
   const params = useParams()
   const navigate = useNavigate()
   const { products } = useContext(ProductsContext)
@@ -16,7 +16,7 @@ const SingleProduct = () => {
   const [product, setProduct] = useState<ProductType | null>(null)
 
   useEffect(() => {
-    const product = products.find((item:any) => Number(item.id) === Number(id))
+    const product = products.find((item) => Number(item.id) === Number(id))
 
     if (!product) {
       navigate('/shop')
@@ -60,5 +60,3 @@ const SingleProduct = () => {
     </Layout>
   )
 }
-
-export default SingleProduct

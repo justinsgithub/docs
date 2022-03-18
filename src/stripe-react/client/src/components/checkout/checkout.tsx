@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { CartContext } from '../../context/cart-context'
-import Layout from '../shared/layout'
+import { Layout } from '../shared/layout'
 import './checkout.styles.scss'
 
 export const Checkout = () => {

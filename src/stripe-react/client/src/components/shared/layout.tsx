@@ -1,7 +1,12 @@
+import { FC, ReactNode } from 'react'
 import Header from '../header/header'
 import Footer from '../footer/footer'
 
-const Layout = ({ children }: any) => {
+interface LayoutProps {
+  children: ReactNode
+}
+
+export const Layout: FC<LayoutProps> = ({ children }) => {
   return (
   <>
       <Header />
@@ -12,5 +17,3 @@ const Layout = ({ children }: any) => {
   </>
   )
 }
-
-export default Layout

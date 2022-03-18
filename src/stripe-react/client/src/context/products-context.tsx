@@ -1,9 +1,14 @@
-import { createContext, useState } from 'react'
+import { createContext, ReactNode, useState } from 'react'
 import SHOP_DATA from '../shop'
 
 export const ProductsContext = createContext({products: SHOP_DATA})
 
-const ProductsContextProvider = ({ children }: any) => {
+
+interface ProductsContextProviderProps {
+  children: ReactNode
+}
+
+export const ProductsContextProvider = ({ children }: ProductsContextProviderProps) => {
   const [products] = useState(SHOP_DATA)
 
   return (
@@ -12,5 +17,3 @@ const ProductsContextProvider = ({ children }: any) => {
   </ProductsContext.Provider>
   )
 }
-
-export default ProductsContextProvider

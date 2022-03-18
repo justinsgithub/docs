@@ -11,9 +11,9 @@ export const Total: FC<TotalProps> = ({ itemCount, total}) => {
 
   return (
     <div className="total-container">
-      <div className="total">
+      <div className="total" style={{ textAlign: 'center', marginBottom: '25px'}}>
         <p>Total Items: {itemCount}</p>
-        <p>Total: {total}</p>
+        <p>Total: ${total}</p>
       </div>
       <div className="checkout">
         <button className="button is-black" onClick={() => navigate('/checkout') }>CHECKOUT</button>
