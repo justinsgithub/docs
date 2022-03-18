@@ -10,16 +10,22 @@ export const sumItems = (cartItems: Array<ProductType>) => {
 
 type ACTIONTYPE =
   | { type: 'ADD_ITEM'; payload: ProductType }
-  | { type: 'decrement'; payload: string }
+  | { type: 'INCREASE'; payload: ProductType }
 
 export const cartReducer = (state: typeof initialState, action: ACTIONTYPE) => {
   switch (action.type) {
+
     case 'ADD_ITEM':
-      // check if item is in cart
       if ( !state.cartItems.find( (item: ProductType) => item.id === action.payload.id)) {
         state.cartItems.push({ ...action.payload, quantity: 1 })
       }
       return { ...state, cartItems: [...state.cartItems], ...sumItems(state.cartItems) }
+
+    case 'INCREASE':
+      const increaseIndex = state.cartItems.findIndex(item => item.id === action.payload.id)
+      state.cartItems[increaseIndex].quantity++
+      return { ...state, cartItems: [...state.cartItems], ...sumItems(state.cartItems) }
+
     default:
       return state
   }

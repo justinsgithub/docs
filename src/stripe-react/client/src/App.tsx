@@ -5,6 +5,8 @@ import NotFound from './components/not-found'
 import Shop from './components/pages/shop/shop';
 import SingleProduct from './components/single-product/single-product';
 import './App.scss';
+import { Checkout } from './components/checkout/checkout'
+import { CartPage } from './components/pages/cart-page/cart-page';
 
 const App: React.FC = ()  => {
   return (
@@ -13,6 +15,8 @@ const App: React.FC = ()  => {
         <Route path='/' element={<HomePage />}/>
         <Route path='/shop' element={<Shop />}/>
         <Route path='/product/:id' element={<SingleProduct />}/>
+        <Route path='/checkout' element={<Checkout />}/>
+        <Route path='/cart' element={<CartPage />}/>
         <Route path='*' element={<NotFound />}/>
       </Routes>
     </div>

@@ -1,7 +1,7 @@
 import { createContext, useState } from 'react'
 import SHOP_DATA from '../shop'
 
-export const ProductsContext:any = createContext([])
+export const ProductsContext = createContext({products: SHOP_DATA})
 
 const ProductsContextProvider = ({ children }: any) => {
   const [products] = useState(SHOP_DATA)

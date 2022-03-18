@@ -9,7 +9,9 @@ import { ProductType } from '../../types/product-type';
 const FeaturedProduct = (product: ProductType) => {
   const navigate = useNavigate()
   const { title, imageUrl, price, id, description} = product;
-  const { addProduct, cartItems } = useContext(CartContext)
+  const { addProduct, increase, cartItems } = useContext(CartContext)
+
+  const inCart = isInCart(product, cartItems)
 
   return (
   <div className='featured-product'>
@@ -19,7 +21,11 @@ const FeaturedProduct = (product: ProductType) => {
     <div className='name-price'>
       <h3>{title}</h3>
       <p>$ {price}</p>
-      <button className="button is-black nomad-btn">ADD TO CART</button>
+      {!inCart ? ( 
+      <button className="button is-black nomad-btn" onClick={() => addProduct(product)}>ADD TO CART</button>
+      ) : (
+      <button className="button is-white nomad-btn" id='btn-white-outline' onClick={() => increase(product)}>ADD MORE</button>
+      ) }
     </div>
   </div>
   )
