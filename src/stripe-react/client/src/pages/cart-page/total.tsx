@@ -4,9 +4,10 @@ import { useNavigate } from 'react-router-dom';
 interface TotalProps {
   itemCount: number
   total: number
+  clearCart: () => void
 }
 
-export const Total: FC<TotalProps> = ({ itemCount, total}) => {
+export const Total: FC<TotalProps> = ({ itemCount, total, clearCart}) => {
   const navigate = useNavigate()
 
   return (
@@ -17,7 +18,7 @@ export const Total: FC<TotalProps> = ({ itemCount, total}) => {
       </div>
       <div className="checkout">
         <button className="button is-black" onClick={() => navigate('/checkout') }>CHECKOUT</button>
-        <button className='button is-white' onClick={() => {}}>CLEAR</button>
+        <button className='button is-white' onClick={() => clearCart()}>CLEAR</button>
       </div>
     </div>
   )
