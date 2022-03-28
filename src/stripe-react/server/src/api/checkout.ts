@@ -8,6 +8,8 @@ export const createCheckoutSession = async( request: Request, response: Response
 
   const { line_items, customer_email } = request.body
 
+  console.log('body', request.body)
+
   if (!line_items || !customer_email) {
     return response.status(400).json({ error: 'missing required session paramaters'})
   } 

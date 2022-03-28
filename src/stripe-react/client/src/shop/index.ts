@@ -1,12 +1,12 @@
 import { ProductType } from "../types/product-type";
-import fancyCoffee from '../assets/fancy-coffee.jpg'
-import coffeeBreakfast from '../assets/coffee-breakfast.jpg'
-import coffeeCroissant from '../assets/coffee-croissant.jpg'
-import coffeeShot from '../assets/coffee-shot.jpg'
-import freshBeans from '../assets/fresh-beans.jpg'
-import happyCoffee from '../assets/happy-coffee.jpg'
-import lovingBeans from '../assets/loving-beans.jpg'
-import lovingCoffee from '../assets/loving-coffee.jpg'
+const fancyCoffee = 'https://i.ibb.co/qksVRML/fancy-coffee.jpg'
+const coffeeBreakfast = 'https://i.ibb.co/kyd4vwz/coffee-breakfast.jpg'
+const coffeeCroissant = 'https://i.ibb.co/N9jpD9b/coffee-croissant.jpg'
+const coffeeShot = 'https://i.ibb.co/V3XM7Kh/coffee-shot.jpg'
+const freshBeans = 'https://i.ibb.co/261kgT1/fresh-beans.jpg'
+const happyCoffee = 'https://i.ibb.co/yXBwV5M/happy-coffee.jpg'
+const lovingBeans = 'https://i.ibb.co/4T1Lkjz/loving-beans.jpg'
+const lovingCoffee = 'https://i.ibb.co/0nGVk9w/loving-coffee.jpg'
 
 const SHOP_DATA: Array<ProductType> = [ {
     id: 1,

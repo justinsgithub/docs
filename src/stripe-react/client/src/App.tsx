@@ -7,6 +7,8 @@ import { SingleProduct } from './components/single-product/single-product';
 import './App.scss';
 import { Checkout } from './components/checkout/checkout'
 import { CartPage } from './pages/cart-page/cart-page';
+import { Success } from './components/stripe-checkout/stripe-checkout/success';
+import { Canceled } from './components/stripe-checkout/stripe-checkout/canceled';
 
 const App: React.FC = ()  => {
   return (
@@ -17,6 +19,8 @@ const App: React.FC = ()  => {
         <Route path='/product/:id' element={<SingleProduct />}/>
         <Route path='/checkout' element={<Checkout />}/>
         <Route path='/cart' element={<CartPage />}/>
+        <Route path='/canceled' element={<Canceled />}/>
+        <Route path='/success' element={<Success />}/>
         <Route path='*' element={<NotFound />}/>
       </Routes>
     </div>
