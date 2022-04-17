@@ -51,10 +51,11 @@ nav:
     - SEO Fundamentals: creative/seo-fundamentals.md
     - Writing Blogs: creative/writing-blogs.md
   - Linux: 
-    - Code Snips: linux/code-snips.md
-    - Directories: linux/directories.md
-    - Command Line: linux/command-line.md
     - Advanced: linux/linux-programs.md
+    - Code Snips: linux/code-snips.md
+    - Command Line: linux/command-line.md
+    - Directories: linux/directories.md
+    - General: linux/general.md
     - Zsh: linux/zsh.md
   - Resources:
     - Learning Resources: resources/resources.md
@@ -116,7 +117,7 @@ markdown_extensions:
     custom_fences:
     - name: mermaid
       class: mermaid
-      format: !!python/name:pymdownx.superfences.fence_code_format ''
+        #format: !!python/name:pymdownx.superfences.fence_code_format ''
 - pymdownx.tabbed
 extra:
   social:
