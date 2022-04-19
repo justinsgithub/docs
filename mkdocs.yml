@@ -80,6 +80,7 @@ nav:
       - Mini Projects: program-langs/rust/mini-projects.md
   - Software:
     - Docker: software/docker.md
+    - Docker Compose: software/docker-compose.md
     - ESLint Prettier: software/eslint-prettier.md
     - Git: 
       - Git Essentials: software/git/essentials.md  

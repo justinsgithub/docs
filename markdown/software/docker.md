@@ -231,7 +231,7 @@ and it makes a copy of that in the Linux Kernel for each container, so each cont
 - not part of images, not included when you download an image or upload an image, your local data, local to the host machine 
 
 - sharing data with the host:
-    - "shared folders" the the hose
+    - "shared folders" on the host
     - sharing a "single file" into a container, make sure the file exists locally before hand or docker will assume it is a folder
     - similar to shared folders in things like virtual box
 
@@ -247,36 +247,30 @@ docker run -ti -v /home/justin/Desktop:/shared-folder ubuntu bash
     - can between containers
     - `docker run -ti --volumes-from $image-name ubuntu bash`
 
-### docker registries
 
-## building Docker images
+## docker-compose 
 
-### what are Dockerfiles?
+### YAML 
 
-### building Dockerfiles
+YAML ain't markup language 
 
-### Dockerfile syntax
+- nesting of objects in a YAML is determined by whitespace / indentation
 
-### Multi-project Docker files
+#### YAML datatypes
 
-### Avoid golden Images
+- Scalars (strings and numbers)
+- Sequences (arrays and lists)
+- Mappings (hashes and dictionaries)
 
-## under the hood
+### docker-compose main keys 
 
-### Docker the program
+#### version 
 
-### networking and namespaces
+- specifies what version of docker-compose is being used
 
-### processes and cgroups
+#### services 
 
-### storage
+- different containers are placed under services (may have one for db, frontend, backend, and webserver, for example)
 
-## orchestration: building systems with Docker
 
-### registries in detail
 
-### intro to orchestration 
-
-### Kubernetes in AWS
-
-### Google Kubernetes Engine
