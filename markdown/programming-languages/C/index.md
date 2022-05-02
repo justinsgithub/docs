@@ -94,3 +94,9 @@
 - example: `#define MYNAME 'Justin'`
 - a Macro is normally named with all capital letters
 - basically creates a global variable
+
+### makefile 
+
+- instructions to compile program 
+- written with shell syntax 
+- `#` is used for comments 
