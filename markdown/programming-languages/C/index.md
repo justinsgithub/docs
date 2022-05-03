@@ -100,3 +100,18 @@
 - instructions to compile program 
 - written with shell syntax 
 - `#` is used for comments 
+
+### __FILE__
+
+- a macro the C language provides which will give you the current files name 
+- useful for debugging
+
+### __FUNCTION__
+
+- a macro the C language provides which will give you the current functions name 
+- useful for debugging
+
+### __LINE__
+
+- a macro the C language provides which will give you the current line in the file name 
+- useful for debugging

@@ -11,6 +11,11 @@
 
 int main(void)
 {
+  int twoPlusFifty;
+
+  twoPlusFifty = addTwo(50);
+  printf("twoPlusFifty = %d\n", twoPlusFifty);
+
 	printHelloWorld();
 
 	promptAndPrint();

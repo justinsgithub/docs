@@ -7,3 +7,5 @@
 void printHelloWorld(void);
 
 void promptAndPrint(void);
+
+int addTwo(int number);

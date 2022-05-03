@@ -16,5 +16,10 @@ void promptAndPrint(void)
 	int iNumber = 0;
 	printf("Enter an integer please: ");
 	scanf("%d", &iNumber);
-	printf("You entered: %d", iNumber);
+	printf("You entered: %d\n", iNumber);
+}
+
+int addTwo(int number)
+{
+  return number + 2;
 }
