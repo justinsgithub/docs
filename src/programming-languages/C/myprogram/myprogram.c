@@ -9,11 +9,17 @@
 
 #include "myfuncs.h"
 
+int main(void) {
+  loopExample();
+  return 0;
+}
+
+/*
 int main(int argc, char *argv[])
 {
   int twoPlusFifty;
 
-  if (argc != 3) 
+  if (argc != 3)
   {
     printf("invalid number of arguments, expected 2\n");
     return -1;
@@ -22,10 +28,11 @@ int main(int argc, char *argv[])
   twoPlusFifty = addTwo(50);
   printf("twoPlusFifty = %d\n", twoPlusFifty);
 
-	printHelloWorld();
+        printHelloWorld();
 
-	// promptAndPrint();
+        // promptAndPrint();
 
   ifStatementExample();
-	return 0;
+        return 0;
 }
+*/

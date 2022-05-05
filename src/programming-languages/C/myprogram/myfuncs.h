@@ -11,3 +11,5 @@ void promptAndPrint(void);
 int addTwo(int number);
 
 void ifStatementExample(void);
+
+void loopExample(void);
