@@ -13,3 +13,7 @@ int addTwo(int number);
 void ifStatementExample(void);
 
 void loopExample(void);
+
+void switchExample(void);
+
+int gotoExample(void);

@@ -1,5 +1,9 @@
 # the C programming language
 
+## Bit vs Byte
+
+
+
 ## compilation process
 
 ### source code 

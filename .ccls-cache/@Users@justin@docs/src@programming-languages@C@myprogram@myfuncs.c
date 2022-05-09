@@ -6,6 +6,67 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int gotoExample(void){
+  // this function checks a user's identity
+  // returns 0 for success, or other error codes depending on the reason for failure
+  // goto can be used in place of early return statements for better code coverage
+
+  char * name = "Justin";
+  int age = -26;
+  char * occupation = "software developer";
+  int ret = -1;
+
+  if (!name) {
+    ret = -2;
+    goto error;
+  }
+
+  if (age < 0) {
+    ret = -3;
+    goto error;
+  }
+
+  if (!occupation) {
+    ret = -4;
+    goto error;
+  }
+
+  ret = 0;
+
+error:
+  return ret;
+}
+
+void switchExample(void) {
+  char selector = 'c';
+
+  switch (selector) {
+    case 'a': {
+      printf("apple\n");
+      break;
+    }
+    case 'b': {
+      printf("banana\n");
+      break;
+    }
+    case 'c': {
+      printf("carrot\n");
+      break;
+    }
+    case '1':
+    case '2':
+    case '3':
+    case '4': {
+      printf("it was 1, 2, 3, or 4\n");
+      break;
+    }
+    default: {
+      printf("was not a, b, or c\n");
+    }
+  }
+
+}
+
 void printHelloWorld(void) { printf("Hello World\n"); }
 
 void promptAndPrint(void) {
@@ -60,8 +121,8 @@ void loopExample(void) {
   } while (c < i);
 
   int d = 0;
-  for (d = 0; d < 5; d++){
-    if ( d == 3 ) 
+  for (d = 0; d < 5; d++) {
+    if (d == 3)
       continue;
     printf("d = 3 does not get printed, d = %d\n", d);
   }
