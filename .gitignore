@@ -153,6 +153,9 @@ dmypy.json
 .pyre/
 
 # C language development directories
+
 .ccls-cache
 .ccls-cache/
 /.ccls-cache
+./.ccls-cache/
+./.ccls-cache
