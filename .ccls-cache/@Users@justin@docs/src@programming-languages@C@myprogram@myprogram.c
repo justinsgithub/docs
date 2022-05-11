@@ -11,6 +11,14 @@
 
 int main(void) {
 
+  datatypeExample();
+
+  return 0;
+}
+
+/*
+int main(void) {
+
   int ret = -1;
 
   ret = gotoExample();
@@ -36,7 +44,6 @@ int main(void) {
   return 0;
 }
 
-/*
 int main(int argc, char *argv[])
 {
   loopExample();

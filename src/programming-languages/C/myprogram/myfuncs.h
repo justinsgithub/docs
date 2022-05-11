@@ -17,3 +17,5 @@ void loopExample(void);
 void switchExample(void);
 
 int gotoExample(void);
+
+void datatypeExample(void);

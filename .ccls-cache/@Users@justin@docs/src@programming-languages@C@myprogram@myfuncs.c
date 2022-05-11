@@ -6,6 +6,37 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void datatypeExample(void) {
+  int myint;
+  unsigned int myuint;
+  short myshort;
+  unsigned short myushort;
+  char mychar;
+  unsigned char myuchar;
+  long mylong;
+  unsigned long myulong;
+  
+  float myfloat;
+  double mydouble;
+
+  char mychar2 = 65;
+
+  printf("sizeof(myint) = %1d\n", sizeof(myint));
+  printf("sizeof(myuint) = %1d\n", sizeof(myuint));
+  printf("sizeof(myshort) = %1d\n", sizeof(myshort));
+  printf("sizeof(myushort) = %1d\n", sizeof(myushort));
+  printf("sizeof(mychar) = %1d\n", sizeof(mychar));
+  printf("sizeof(myuchar) = %1d\n", sizeof(myuchar));
+  printf("sizeof(mylong) = %1d\n", sizeof(mylong));
+  printf("sizeof(myulong) = %1d\n", sizeof(myulong));
+  printf("sizeof(myfloat) = %1d\n", sizeof(myfloat));
+  printf("sizeof(mydouble) = %1d\n", sizeof(mydouble));
+
+  printf("mychar2 as integer = %d\n", mychar2);
+  printf("mychar2 as character = %c\n", mychar2);
+
+}
+
 int gotoExample(void){
   // this function checks a user's identity
   // returns 0 for success, or other error codes depending on the reason for failure
