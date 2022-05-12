@@ -5,6 +5,15 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
+
+struct user {
+  int userid;
+  char username[64];
+  unsigned int age; 
+  char occupation[64];
+};
 
 void datatypeExample(void) {
   int myint;
@@ -20,6 +29,17 @@ void datatypeExample(void) {
   double mydouble;
 
   char mychar2 = 65;
+
+  struct user myself;
+
+  memset(&myself, 0, sizeof(myself));
+
+  myself.userid = 1;
+  strncpy(myself.username, "justin", strlen("justin"));
+  myself.age = 26;
+  strncpy(myself.occupation, "developer", strlen("developer"));
+
+  printf("myself.userid = %d myself.username = %s myself.age = %u myself.occupation = %s\n", myself.userid, myself.username, myself.age, myself.occupation);
 
   printf("sizeof(myint) = %1d\n", sizeof(myint));
   printf("sizeof(myuint) = %1d\n", sizeof(myuint));
