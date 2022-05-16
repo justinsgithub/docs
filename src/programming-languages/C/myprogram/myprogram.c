@@ -10,9 +10,18 @@
 
 #include "myfuncs.h"
 
+extern int myProgramCount; // allows using variables from other files
+extern int numOfStates;
+
+
 int main(void) {
 
-  datatypeExample();
+  enumExample();
+  printf("my program count = %d\n", myProgramCount);
+  staticExample();
+  staticExample();
+  // typeCastingExample();
+  // datatypeExample();
 
   return 0;
 }
@@ -23,6 +32,8 @@ int main(void) {
   int ret = -1;
 
   ret = gotoExample();
+
+  datatypeExample();
 
   switch(ret){
     case -2: {

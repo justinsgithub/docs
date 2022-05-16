@@ -6,14 +6,79 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "myfuncs.h"
 
+static int thisFileCount =
+    0; // this variable is only available inside of this file
 
-struct user {
-  int userid;
-  char username[64];
-  unsigned int age; 
-  char occupation[64];
-};
+int myProgramCount = 0;
+const int numOfStates = 50;
+
+// before compilation, preprocessor replaces all instances of NUM_OF_STATES with
+// specified value does not take up space in memory, should be used instead of
+// global const
+#define NUM_OF_STATES = 50;
+
+// needs to be declared before it is implemented, or you can put prototype at
+// the top of the file
+static int staticFunction(void) {
+  return 1;
+} // this function is only available inside of this file. Not put in header file
+
+void enumExample(void) {
+  Day today = MONDAY;
+  switch (today) {
+    case SUNDAY: {
+      printf("today is sunday\n");
+      break;
+    }
+    case MONDAY: {
+      printf("today is monday\n");
+      break;
+    }
+    default: 
+      printf("today is not sunday or monday\n");
+  }
+}
+
+void staticExample(void) {
+
+  char states[numOfStates]; // sets states to be an array of characters equal to
+                            // num of states
+
+  static int32 count = 0; // persists value of 0 everytime this function is ran
+
+  count = count + staticFunction();
+  thisFileCount = thisFileCount + staticFunction();
+
+  printf("count is %d\n", count);
+  printf("this file count is %d\n", thisFileCount);
+}
+
+void typeCastingExample(void) {
+  int myint = 80001;
+  int myint2 = 5000;
+
+  // 2's complement is a computer science technique to store a negative number
+  // in memory
+  char mychar = -1; // 2's complement to represent negative numbers
+
+  /*
+   * 0000 0001
+   * 1111 1110 // converts all 0's and 1's to the opposite, (compliment)
+   * 1111 1111 // adds a 1 to the outcome of the compliment, this is how -1 is
+   * represented in C, which equals 255 type casting does not change the value
+   * in memory, it just represents it differently
+   */
+
+  // integer is 4 bytes / 32 bits, short is only 2 bytes / 16 bits, so casting
+  // to short will only look at the first 16 digits / bits
+  printf("myint cast to short = %d\n", (short)myint);
+  printf("myint2 cast to short = %d\n", (short)myint2);
+  printf("myint cast to unsigned int = %d\n", (unsigned int)myint);
+  printf("myint cast to unsigned long = %1d\n", (unsigned long)myint);
+  printf("myint cast to unsigned char = %d\n", (unsigned char)mychar);
+}
 
 void datatypeExample(void) {
   int myint;
@@ -24,7 +89,7 @@ void datatypeExample(void) {
   unsigned char myuchar;
   long mylong;
   unsigned long myulong;
-  
+
   float myfloat;
   double mydouble;
 
@@ -39,7 +104,9 @@ void datatypeExample(void) {
   myself.age = 26;
   strncpy(myself.occupation, "developer", strlen("developer"));
 
-  printf("myself.userid = %d myself.username = %s myself.age = %u myself.occupation = %s\n", myself.userid, myself.username, myself.age, myself.occupation);
+  printf("myself.userid = %d myself.username = %s myself.age = %u "
+         "myself.occupation = %s\n",
+         myself.userid, myself.username, myself.age, myself.occupation);
 
   printf("sizeof(myint) = %1d\n", sizeof(myint));
   printf("sizeof(myuint) = %1d\n", sizeof(myuint));
@@ -54,17 +121,17 @@ void datatypeExample(void) {
 
   printf("mychar2 as integer = %d\n", mychar2);
   printf("mychar2 as character = %c\n", mychar2);
-
 }
 
-int gotoExample(void){
+int gotoExample(void) {
   // this function checks a user's identity
-  // returns 0 for success, or other error codes depending on the reason for failure
-  // goto can be used in place of early return statements for better code coverage
+  // returns 0 for success, or other error codes depending on the reason for
+  // failure goto can be used in place of early return statements for better
+  // code coverage
 
-  char * name = "Justin";
+  char *name = "Justin";
   int age = -26;
-  char * occupation = "software developer";
+  char *occupation = "software developer";
   int ret = -1;
 
   if (!name) {
@@ -92,30 +159,29 @@ void switchExample(void) {
   char selector = 'c';
 
   switch (selector) {
-    case 'a': {
-      printf("apple\n");
-      break;
-    }
-    case 'b': {
-      printf("banana\n");
-      break;
-    }
-    case 'c': {
-      printf("carrot\n");
-      break;
-    }
-    case '1':
-    case '2':
-    case '3':
-    case '4': {
-      printf("it was 1, 2, 3, or 4\n");
-      break;
-    }
-    default: {
-      printf("was not a, b, or c\n");
-    }
+  case 'a': {
+    printf("apple\n");
+    break;
   }
-
+  case 'b': {
+    printf("banana\n");
+    break;
+  }
+  case 'c': {
+    printf("carrot\n");
+    break;
+  }
+  case '1':
+  case '2':
+  case '3':
+  case '4': {
+    printf("it was 1, 2, 3, or 4\n");
+    break;
+  }
+  default: {
+    printf("was not a, b, or c\n");
+  }
+  }
 }
 
 void printHelloWorld(void) { printf("Hello World\n"); }

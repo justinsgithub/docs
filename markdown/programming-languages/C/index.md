@@ -1,6 +1,53 @@
 # the C programming language
 
-## Bit vs Byte
+## Pointer Basics 
+
+### What is a pointer? 
+
+- a pointer is an object in C that stores a memory address (ex. 0x9aa61c44) (hexadecimal)
+- a pointer references a location in memory 
+- obtaining the value pointed to by a pointer is called dereferencing a pointer
+- every variable and function occupies some space in memory, which means they can all be referenced by pointers
+
+
+### About Pointers
+
+- pointers in C may seem daunting but are very interesting when you get the hang of it 
+- many programming tasks can be done much easier with pointers
+- pointers are required to perform dynamic memory allocation 
+
+### Referencing a Pointer 
+
+- declare a pointer with the `*` operator
+- `int * mypointer = NULL`
+- every pointer needs a data type (similar to a variable)
+- pointers are given an name just like a variable 
+- pointers are assigned an initial memory location to point to, which can be `NULL`
+
+```C
+int a = 90;
+mypointer = &a;
+```
+
+- you can declare a pointer with the & operator
+- regular variable declaration / initialization
+- `&a` will evaluate to the memory address where `a` resides in
+- `mypointer` references to the address that contains the value of 90
+
+### Dereferencing a Pointer
+
+
+- dereference a pointer with `*` operator 
+- dereferencing a pointer is done based on the data type of the pointer 
+```C 
+int * mypointer = NULL;
+int a = 90;
+mypointer = &a;
+printf("myptr rerferences to the memory address of %x\n", mypointer)
+printf("myptr dererferences to the value stored at address of %d\n", *mypointer)
+```
+- first `printf` will print the hexadecimal memory address that `mypointer` references to
+- second `printf` will print the value stored at the memory address that `mypointer` references to
 
 
 
@@ -12,7 +59,7 @@
 
 ### preprocessor 
 
-- compiler program ( gcc ) runs source code in a preprocessor to expand the code
+- compiler program ( `gcc` ) runs source code in a preprocessor to expand the code
 - looks for errors, such as syntax errors
 - removes comments 
 - replaces Macros
