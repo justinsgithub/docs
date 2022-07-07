@@ -1,0 +1,42 @@
+version: '3.8'
+services:
+  mongodb:
+    image: 'mongo'
+    volumes:
+      - data:/data/db
+    # environment: 
+    #   MONGO_INITDB_ROOT_PASSWORD: justin # key value pairs do not need prefixed with a dash
+    #   MONGO_INITDB_ROOT_USERNAME: password
+    env_file:
+      - ./env/mongo.env # single values need prefixed with a dash 
+    # networks: # often not needed, docker-compose will create a network for all specified networks automatically
+    #  - goals-net
+  backend:
+    build: 
+      #./backend // same as below, no need to use longer format unless Dockerfile is named something different
+      context: ./backend
+      dockerfile: Dockerfile
+    ports: 
+      - '8001:8001'
+    volumes:
+      - logs:/app/logs
+      - ./backend:/app
+      - /app/node_modules
+    env_file:
+      - ./env/backend.env
+    depends_on:
+      - mongodb 
+  frontend:
+    build: ./frontend
+    ports: 
+      - '3000:3000'
+    volumes: 
+      - ./frontend/src:/app/src
+    stdin_open: true 
+    tty: true
+    depends_on:
+      - backend
+# any named volumes used in services must be listed here as well
+volumes: 
+  data:
+  logs:

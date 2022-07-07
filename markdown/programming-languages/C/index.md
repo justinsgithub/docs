@@ -1,5 +1,41 @@
 # the C programming language
 
+## Memory 
+
+### Overview
+
+- computer programs require memory to run 
+- most program crashes have something to do with memory violations
+- a memory address is normally represented by hexadecimal values
+- there are 3 main sections of memory, Stack, Heap, Read-only
+
+### Stack Memory 
+
+- simple data structures have continuous blocks of memory, or linear memory, one chunk of memory
+- LIFO = Last In First Out, like a stack of papers 
+- allocation happens automatically in the function call stack
+- a functions local variables are stored in stack memory
+- deallocation happens automatically when the function returns  
+- high speed access
+- normally very small and limited in size, 1 - 8 MB typically 
+- stack overflow happens when all of the stack memory is exhausted 
+
+### Heap Memory 
+
+- a pile of memory space available for programmers to allocate and deallocate 
+- allocated by programmers manually during program run time, normally using `malloc()` and pointers
+- deallocated by programmers manually during program run time, normally by using `free()`
+- requires more care to manage or memory leak can happen to the program 
+- slower than stack memory 
+- how much memory is available to use depends on your RAM
+
+### Read-Only Memory 
+
+- the data here is set when the memory is allocated automatically
+- data here can only be read by your program, but not modified 
+- any attempt to modify data in read-only memory will result in segmentation fault, (program crash)
+- programmer does not need to manually manage the memory space 
+
 ## Pointer Basics 
 
 ### What is a pointer? 

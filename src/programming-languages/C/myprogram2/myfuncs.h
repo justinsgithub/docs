@@ -1,0 +1,1 @@
+void memoryAllocationExample(void);
